@@ -1,0 +1,423 @@
+/* ═══════════════════════════════════════════════════════════════
+   NAYARA INDUSTRIES — Luxury Dark Premium Override
+   Applied to ALL pages via link tag in every HTML file
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ─── ROOT VARIABLES ─── */
+:root {
+  --gold: #d4af37;
+  --gold-light: #e8c84a;
+  --gold-dark: #b8891a;
+  --dark-bg: #07090f;
+  --dark-surface: #0e1420;
+  --dark-surface-2: #111825;
+  --dark-border: rgba(212,175,55,0.18);
+  --dark-border-hover: rgba(212,175,55,0.45);
+  --text-primary: #f0ece0;
+  --text-secondary: #7f8fa6;
+  --sp-bg: #07090f !important;
+  --corp-bg: #07090f !important;
+  --nf-bg: #07090f !important;
+  --corp-gray: #0c1018 !important;
+  --corp-surface-alt: #0c1018 !important;
+}
+
+/* ─── KEYFRAMES ─── */
+@keyframes luxFloatUp {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+@keyframes luxGoldGlow {
+  0%, 100% { box-shadow: 0 0 20px rgba(212,175,55,0.1), 0 24px 60px rgba(0,0,0,0.6); }
+  50% { box-shadow: 0 0 45px rgba(212,175,55,0.3), 0 24px 60px rgba(0,0,0,0.6); }
+}
+@keyframes luxGridDrift {
+  0% { background-position: 0 0; }
+  100% { background-position: 60px 60px; }
+}
+@keyframes luxShimmer {
+  0% { left: -100%; }
+  100% { left: 200%; }
+}
+
+/* ─── BODY / PAGE BACKGROUND ─── */
+html, body {
+  background: var(--dark-bg) !important;
+  color: var(--text-primary) !important;
+}
+body::before {
+  background:
+    radial-gradient(ellipse 80% 60% at 10% 0%, rgba(212,175,55,0.03), transparent 55%),
+    radial-gradient(ellipse 70% 60% at 50% 100%, rgba(11,31,58,0.4), transparent 60%) !important;
+}
+
+/* ─── ALL SECTIONS DARK ─── */
+section,
+.sp-zone,
+.eb-zone,
+.sp-zone--mesh,
+.eb-zone--mesh,
+.eb-zone--blueprint,
+.eb-zone--industrial,
+.sp-zone:nth-of-type(even),
+.eb-zone:nth-of-type(even),
+.sp-zone:nth-of-type(odd),
+.eb-zone:nth-of-type(odd),
+section[style*="background"] {
+  background: linear-gradient(180deg, var(--dark-bg) 0%, #0b0e18 50%, var(--dark-bg) 100%) !important;
+  color: var(--text-primary) !important;
+  position: relative;
+}
+
+/* Animated gold grid lines on sections */
+.sp-zone::before,
+.eb-zone::before {
+  content: '' !important;
+  position: absolute !important;
+  inset: 0 !important;
+  background-image:
+    linear-gradient(rgba(212,175,55,0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(212,175,55,0.025) 1px, transparent 1px) !important;
+  background-size: 60px 60px !important;
+  pointer-events: none !important;
+  z-index: 0 !important;
+  animation: luxGridDrift 25s linear infinite !important;
+}
+
+/* ─── TYPOGRAPHY ─── */
+.sp-section-title, .section-title { color: #ffffff !important; }
+.sp-section-eyebrow, .section-label, .page-hero-eyebrow { color: var(--gold) !important; letter-spacing: 0.2em !important; }
+.sp-feature-text, .cms-content p, .cms-content-premium p { color: var(--text-secondary) !important; line-height: 1.78 !important; }
+
+/* ─── NAVBAR dark glass ─── */
+.lg-nav-shell {
+  background: rgba(7,9,15,0.85) !important;
+  backdrop-filter: blur(30px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(30px) saturate(180%) !important;
+  border: 1px solid rgba(212,175,55,0.15) !important;
+  border-bottom: 1px solid rgba(212,175,55,0.3) !important;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.5) !important;
+}
+.lg-nav-link { color: rgba(255,255,255,0.72) !important; }
+.lg-nav-link:hover, .lg-nav-link.active { color: var(--gold) !important; }
+.lg-dropdown-inner, .lg-mega-inner {
+  background: rgba(7,9,15,0.97) !important;
+  border: 1px solid rgba(212,175,55,0.15) !important;
+  box-shadow: 0 24px 72px rgba(0,0,0,0.7) !important;
+}
+.lg-dropdown-link, .lg-mega-link { color: rgba(240,236,224,0.8) !important; }
+.lg-dropdown-link:hover, .lg-mega-link:hover {
+  background: rgba(212,175,55,0.06) !important;
+  color: var(--gold) !important;
+  box-shadow: inset 3px 0 0 var(--gold) !important;
+}
+
+/* ─── ALL CARD TYPES ─── */
+.card-3d,
+.sp-tile,
+.glass-card-premium,
+.page-content-card,
+.eb-bento-card,
+.eb-prod,
+.eb-connect-card,
+.product-card,
+.bwm-card,
+.eb-cell,
+.eb-why-card {
+  background: linear-gradient(145deg, var(--dark-surface) 0%, var(--dark-surface-2) 60%, var(--dark-surface) 100%) !important;
+  border: 1px solid var(--dark-border) !important;
+  border-radius: 20px !important;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.55), 0 0 0 1px rgba(255,255,255,0.02) !important;
+  color: var(--text-primary) !important;
+  transition: transform 0.4s cubic-bezier(0.4,0,0.2,1), box-shadow 0.4s ease, border-color 0.4s ease !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+/* Gold shimmer line top of card */
+.card-3d::before,
+.sp-tile::before,
+.eb-cell::before,
+.eb-why-card::before {
+  content: '' !important;
+  position: absolute !important;
+  top: 0 !important; left: 0 !important; right: 0 !important;
+  height: 1px !important;
+  background: linear-gradient(90deg, transparent, rgba(212,175,55,0.7), transparent) !important;
+  z-index: 10 !important;
+  pointer-events: none !important;
+}
+
+/* Card hover */
+.card-3d:hover,
+.sp-tile:hover,
+.eb-prod:hover,
+.eb-cell:hover,
+.eb-why-card:hover,
+.product-card:hover,
+.bwm-card:hover {
+  transform: translateY(-8px) !important;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.7), 0 0 0 1px rgba(212,175,55,0.35) !important;
+  border-color: var(--dark-border-hover) !important;
+  animation: luxGoldGlow 3s ease infinite !important;
+}
+
+/* Card headings */
+.card-3d h2, .card-3d h3,
+.sp-tile h2, .sp-tile h3,
+.eb-cell h2, .eb-cell h3,
+.eb-cell .eb-cell-title,
+.card-3d .sp-feature-title,
+.card-3d .eb-prod-name,
+.eb-why-card h3,
+.product-card h3, .bwm-card h3 {
+  color: #ffffff !important;
+  font-weight: 700 !important;
+}
+
+/* Card paragraphs */
+.card-3d p, .sp-tile p, .eb-cell p,
+.eb-cell .eb-cell-text, .product-card p, .bwm-card p {
+  color: var(--text-secondary) !important;
+}
+
+/* Stat numbers */
+.sp-stat-num, .eb-float-stat-num {
+  color: var(--gold) !important;
+  font-weight: 800 !important;
+}
+.sp-stat-label, .eb-float-stat-label {
+  color: var(--text-secondary) !important;
+}
+
+/* Tags/chips */
+.card-3d .eb-cell-tag, .card-3d .eb-chip, .card-3d .eb-prod-badge,
+.sp-tile .sp-cat, .bwm-card .bwm-cat, .product-card .product-cat {
+  background: rgba(212,175,55,0.1) !important;
+  color: var(--gold) !important;
+  border: 1px solid rgba(212,175,55,0.25) !important;
+  font-weight: 600 !important;
+  font-size: 0.7rem !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+}
+
+/* Why-choose icons */
+.eb-why-icon {
+  color: var(--gold) !important;
+  background: rgba(212,175,55,0.1) !important;
+  padding: 12px !important;
+  border-radius: 12px !important;
+  display: inline-flex !important;
+  border: 1px solid rgba(212,175,55,0.2) !important;
+  margin-bottom: 16px !important;
+}
+.eb-why-num {
+  color: rgba(212,175,55,0.1) !important;
+  font-weight: 900 !important;
+  font-size: 4rem !important;
+  line-height: 1 !important;
+}
+
+/* List items */
+.card-3d ul li, .sp-tile ul li, .eb-cell ul li,
+.cms-content ul li, .cms-content-premium ul li {
+  color: var(--text-secondary) !important;
+  border-left: 2px solid rgba(212,175,55,0.3) !important;
+  padding-left: 10px !important;
+  margin-bottom: 6px !important;
+  list-style: none !important;
+}
+
+/* ─── ENQUIRE BUTTON (Luxury Gold) ─── */
+.card-3d .eb-enquire, .sp-tile .eb-enquire {
+  display: block !important;
+  text-align: center !important;
+  background: linear-gradient(135deg, var(--gold-dark) 0%, var(--gold) 50%, var(--gold-dark) 100%) !important;
+  background-size: 200% auto !important;
+  color: #06070d !important;
+  padding: 13px 24px !important;
+  border-radius: 10px !important;
+  font-weight: 700 !important;
+  margin-top: 20px !important;
+  transition: background-position 0.5s ease, transform 0.25s ease, box-shadow 0.3s ease !important;
+  border: none !important;
+  box-shadow: 0 4px 20px rgba(212,175,55,0.28) !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+  font-size: 0.78rem !important;
+}
+.card-3d .eb-enquire:hover, .sp-tile .eb-enquire:hover {
+  background-position: right center !important;
+  transform: scale(1.02) translateY(-2px) !important;
+  box-shadow: 0 8px 35px rgba(212,175,55,0.5) !important;
+}
+
+/* ─── PRIMARY / GHOST BUTTONS ─── */
+.sp-btn--primary, .lg-btn-cta, .btn-primary, .pf-cta-btn {
+  background: linear-gradient(135deg, var(--gold-dark), var(--gold), var(--gold-dark)) !important;
+  background-size: 200% auto !important;
+  color: #06070d !important;
+  box-shadow: 0 8px 28px rgba(212,175,55,0.25) !important;
+  border: none !important;
+  font-weight: 700 !important;
+  transition: background-position 0.5s ease, box-shadow 0.3s ease, transform 0.25s ease !important;
+}
+.sp-btn--primary:hover, .lg-btn-cta:hover, .pf-cta-btn:hover {
+  background-position: right center !important;
+  box-shadow: 0 12px 40px rgba(212,175,55,0.45) !important;
+  transform: translateY(-2px) !important;
+  color: #06070d !important;
+}
+.sp-btn--ghost {
+  border-color: rgba(212,175,55,0.5) !important;
+  color: var(--gold) !important;
+}
+.sp-btn--ghost:hover {
+  background: rgba(212,175,55,0.1) !important;
+  border-color: var(--gold) !important;
+  color: var(--gold) !important;
+}
+
+/* ─── PRODUCT IMAGE VISUALS ─── */
+.eb-prod-visual {
+  border-radius: 14px !important;
+  overflow: hidden !important;
+  margin-bottom: 18px !important;
+  aspect-ratio: 4/3 !important;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.5) !important;
+  border: 1px solid rgba(212,175,55,0.1) !important;
+  position: relative !important;
+}
+.eb-prod-visual img {
+  width: 100% !important; height: 100% !important;
+  object-fit: cover !important;
+  transition: transform 0.6s cubic-bezier(0.4,0,0.2,1) !important;
+}
+.eb-prod:hover .eb-prod-visual img,
+.card-3d:hover .eb-prod-visual img {
+  transform: scale(1.08) !important;
+}
+.eb-prod-name { color: #ffffff !important; font-weight: 700 !important; }
+.eb-prod-desc { color: var(--text-secondary) !important; flex-grow: 1 !important; }
+.eb-prod-inner {
+  padding: 22px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  height: 100% !important;
+}
+
+/* Image tiles for inner pages */
+.sp-tile--image .sp-tile-inner {
+  border-radius: 14px !important;
+  overflow: hidden !important;
+  position: relative !important;
+}
+.sp-tile--image .sp-tile-inner::after {
+  content: '' !important;
+  position: absolute !important;
+  inset: 0 !important;
+  background: linear-gradient(180deg, transparent 55%, rgba(7,9,15,0.6) 100%) !important;
+  pointer-events: none !important;
+  z-index: 1 !important;
+}
+.sp-tile--image img {
+  width: 100% !important; height: 100% !important;
+  object-fit: cover !important;
+  transition: transform 0.7s cubic-bezier(0.4,0,0.2,1) !important;
+}
+.sp-tile--image:hover img { transform: scale(1.08) !important; }
+
+/* ─── FLOATING STAT ANIMATION ─── */
+.eb-float-stat { animation: luxFloatUp 4s ease-in-out infinite !important; }
+.eb-float-stat:nth-child(2) { animation-delay: 1.3s !important; }
+.eb-float-stat:nth-child(3) { animation-delay: 2.6s !important; }
+
+/* ─── CERTIFICATES ─── */
+.eb-cert-frame {
+  background: linear-gradient(145deg, var(--dark-surface), var(--dark-surface-2)) !important;
+  border: 1px solid rgba(212,175,55,0.15) !important;
+  border-radius: 14px !important;
+  transition: border-color 0.3s, transform 0.3s !important;
+}
+.eb-cert-frame:hover {
+  border-color: rgba(212,175,55,0.45) !important;
+  transform: translateY(-5px) !important;
+}
+
+/* ─── CONTACT INFO ─── */
+.eb-info-card {
+  background: linear-gradient(145deg, var(--dark-surface), var(--dark-surface-2)) !important;
+  border: 1px solid rgba(212,175,55,0.15) !important;
+  border-radius: 14px !important;
+  transition: border-color 0.3s, transform 0.3s !important;
+}
+.eb-info-card:hover { border-color: rgba(212,175,55,0.45) !important; transform: translateX(5px) !important; }
+.eb-info-icon { color: var(--gold) !important; }
+.eb-info-label { color: var(--text-secondary) !important; }
+.eb-info-value { color: #e2e8f0 !important; }
+
+/* ─── FORM INPUTS ─── */
+.premium-input, .premium-textarea, .eb-connect-input {
+  background: rgba(0,0,0,0.4) !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(212,175,55,0.2) !important;
+  border-radius: 12px !important;
+  padding: 14px 18px !important;
+}
+.premium-input:focus, .premium-textarea:focus {
+  border-color: rgba(212,175,55,0.6) !important;
+  box-shadow: 0 0 0 4px rgba(212,175,55,0.1) !important;
+  outline: none !important;
+}
+.form-group label { color: var(--text-secondary) !important; }
+
+/* ─── CTA BAND ─── */
+.eb-cta-band {
+  background: linear-gradient(135deg, #060810 0%, var(--dark-surface) 50%, #060810 100%) !important;
+  border-top: 1px solid rgba(212,175,55,0.15) !important;
+  border-bottom: 1px solid rgba(212,175,55,0.15) !important;
+}
+.eb-cta-glass {
+  background: rgba(14,20,32,0.6) !important;
+  border: 1px solid rgba(212,175,55,0.2) !important;
+  border-radius: 24px !important;
+  backdrop-filter: blur(20px) !important;
+}
+.eb-cta-line {
+  background: linear-gradient(90deg, transparent, var(--gold), transparent) !important;
+}
+
+/* ─── FOOTER ─── */
+.pf-footer, .lg-footer, footer {
+  background: #04050a !important;
+  border-top: 1px solid rgba(212,175,55,0.12) !important;
+  color: var(--text-secondary) !important;
+}
+
+/* ─── INNER PAGE HERO ─── */
+.page-hero-3d-overlay {
+  background:
+    linear-gradient(105deg, rgba(7,9,15,0.92) 0%, rgba(11,18,30,0.75) 50%, rgba(7,9,15,0.55) 100%),
+    linear-gradient(0deg, rgba(7,9,15,0.9) 0%, transparent 55%) !important;
+}
+.page-hero-glass-panel {
+  background: rgba(7,9,15,0.5) !important;
+  border: 1px solid rgba(212,175,55,0.15) !important;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.4) !important;
+}
+
+/* ─── HERO SWIPER ─── */
+.hero-swiper-dot { background: rgba(212,175,55,0.3) !important; border: 1px solid rgba(212,175,55,0.4) !important; }
+.hero-swiper-dot.is-active { background: var(--gold) !important; box-shadow: 0 0 10px rgba(212,175,55,0.5) !important; }
+
+/* ─── Z-INDEX STACK ─── */
+.eb-inner, .sp-zone-inner { position: relative; z-index: 1; }
+
+/* ─── REDUCED MOTION ─── */
+@media (prefers-reduced-motion: reduce) {
+  .eb-float-stat, .sp-zone::before, .eb-zone::before, .card-3d:hover {
+    animation: none !important;
+    transition: none !important;
+  }
+}

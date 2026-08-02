@@ -1,0 +1,260 @@
+/**
+ * Nayara Industries — Premium Image Presentation
+ * Unified frames, cert gallery polish, hero backgrounds, decorative section layers.
+ * Does NOT change image URLs, gallery structure, or layout positions.
+ */
+
+:root {
+  --lux-img-radius: 22px;
+  --lux-img-shadow: 0 20px 60px rgba(15, 23, 42, 0.08);
+  --lux-img-border: rgba(15, 23, 42, 0.08);
+  --lux-img-ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --lux-img-zoom: 1.05;
+  --lux-deco-opacity: 0.06;
+}
+
+/* ─── SHARED FRAME WRAPPERS ─── */
+.premium-img-wrap,
+.nl-img-frame,
+.sp-tile--image .sp-tile-inner,
+.sp-product-visual,
+.eb-prod-visual,
+.bwm-img-frame,
+.bwm-svc-img,
+.sp-hero-image-frame,
+.sp-tile-img-wrap {
+  position: relative;
+  border-radius: var(--lux-img-radius);
+  border: 1px solid var(--lux-img-border);
+  box-shadow: var(--lux-img-shadow);
+  overflow: hidden;
+}
+
+.sp-tile--image {
+  overflow: hidden;
+  border-radius: var(--lux-img-radius);
+}
+
+.premium-img-wrap,
+.nl-img-frame,
+.sp-hero-image-frame {
+  isolation: isolate;
+}
+
+/* Glass sheen overlay */
+.premium-img-wrap::before,
+.nl-img-frame::before,
+.sp-hero-image-frame::before,
+.sp-tile--image .sp-tile-inner::before,
+.sp-product-visual::before,
+.eb-prod-visual::before,
+.bwm-img-frame::before,
+.bwm-svc-img::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  border-radius: inherit;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.14) 0%, transparent 48%);
+}
+
+.premium-img-wrap::after,
+.nl-img-frame::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  border-radius: inherit;
+  background: linear-gradient(180deg, transparent 55%, rgba(11, 31, 58, 0.04) 100%);
+}
+
+/* ─── CONTENT IMAGES ─── */
+.premium-img-wrap img,
+.nl-img-frame img,
+.sp-tile--image img,
+.sp-product-visual img,
+.eb-prod-visual img,
+.bwm-img-frame img,
+.bwm-svc-img img,
+.sp-tile-img-wrap img,
+.product-card img,
+.eb-bento-card img,
+.img-premium {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.55s var(--lux-img-ease);
+}
+
+.premium-img-wrap:hover img,
+.nl-img-frame:hover img,
+.sp-tile--image:hover img,
+.sp-tile:hover .sp-product-visual img,
+.eb-prod:hover .eb-prod-visual img,
+.bwm-img-frame:hover img,
+.bwm-svc-tile:hover .bwm-svc-img img,
+.product-card:hover img,
+.eb-bento-card:hover img {
+  transform: scale(var(--lux-img-zoom));
+}
+
+/* Why-choose factory photo card */
+.eb-why-card img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--lux-img-radius);
+  transition: transform 0.55s var(--lux-img-ease);
+}
+
+.eb-why-card:hover img {
+  transform: scale(var(--lux-img-zoom));
+}
+
+.eb-why-card.eb-why--7 {
+  border-radius: var(--lux-img-radius);
+  box-shadow: var(--lux-img-shadow);
+  overflow: hidden;
+}
+
+/* Molecule decorative asset — light polish only */
+.eb-molecule-wrap img {
+  filter: drop-shadow(0 12px 32px rgba(15, 23, 42, 0.08));
+  transition: transform 0.6s var(--lux-img-ease);
+}
+
+.eb-molecule-wrap:hover img {
+  transform: scale(1.02);
+}
+
+/* ─── CERTIFICATE GALLERY (logos — no crop) ─── */
+.eb-cert-frame {
+  background: var(--pe-surface-elevated) !important;
+  border: 1px solid var(--lux-img-border) !important;
+  border-radius: var(--lux-img-radius) !important;
+  box-shadow: var(--lux-img-shadow) !important;
+  overflow: hidden !important;
+}
+
+.eb-cert-frame img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 72px;
+  object-fit: contain !important;
+  object-position: center;
+  padding: 14px 16px;
+  transition: transform 0.5s var(--lux-img-ease), opacity 0.4s ease;
+}
+
+.eb-cert-frame:hover img {
+  transform: scale(1.03) !important;
+  opacity: 0.95;
+}
+
+/* ─── HERO BACKGROUND PHOTOS ─── */
+.hero-slide-bg,
+.page-hero-3d-photo {
+  background-size: cover;
+  background-position: center;
+  transition: transform 8s var(--lux-img-ease);
+  will-change: transform;
+}
+
+.hero-slide-panel.is-active .hero-slide-bg,
+.page-hero-3d:hover .page-hero-3d-photo {
+  transform: scale(1.05);
+}
+
+.sp-hero-bg .hero-slide-bg {
+  transform: scale(1.02);
+}
+
+.sp-hero-bg .hero-slide-panel.is-active .hero-slide-bg {
+  transform: scale(1.06);
+}
+
+/* ─── DECORATIVE BACKGROUNDS — image-less sections ─── */
+.page-contact-us .eb-connect-zone,
+.page-home #contact,
+.page-careers section.sp-zone:has(.sp-contact),
+.sp-zone:has(.sp-contact-form-wrap a.sp-btn),
+.page-home .eb-cta-band {
+  position: relative;
+  overflow: hidden;
+}
+
+.page-contact-us .eb-connect-zone::before,
+.page-home #contact::before,
+.page-careers section.sp-zone:has(.sp-contact)::before,
+.sp-zone:has(.sp-contact-form-wrap a.sp-btn)::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  opacity: var(--lux-deco-opacity);
+}
+
+.page-contact-us .eb-connect-zone::before,
+.page-home #contact::before {
+  background-image: url('https://nayaragroup.com/wp-content/uploads/2025/12/environmental-pollution-factory-exterior.jpg');
+}
+
+.page-careers section.sp-zone:has(.sp-contact)::before {
+  background-image: url('https://nayaragroup.com/wp-content/uploads/2026/01/lab-technician-dressed-protective-suit-as-safety-precaution-looking-test-tube-scaled-1.jpg');
+}
+
+.sp-zone:has(.sp-contact-form-wrap a.sp-btn)::before {
+  background-image: url('https://nayaragroup.com/wp-content/uploads/2026/01/Consultancy-ServiceS-scaled.jpg');
+}
+
+.page-home .eb-cta-band::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: url('https://nayaragroup.com/wp-content/uploads/2026/01/greenfield-news.jpg') center/cover no-repeat;
+  opacity: var(--lux-deco-opacity);
+}
+
+.page-contact-us .eb-connect-zone > *,
+.page-home #contact > *,
+.page-careers section.sp-zone:has(.sp-contact) > *,
+.sp-zone:has(.sp-contact-form-wrap a.sp-btn) > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* ─── REDUCED MOTION ─── */
+@media (prefers-reduced-motion: reduce) {
+  .hero-slide-bg,
+  .page-hero-3d-photo,
+  .premium-img-wrap img,
+  .nl-img-frame img,
+  .sp-tile--image img,
+  .sp-product-visual img,
+  .eb-prod-visual img,
+  .bwm-img-frame img,
+  .bwm-svc-img img,
+  .eb-cert-frame img,
+  .eb-why-card img,
+  .eb-molecule-wrap img {
+    transition: none !important;
+    transform: none !important;
+  }
+
+  .hero-slide-panel.is-active .hero-slide-bg,
+  .page-hero-3d:hover .page-hero-3d-photo,
+  .sp-hero-bg .hero-slide-panel.is-active .hero-slide-bg {
+    transform: none !important;
+  }
+}

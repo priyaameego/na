@@ -1,0 +1,14 @@
+{
+  "name": "nayara-industries-premium",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build:css": "tailwindcss -i ./src/input.css -o ./assets/css/style.css --minify",
+    "watch:css": "tailwindcss -i ./src/input.css -o ./assets/css/style.css --watch",
+    "generate": "node generate_pages.js",
+    "build": "npm run build:css && npm run generate"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.17"
+  }
+}

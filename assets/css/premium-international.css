@@ -1,0 +1,961 @@
+/**
+ * NAYARA — Premium International Enterprise UI
+ * Siemens · ABB · Honeywell · BASF · Schneider Electric aesthetic
+ * Visual-only layer — structure, content, URLs unchanged
+ */
+
+:root {
+  --pe-primary: #0B1F3A;
+  --pe-secondary: #16304F;
+  --pe-accent: #C9A96E;
+  --pe-accent-hover: #D4B87A;
+  --pe-bg: #F3F5F8;
+  --pe-bg-alt: #E9EEF3;
+  --pe-surface: #F5F8FB;
+  --pe-surface-elevated: #FAFBFD;
+  --pe-dark: #0F172A;
+  --pe-border: rgba(15, 23, 42, 0.08);
+  --pe-shadow: 0 20px 60px rgba(15, 23, 42, 0.08);
+  --pe-shadow-lg: 0 28px 72px rgba(15, 23, 42, 0.12);
+  --pe-ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --pe-radius: 20px;
+  --pe-radius-lg: 24px;
+
+  /* Remap all legacy tokens */
+  --corp-primary: var(--pe-primary);
+  --corp-secondary: var(--pe-secondary);
+  --corp-bg: var(--pe-bg);
+  --corp-surface: var(--pe-surface);
+  --corp-surface-alt: var(--pe-bg-alt);
+  --corp-accent: var(--pe-accent);
+  --corp-accent-hover: var(--pe-accent-hover);
+  --corp-border: var(--pe-border);
+  --corp-shadow: var(--pe-shadow);
+  --corp-shadow-lg: var(--pe-shadow-lg);
+  --corp-text: #0F172A;
+  --corp-text-secondary: #475569;
+  --nf-bg: var(--pe-bg);
+  --nf-bg-2: var(--pe-bg-alt);
+  --nf-surface: var(--pe-surface);
+  --nf-surface-light: var(--pe-bg-alt);
+  --sp-bg: var(--pe-bg);
+  --sp-bg-2: var(--pe-bg-alt);
+  --sp-surface: var(--pe-surface);
+}
+
+/* ─── TYPOGRAPHY ─── */
+html {
+  background: var(--pe-bg);
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Manrope', 'Plus Jakarta Sans', system-ui, sans-serif !important;
+  background: var(--pe-bg) !important;
+  color: var(--corp-text-secondary) !important;
+  line-height: 1.75 !important;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6,
+.sp-section-title,
+.page-hero-title,
+.eb-cell-title,
+.eb-connect-headline,
+.hero-slide-title,
+.sp-feature-title,
+.eb-prod-name {
+  font-family: 'Plus Jakarta Sans', 'Manrope', system-ui, sans-serif !important;
+  color: var(--pe-primary) !important;
+  letter-spacing: -0.02em !important;
+  line-height: 1.15 !important;
+}
+
+.sp-section-title,
+.page-hero-title {
+  font-size: clamp(2rem, 4.5vw, 3.25rem) !important;
+  font-weight: 700 !important;
+}
+
+.sp-section-eyebrow,
+.page-hero-eyebrow,
+.eb-cell-tag {
+  font-family: 'Manrope', sans-serif !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.22em !important;
+  text-transform: uppercase !important;
+  color: var(--pe-accent) !important;
+}
+
+.sp-feature-text,
+.eb-cell-text,
+.cms-content p {
+  font-size: clamp(0.95rem, 1.1vw, 1.0625rem) !important;
+  line-height: 1.78 !important;
+  max-width: 68ch;
+}
+
+/* ─── GLOBAL TEXTURE ─── */
+body::before {
+  background:
+    radial-gradient(ellipse 80% 55% at 0% -5%, rgba(11, 31, 58, 0.06), transparent 55%),
+    radial-gradient(ellipse 65% 45% at 100% 5%, rgba(201, 169, 110, 0.05), transparent 50%),
+    radial-gradient(ellipse 90% 60% at 50% 100%, rgba(22, 48, 79, 0.04), transparent 60%) !important;
+}
+
+body::after {
+  opacity: 0.04 !important;
+}
+
+/* ─── ALTERNATING SECTION BACKGROUNDS — Homepage ─── */
+.page-home main > .eb-zone#about {
+  background: var(--pe-bg-alt) !important;
+}
+
+.page-home main > .eb-zone#products {
+  background: var(--pe-surface) !important;
+}
+
+.page-home main > .eb-zone#certificates {
+  background: var(--pe-dark) !important;
+}
+
+.page-home main > .eb-zone#certificates .sp-section-title {
+  color: #ffffff !important;
+}
+
+.page-home main > .eb-zone#why-choose {
+  background: var(--pe-bg) !important;
+}
+
+.page-home main > .eb-cta-band {
+  background: linear-gradient(135deg, var(--pe-primary) 0%, var(--pe-secondary) 100%) !important;
+}
+
+.page-home main > .eb-cta-band .sp-section-title,
+.page-home main > .eb-cta-band .sp-feature-text,
+.page-home main > .eb-cta-band .sp-section-eyebrow {
+  color: rgba(255, 255, 255, 0.92) !important;
+}
+
+.page-home main > #contact {
+  background: var(--pe-bg-alt) !important;
+}
+
+/* ─── INNER PAGE SECTION ALTERNATION ─── */
+body:not(.page-home) main > section.sp-zone:nth-of-type(odd),
+body:not(.page-home) main > section.eb-zone:nth-of-type(odd) {
+  background: var(--pe-bg) !important;
+}
+
+body:not(.page-home) main > section.sp-zone:nth-of-type(even),
+body:not(.page-home) main > section.eb-zone:nth-of-type(even) {
+  background: var(--pe-bg-alt) !important;
+}
+
+body:not(.page-home) main > section.sp-page-hero {
+  background: transparent !important;
+}
+
+/* Section texture overlays */
+.eb-zone--mesh::before,
+.sp-zone--mesh::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background:
+    url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 30h60M30 0v60' stroke='%230B1F3A' stroke-width='0.35' opacity='0.05'/%3E%3C/svg%3E"),
+    radial-gradient(ellipse 50% 40% at 80% 20%, rgba(201, 169, 110, 0.04), transparent 60%);
+  opacity: 0.7;
+}
+
+.eb-zone--blueprint::after {
+  opacity: 0.06 !important;
+}
+
+.eb-zone,
+.sp-zone {
+  position: relative;
+  padding: clamp(5rem, 12vw, 9rem) clamp(1.25rem, 4vw, 2rem) !important;
+}
+
+.eb-zone > *,
+.sp-zone-inner {
+  position: relative;
+  z-index: 1;
+}
+
+/* Soft section dividers */
+.eb-zone + .eb-zone::before,
+.sp-zone + .sp-zone::before,
+.eb-zone + .sp-zone::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 10%;
+  right: 10%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(201, 169, 110, 0.25), transparent);
+  z-index: 2;
+}
+
+/* ─── HOME HERO — Cinematic ─── */
+.sp-hero.hero-swiper {
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+}
+
+.sp-hero.hero-swiper::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  pointer-events: none;
+  background:
+    linear-gradient(125deg, rgba(255, 255, 255, 0.08) 0%, transparent 35%, transparent 65%, rgba(201, 169, 110, 0.06) 100%),
+    radial-gradient(ellipse 80% 50% at 20% 0%, rgba(255, 255, 255, 0.12), transparent 55%);
+  mix-blend-mode: overlay;
+}
+
+.sp-hero.hero-swiper::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+  background-image:
+    radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.15) 0%, transparent 2%),
+    radial-gradient(circle at 75% 60%, rgba(255, 255, 255, 0.1) 0%, transparent 1.5%),
+    radial-gradient(circle at 45% 80%, rgba(201, 169, 110, 0.2) 0%, transparent 2%),
+    radial-gradient(circle at 90% 25%, rgba(255, 255, 255, 0.12) 0%, transparent 1.5%),
+    radial-gradient(circle at 10% 70%, rgba(255, 255, 255, 0.08) 0%, transparent 1%);
+  animation: peParticlesDrift 20s ease-in-out infinite alternate;
+}
+
+@keyframes peParticlesDrift {
+  0% { opacity: 0.5; transform: translateY(0); }
+  100% { opacity: 0.85; transform: translateY(-12px); }
+}
+
+.sp-hero-bg {
+  position: absolute;
+  inset: 0;
+}
+
+.sp-hero-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(11, 31, 58, 0.55) 0%,
+    rgba(11, 31, 58, 0.72) 45%,
+    rgba(15, 23, 42, 0.88) 100%
+  );
+  z-index: 2;
+}
+
+.hero-slide-bg {
+  position: absolute;
+  inset: -8%;
+  background-size: cover;
+  background-position: center;
+  will-change: transform;
+}
+
+.hero-slide-panel.is-active .hero-slide-bg {
+  animation: peKenBurns 22s ease-out forwards;
+}
+
+@keyframes peKenBurns {
+  from { transform: scale(1); }
+  to { transform: scale(1.1); }
+}
+
+.sp-hero .hero-slide-panel > .relative.z-10,
+.sp-hero .hero-slide-panel > div.relative {
+  background: transparent !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  padding: clamp(1rem, 3vw, 2rem) clamp(1rem, 4vw, 2rem) !important;
+  max-width: min(920px, 92vw);
+  margin: 0 auto;
+}
+
+.sp-hero h1,
+.sp-hero h2 {
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
+  color: #ffffff !important;
+  text-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
+}
+
+.sp-hero a[href*="contact-us"] {
+  display: inline-flex !important;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--pe-primary) !important;
+  border: 1px solid rgba(201, 169, 110, 0.45) !important;
+  color: #ffffff !important;
+  padding: 14px 32px !important;
+  border-radius: 12px !important;
+  font-family: 'Manrope', sans-serif !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+  transition: all 0.4s var(--pe-ease) !important;
+  box-shadow: 0 8px 32px rgba(11, 31, 58, 0.4) !important;
+}
+
+.sp-hero a[href*="contact-us"]::after {
+  content: '→';
+  transition: transform 0.35s var(--pe-ease);
+}
+
+.sp-hero a[href*="contact-us"]:hover {
+  background: var(--pe-accent) !important;
+  border-color: var(--pe-accent) !important;
+  color: var(--pe-primary) !important;
+  box-shadow: 0 12px 40px rgba(201, 169, 110, 0.35) !important;
+  transform: translateY(-2px);
+}
+
+.sp-hero a[href*="contact-us"]:hover::after {
+  transform: translateX(4px);
+}
+
+/* ─── INNER PAGE HERO BANNERS ─── */
+.page-hero-3d-overlay {
+  background: linear-gradient(
+    105deg,
+    rgba(11, 31, 58, 0.72) 0%,
+    rgba(22, 48, 79, 0.58) 45%,
+    rgba(15, 23, 42, 0.48) 100%
+  ) !important;
+}
+
+.page-hero-3d-photo {
+  transform: scale(1.05);
+  animation: peKenBurns 25s ease-out infinite alternate;
+}
+
+.page-hero-glass-panel {
+  background: rgba(255, 255, 255, 0.1) !important;
+  backdrop-filter: blur(32px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(32px) saturate(180%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.16) !important;
+  border-radius: var(--pe-radius-lg) !important;
+  box-shadow: 0 32px 80px rgba(0, 0, 0, 0.28), inset 0 1px 0 rgba(255, 255, 255, 0.12) !important;
+  padding: clamp(1.5rem, 3.5vw, 2.5rem) !important;
+}
+
+.page-hero-title {
+  color: #ffffff !important;
+  font-size: clamp(2.25rem, 5vw, 3.75rem) !important;
+  text-shadow: 0 4px 24px rgba(0, 0, 0, 0.25);
+}
+
+.page-hero-title-accent {
+  background: linear-gradient(90deg, var(--pe-accent), transparent) !important;
+  height: 3px !important;
+  margin-top: 1rem !important;
+}
+
+.page-hero-3d-glow {
+  background:
+    radial-gradient(ellipse 55% 70% at 0% 100%, rgba(201, 169, 110, 0.2), transparent 55%),
+    radial-gradient(ellipse 45% 55% at 100% 0%, rgba(255, 255, 255, 0.08), transparent 50%) !important;
+}
+
+/* ─── PREMIUM CARDS ─── */
+.card-3d,
+.sp-tile,
+.eb-prod,
+.eb-why-card,
+.eb-cell,
+.glass-card-premium,
+.sp-contact-form-wrap,
+.product-card {
+  position: relative;
+  background: linear-gradient(165deg, #F5F8FB 0%, #E9EEF3 100%) !important;
+  border: 1px solid var(--pe-border) !important;
+  border-radius: var(--pe-radius) !important;
+  box-shadow: var(--pe-shadow) !important;
+  transition: transform 0.55s var(--pe-ease), box-shadow 0.55s ease, border-color 0.4s ease !important;
+  overflow: hidden;
+}
+
+.card-3d::before,
+.sp-tile::before,
+.eb-prod::before,
+.eb-why-card::before,
+.eb-cell::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 20px;
+  right: 20px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--pe-accent), transparent);
+  opacity: 0.65;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.card-3d:hover,
+.sp-tile:hover,
+.eb-prod:hover,
+.eb-why-card:hover,
+.eb-cell:hover,
+.glass-card-premium:hover {
+  transform: translateY(-8px) !important;
+  border-color: rgba(201, 169, 110, 0.35) !important;
+  box-shadow: var(--pe-shadow-lg), 0 0 0 1px rgba(201, 169, 110, 0.12) !important;
+}
+
+/* Icon containers */
+.eb-why-icon,
+.sp-feature-icon,
+.eb-connect-icon {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 48px !important;
+  height: 48px !important;
+  border-radius: 14px !important;
+  background: linear-gradient(135deg, rgba(11, 31, 58, 0.06), rgba(201, 169, 110, 0.1)) !important;
+  border: 1px solid rgba(201, 169, 110, 0.2) !important;
+  color: var(--pe-primary) !important;
+  margin-bottom: 1rem !important;
+}
+
+/* ─── BUTTONS ─── */
+.sp-btn--primary,
+.lg-btn-cta,
+.btn-primary,
+.pf-cta-btn,
+.eb-connect-submit,
+.bwm-btn-primary,
+.bwm-hero-cta,
+.magnetic-btn.sp-btn--primary {
+  background: var(--pe-primary) !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(201, 169, 110, 0.3) !important;
+  border-radius: 12px !important;
+  font-family: 'Manrope', sans-serif !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.06em !important;
+  padding: 14px 28px !important;
+  box-shadow: 0 8px 28px rgba(11, 31, 58, 0.22) !important;
+  transition: all 0.4s var(--pe-ease) !important;
+  position: relative;
+  overflow: hidden;
+}
+
+.sp-btn--primary:hover,
+.lg-btn-cta:hover,
+.btn-primary:hover,
+.magnetic-btn.sp-btn--primary:hover {
+  background: var(--pe-accent) !important;
+  color: var(--pe-primary) !important;
+  border-color: var(--pe-accent) !important;
+  box-shadow: 0 12px 36px rgba(201, 169, 110, 0.35) !important;
+  transform: translateY(-2px);
+}
+
+.sp-link,
+.eb-enquire {
+  color: var(--pe-primary) !important;
+  font-weight: 600 !important;
+  transition: color 0.3s ease, gap 0.3s ease !important;
+}
+
+.card-3d .eb-enquire {
+  display: block !important;
+  text-align: center !important;
+  background: var(--pe-primary) !important;
+  color: #ffffff !important;
+  padding: 12px 24px !important;
+  border-radius: 10px !important;
+  font-weight: 600 !important;
+  margin-top: 20px !important;
+  border: 1px solid rgba(201, 169, 110, 0.25) !important;
+  box-shadow: 0 6px 20px rgba(11, 31, 58, 0.18) !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.06em !important;
+  transition: all 0.4s var(--pe-ease) !important;
+}
+
+.card-3d .eb-enquire:hover {
+  background: var(--pe-accent) !important;
+  color: var(--pe-primary) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 10px 28px rgba(201, 169, 110, 0.3) !important;
+}
+
+/* ─── DROPDOWNS — Glass luxury ─── */
+.lg-dropdown-inner,
+.lg-mega-inner {
+  background: rgba(245, 248, 251, 0.98) !important;
+  backdrop-filter: blur(32px) saturate(200%) !important;
+  -webkit-backdrop-filter: blur(32px) saturate(200%) !important;
+  border: 1px solid var(--pe-border) !important;
+  border-top: 2px solid rgba(201, 169, 110, 0.35) !important;
+  border-radius: var(--pe-radius) !important;
+  box-shadow: var(--pe-shadow-lg) !important;
+  padding: 1.25rem !important;
+}
+
+.lg-dropdown-link,
+.lg-mega-link {
+  padding: 0.65rem 1rem !important;
+  border-radius: 10px !important;
+  font-family: 'Manrope', sans-serif !important;
+  font-size: 0.875rem !important;
+  transition: all 0.3s var(--pe-ease) !important;
+}
+
+.lg-dropdown-link:hover,
+.lg-mega-link:hover {
+  background: rgba(11, 31, 58, 0.05) !important;
+  color: var(--pe-primary) !important;
+  padding-left: 1.25rem !important;
+}
+
+.lg-mega-title {
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
+  font-weight: 700 !important;
+  color: var(--pe-primary) !important;
+  border-bottom: 1px solid var(--pe-border);
+  padding-bottom: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+/* ─── NAVBAR ─── */
+.lg-nav-shell {
+  background: rgba(245, 248, 251, 0.96) !important;
+  border-bottom: 2px solid rgba(201, 169, 110, 0.45) !important;
+  box-shadow: 0 12px 48px rgba(15, 23, 42, 0.08) !important;
+}
+
+.lg-nav-link {
+  font-family: 'Manrope', sans-serif !important;
+  font-weight: 500 !important;
+  color: var(--pe-primary) !important;
+}
+
+.lg-nav-link:hover,
+.lg-nav-link.is-active {
+  color: var(--pe-accent) !important;
+}
+
+/* ─── FOOTER ─── */
+.premium-footer,
+.site-footer {
+  background: var(--pe-dark) !important;
+}
+
+/* ─── CERT GALLERY on dark section ─── */
+.page-home #certificates .eb-cert-frame {
+  background: rgba(255, 255, 255, 0.95) !important;
+  border-color: rgba(255, 255, 255, 0.12) !important;
+}
+
+/* ─── FORMS ─── */
+.premium-input,
+.premium-textarea {
+  background: var(--pe-surface-elevated) !important;
+  border: 1px solid var(--pe-border) !important;
+  border-radius: 12px !important;
+  font-family: 'Manrope', sans-serif !important;
+}
+
+.premium-input:focus,
+.premium-textarea:focus {
+  border-color: rgba(201, 169, 110, 0.5) !important;
+  box-shadow: 0 0 0 4px rgba(201, 169, 110, 0.1) !important;
+}
+
+/* ─── CTA BAND — no white panel ─── */
+.page-home .eb-cta-glass {
+  background: transparent !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+.page-home .eb-cta-glass .sp-section-title,
+.page-home .eb-cta-glass .sp-feature-text,
+.page-home .eb-cta-glass .sp-section-eyebrow {
+  color: rgba(255, 255, 255, 0.95) !important;
+}
+
+/* ─── Contact Let's Talk — form without white box ─── */
+.page-home #contact .eb-form-glass {
+  background: rgba(11, 31, 58, 0.04) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  border: 1px solid var(--pe-border) !important;
+  box-shadow: var(--pe-shadow) !important;
+}
+
+.page-home #contact .eb-form-glass::before {
+  display: none !important;
+}
+
+/* ═══ CONTACT US PAGE — Premium cards & typography ═══ */
+.page-contact-us .eb-connect-zone {
+  background: var(--pe-bg) !important;
+}
+
+.page-contact-us .eb-connect-headline {
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
+  font-weight: 800 !important;
+  font-size: clamp(2rem, 4.5vw, 3.25rem) !important;
+  letter-spacing: -0.03em !important;
+  color: var(--pe-primary) !important;
+  line-height: 1.12 !important;
+}
+
+.page-contact-us .eb-connect-accent {
+  color: var(--pe-accent) !important;
+  -webkit-text-fill-color: var(--pe-accent) !important;
+}
+
+.page-contact-us .eb-connect-tagline {
+  font-family: 'Manrope', sans-serif !important;
+  font-size: 0.72rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.32em !important;
+  color: var(--pe-secondary) !important;
+  opacity: 0.75;
+}
+
+.page-contact-us .eb-connect-card {
+  background: linear-gradient(155deg, #0B1F3A 0%, #16304F 52%, #1a3d62 100%) !important;
+  border: 1px solid rgba(201, 169, 110, 0.22) !important;
+  border-radius: var(--pe-radius-lg) !important;
+  box-shadow: 0 16px 48px rgba(11, 31, 58, 0.18) !important;
+  transition: transform 0.55s var(--pe-ease), box-shadow 0.55s ease, border-color 0.4s ease !important;
+  animation: peContactCardIn 0.85s var(--pe-ease) backwards;
+}
+
+.page-contact-us .eb-connect-card:nth-child(1) { animation-delay: 0.08s; }
+.page-contact-us .eb-connect-card:nth-child(2) { animation-delay: 0.18s; }
+.page-contact-us .eb-connect-card:nth-child(3) { animation-delay: 0.28s; }
+.page-contact-us .eb-connect-card:nth-child(4) { animation-delay: 0.38s; }
+
+@keyframes peContactCardIn {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.page-contact-us .eb-connect-card::before {
+  content: '' !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  height: 3px !important;
+  background: linear-gradient(90deg, transparent, var(--pe-accent), transparent) !important;
+  opacity: 0.85 !important;
+  z-index: 2 !important;
+}
+
+.page-contact-us .eb-connect-card:hover {
+  transform: translateY(-10px) !important;
+  border-color: rgba(201, 169, 110, 0.55) !important;
+  box-shadow: 0 28px 64px rgba(11, 31, 58, 0.28), 0 0 0 1px rgba(201, 169, 110, 0.15) !important;
+}
+
+.page-contact-us .eb-connect-card-inner {
+  position: relative;
+  z-index: 1;
+  padding: clamp(1.25rem, 2.5vw, 1.75rem) !important;
+}
+
+.page-contact-us .eb-connect-card-title {
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
+  font-weight: 700 !important;
+  font-size: clamp(1rem, 1.8vw, 1.15rem) !important;
+  letter-spacing: 0.02em !important;
+  color: #ffffff !important;
+  margin-bottom: 0.5rem !important;
+}
+
+.page-contact-us .eb-connect-card-sub {
+  font-family: 'Manrope', sans-serif !important;
+  font-size: 0.68rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.18em !important;
+  text-transform: uppercase !important;
+  color: var(--pe-accent) !important;
+  margin-bottom: 0.65rem !important;
+}
+
+.page-contact-us .eb-connect-card-text {
+  font-family: 'Manrope', sans-serif !important;
+  font-size: 0.92rem !important;
+  line-height: 1.7 !important;
+  color: rgba(255, 255, 255, 0.78) !important;
+}
+
+.page-contact-us .eb-connect-link {
+  font-family: 'Manrope', sans-serif !important;
+  font-weight: 500 !important;
+  font-size: 0.92rem !important;
+  color: rgba(255, 255, 255, 0.92) !important;
+  transition: color 0.3s ease, transform 0.3s ease !important;
+}
+
+.page-contact-us .eb-connect-link:hover {
+  color: var(--pe-accent) !important;
+  transform: translateX(4px);
+}
+
+.page-contact-us .eb-connect-icon {
+  width: 52px !important;
+  height: 52px !important;
+  border-radius: 14px !important;
+  background: rgba(201, 169, 110, 0.12) !important;
+  border: 1px solid rgba(201, 169, 110, 0.35) !important;
+  color: var(--pe-accent) !important;
+  margin-bottom: 1rem !important;
+  transition: transform 0.45s var(--pe-ease), background 0.4s ease, box-shadow 0.4s ease !important;
+}
+
+.page-contact-us .eb-connect-card:hover .eb-connect-icon {
+  transform: scale(1.08) rotate(-4deg) !important;
+  background: rgba(201, 169, 110, 0.2) !important;
+  box-shadow: 0 8px 24px rgba(201, 169, 110, 0.25) !important;
+}
+
+.page-contact-us .eb-connect-icon-ring {
+  animation: peContactRing 4s ease-in-out infinite;
+  border-color: rgba(201, 169, 110, 0.35) !important;
+}
+
+.page-contact-us .eb-connect-card:hover .eb-connect-icon-ring {
+  animation-duration: 2s;
+  opacity: 0.95 !important;
+}
+
+@keyframes peContactRing {
+  0%, 100% { transform: scale(1) rotate(0deg); opacity: 0.45; }
+  50% { transform: scale(1.12) rotate(8deg); opacity: 0.85; }
+}
+
+.page-contact-us .eb-connect-form.eb-form-glass {
+  background: linear-gradient(165deg, #E9EEF3 0%, #F3F5F8 55%, #F5F8FB 100%) !important;
+  border: 1px solid var(--pe-border) !important;
+  border-radius: var(--pe-radius-lg) !important;
+  box-shadow: var(--pe-shadow) !important;
+  animation: peContactCardIn 0.9s var(--pe-ease) 0.45s backwards;
+}
+
+.page-contact-us .eb-connect-form .premium-input,
+.page-contact-us .eb-connect-form .premium-textarea {
+  font-family: 'Manrope', sans-serif !important;
+  background: var(--pe-surface-elevated) !important;
+  border: 1px solid var(--pe-border) !important;
+}
+
+.page-contact-us .eb-connect-form label {
+  font-family: 'Manrope', sans-serif !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.02em !important;
+}
+
+.page-contact-us .eb-connect-map {
+  border-radius: var(--pe-radius-lg) !important;
+  overflow: hidden !important;
+  box-shadow: var(--pe-shadow) !important;
+  animation: peContactCardIn 0.9s var(--pe-ease) 0.55s backwards;
+}
+
+/* ═══ SITE-WIDE — soft tinted backgrounds (no stark white) ═══ */
+main {
+  background: var(--pe-bg) !important;
+}
+
+.eb-zone,
+.sp-zone,
+.eb-connect-zone,
+.bwm-page,
+.eb-page-bg {
+  background-color: var(--pe-bg) !important;
+}
+
+.eb-zone--mesh,
+.sp-zone--mesh {
+  background-color: var(--pe-bg-alt) !important;
+}
+
+.eb-cell,
+.eb-bento-card,
+.eb-stat-card,
+.eb-prod-inner,
+.eb-prod--catalog .eb-prod-inner,
+.sp-tile,
+.sp-contact-form-wrap,
+.glass-card-premium,
+.sp-glass-panel,
+.inner-cta-premium,
+.product-card,
+.bwm-section,
+.bwm-card {
+  background: linear-gradient(165deg, var(--pe-surface) 0%, var(--pe-bg-alt) 100%) !important;
+}
+
+.eb-float-stat,
+.eb-info-card {
+  background: var(--pe-surface) !important;
+  border: 1px solid var(--pe-border) !important;
+}
+
+.eb-form-glass:not(.page-contact-us .eb-connect-form) {
+  background: linear-gradient(160deg, var(--pe-bg-alt) 0%, var(--pe-surface) 100%) !important;
+}
+
+#page-loader {
+  background: var(--pe-bg) !important;
+}
+
+.lg-mobile-menu,
+.lg-mobile-menu-inner {
+  background: var(--pe-surface) !important;
+}
+
+.eb-cert-frame {
+  background: var(--pe-surface-elevated) !important;
+}
+
+section[style*="background"] {
+  background-color: var(--pe-bg) !important;
+}
+
+.page-home main > #contact {
+  background: var(--pe-bg-alt) !important;
+}
+
+.cms-content-premium,
+.sp-cms {
+  background: transparent !important;
+}
+
+/* ═══ BEVERAGES PAGE — hero image visible, premium frames ═══ */
+.bwm-page .bwm-hero {
+  background: transparent !important;
+}
+
+.bwm-page .bwm-hero-overlay {
+  background:
+    linear-gradient(180deg, rgba(11, 31, 58, 0.3) 0%, rgba(11, 31, 58, 0.5) 50%, rgba(15, 23, 42, 0.72) 100%),
+    linear-gradient(135deg, rgba(201, 169, 110, 0.08) 0%, transparent 55%) !important;
+}
+
+.bwm-page .bwm-hero-glass.card-3d {
+  background: rgba(11, 31, 58, 0.52) !important;
+  border: 1px solid rgba(255, 255, 255, 0.14) !important;
+  box-shadow: 0 32px 80px rgba(0, 0, 0, 0.35) !important;
+}
+
+.bwm-page .bwm-hero-glass.card-3d::before {
+  display: none !important;
+}
+
+.bwm-page .bwm-float-stat.card-3d {
+  background: rgba(11, 31, 58, 0.65) !important;
+  border: 1px solid rgba(201, 169, 110, 0.25) !important;
+}
+
+.bwm-page .bwm-float-stat.card-3d::before {
+  display: none !important;
+}
+
+.bwm-page .bwm-feature-card.card-3d,
+.bwm-page .bwm-svc-tile.card-3d,
+.bwm-page .bwm-glass-card.card-3d,
+.bwm-page .bwm-why-card.card-3d {
+  background: linear-gradient(165deg, var(--pe-surface) 0%, var(--pe-bg-alt) 100%) !important;
+}
+
+.bwm-page .bwm-img-frame,
+.bwm-page .bwm-svc-img {
+  border-radius: var(--pe-radius-lg) !important;
+  border: 1px solid var(--pe-border) !important;
+  box-shadow: var(--pe-shadow) !important;
+  overflow: hidden !important;
+}
+
+.bwm-page .bwm-img-frame img,
+.bwm-page .bwm-svc-img img {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  transition: transform 0.6s var(--pe-ease) !important;
+}
+
+.bwm-page .bwm-img-frame:hover img,
+.bwm-page .bwm-svc-tile:hover .bwm-svc-img img {
+  transform: scale(1.06) !important;
+}
+
+.bwm-page .bwm-what-visual.card-3d {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.bwm-page .bwm-what-visual.card-3d::before {
+  display: none !important;
+}
+
+/* ═══ ALL INNER PAGES — hero photo clearer ═══ */
+.page-hero-3d-photo {
+  filter: saturate(1.05) contrast(1.02);
+}
+
+.sp-tile--image .sp-tile-inner,
+.sp-product-visual,
+.eb-prod-visual {
+  box-shadow: var(--pe-shadow) !important;
+}
+
+/* ─── REDUCED MOTION ─── */
+@media (prefers-reduced-motion: reduce) {
+  .hero-slide-panel.is-active .hero-slide-bg,
+  .page-hero-3d-photo,
+  .sp-hero.hero-swiper::after {
+    animation: none !important;
+  }
+
+  .card-3d:hover,
+  .sp-tile:hover,
+  .eb-prod:hover {
+    transform: none !important;
+  }
+
+  .page-contact-us .eb-connect-card,
+  .page-contact-us .eb-connect-form,
+  .page-contact-us .eb-connect-map,
+  .page-contact-us .eb-connect-icon-ring {
+    animation: none !important;
+  }
+}
