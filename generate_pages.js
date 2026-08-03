@@ -909,8 +909,8 @@ function getHead(title, description, basePath, canonical, options = {}) {
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://api.fontshare.com" crossorigin>
-  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@700,900,500,400,300&f[]=general-sans@600,500,400,700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="${basePath}assets/css/style.css?v=3">
   <link rel="stylesheet" href="${basePath}assets/css/liquid-glass.css?v=12">
   <link rel="stylesheet" href="${basePath}assets/css/nayara-fortune.css?v=3">
@@ -920,7 +920,7 @@ function getHead(title, description, basePath, canonical, options = {}) {
   <link rel="stylesheet" href="${basePath}assets/css/luxury-enterprise.css?v=4">
   <link rel="stylesheet" href="${basePath}assets/css/luxury-images.css?v=5">
   <link rel="stylesheet" href="${basePath}assets/css/premium-international.css?v=10">
-  <link rel="stylesheet" href="${basePath}assets/css/visual-premium.css?v=7">
+  <link rel="stylesheet" href="${basePath}assets/css/visual-premium.css?v=8">
   ${extraCss}
   <link rel="stylesheet" href="${basePath}assets/css/site-teal-bg.css?v=10">
 </head>

@@ -23,11 +23,11 @@
   --vp-bg-alt: var(--vp-soft-gray);
   --vp-surface: #EEF2F7;
 
-  /* Typography */
-  --font-display: 'Satoshi', 'Plus Jakarta Sans', sans-serif;
-  --font-editorial: 'General Sans', 'Manrope', sans-serif;
-  --font-ui: 'Manrope', sans-serif;
-  --font-body: 'Plus Jakarta Sans', sans-serif;
+  /* Typography — clear premium, easy to read */
+  --font-display: 'Plus Jakarta Sans', 'Satoshi', sans-serif;
+  --font-editorial: 'Plus Jakarta Sans', 'Manrope', sans-serif;
+  --font-ui: 'Manrope', 'Satoshi', sans-serif;
+  --font-body: 'Manrope', 'Satoshi', sans-serif;
 
   /* Layout */
   --vp-section-y: clamp(4rem, 8vw, 7rem);
@@ -74,7 +74,11 @@ body {
   background-attachment: fixed !important;
   font-family: var(--font-body) !important;
   color: var(--vp-dark);
-  line-height: 1.65;
+  font-size: 16px;
+  line-height: 1.7;
+  letter-spacing: 0.01em;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
   min-height: 100vh;
   position: relative;
 }
@@ -246,14 +250,16 @@ section[style*="background"] {
 /* ─── TYPOGRAPHY ─── */
 h1, h2, .sp-hero-title, .hero-slide-title, .page-hero-title, .bwm-hero-title {
   font-family: var(--font-display) !important;
-  letter-spacing: -0.03em !important;
-  line-height: 1.08 !important;
+  letter-spacing: -0.02em !important;
+  line-height: 1.15 !important;
+  font-weight: 700 !important;
 }
 
 h3, h4, .sp-section-title, .section-title, .bwm-section-title, .sp-page-hero-title {
   font-family: var(--font-display) !important;
-  letter-spacing: -0.02em !important;
-  line-height: 1.12 !important;
+  letter-spacing: -0.015em !important;
+  line-height: 1.2 !important;
+  font-weight: 700 !important;
 }
 
 .sp-section-eyebrow,

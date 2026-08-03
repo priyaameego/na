@@ -25,10 +25,10 @@
   --lux-section-y: clamp(7.5rem, 11vw, 8.75rem);
   --lux-max: min(1360px, calc(100% - 3rem));
   --lux-transition: 300ms var(--lux-ease);
-  --font-display: 'Clash Display', 'Satoshi', sans-serif;
-  --font-heading: 'Satoshi', 'Clash Display', sans-serif;
-  --font-body: 'General Sans', 'Satoshi', 'Manrope', sans-serif;
-  --font-ui: 'General Sans', 'Satoshi', sans-serif;
+  --font-display: 'Plus Jakarta Sans', 'Satoshi', sans-serif;
+  --font-heading: 'Plus Jakarta Sans', 'Satoshi', sans-serif;
+  --font-body: 'Manrope', 'Satoshi', sans-serif;
+  --font-ui: 'Manrope', 'Satoshi', sans-serif;
 }
 
 /* ─── GLOBAL TYPOGRAPHY (homepage premium authority) ─── */
@@ -37,6 +37,9 @@
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   font-feature-settings: 'ss01' on, 'ss02' on;
+  font-size: 16px;
+  line-height: 1.7;
+  letter-spacing: 0.01em;
 }
 
 .page-home,
@@ -53,15 +56,17 @@
 .page-home .hp-hero-title {
   font-family: var(--font-display) !important;
   color: var(--lux-heading) !important;
-  letter-spacing: -0.03em !important;
+  letter-spacing: -0.02em !important;
   font-weight: 700 !important;
+  line-height: 1.15 !important;
 }
 
 .page-home .hp-corporate__title {
   font-family: var(--font-display) !important;
   color: #ffffff !important;
-  letter-spacing: -0.03em !important;
+  letter-spacing: -0.02em !important;
   font-weight: 700 !important;
+  line-height: 1.15 !important;
 }
 
 .page-home h3,
@@ -111,9 +116,9 @@
 .page-home .sp-section-title {
   font-size: clamp(2.35rem, 4.4vw, 3.25rem) !important;
   font-weight: 700 !important;
-  line-height: 1.08 !important;
+  line-height: 1.15 !important;
   margin-top: 0.75rem;
-  letter-spacing: -0.03em !important;
+  letter-spacing: -0.02em !important;
 }
 
 .page-home .sp-btn,
