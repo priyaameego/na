@@ -2,7 +2,12 @@
 .env.*
 uploads/
 node_modules/
+server/
+api/
+generate_pages.js
+data/
+src/
 .DS_Store
 *.log
 .cursor/
-agent-transcripts/
+readme.md
