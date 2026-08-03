@@ -43,17 +43,17 @@ window.NAYARA_DATA = {
 
   productCategories: [
     { id: 'solvents', label: 'Solvents', href: 'solvents/', items: ['Acetone', 'Bromin', 'Toluene', 'Isopropyl Alcohol (IPA)', 'Ethylene Glycol', 'Ethyl Acetate', 'Butanol', 'Acetic Acid', 'Methylene Chloride (MDC)', 'KBR', 'HBR', 'NABR', 'KCL', 'Pyridine'] },
-    { id: 'acids', label: 'Acids & Alkalies', href: 'acids-alkalies/', items: ['Sulfuric Acid', 'Phosphoric Acid', 'Boric Acid', 'Hydrochloric Acid', 'Nitric Acid', 'Caustic Soda Flakes', 'Caustic Potash', 'Citric Acid', 'Acetic Acid', 'Sulfamic Acid', 'Ammonium Sulphate', 'Sodium Lauryl Sulphate Powder', 'Di-Calcium Phosphate', 'Magnesium Oxide', 'Soda Ash', 'Potassium Carbonate'] },
+    { id: 'acids', label: 'Acids & Alkalies', href: 'acids-alkalies/', items: ['Sulfuric Acid', 'Phosphoric Acid', 'Boric Acid', 'Hydrochloric Acid', 'Nitric Acid', 'Caustic Soda Flakes', 'Caustic Potash', 'Citric Acid', 'Sulfamic Acid', 'Ammonium Sulphate', 'Sodium Lauryl Sulphate Powder', 'Di-Calcium Phosphate', 'Magnesium Oxide', 'Soda Ash', 'Potassium Carbonate'] },
     { id: 'intermediates', label: 'Intermediates', href: 'intermediates/', items: ['MCA (Mono Chloro Acetic Acid)', 'Chlorinated Paraffin', 'Sodium Acetate', 'Sodium Formate', 'DMF', 'DMAc', 'Sodium Mono Chloro Acetate (SMCA)', 'Thiophanate Methyl (TPM)', 'Pymetrozine (PMT)', 'Chloraniliprole (CTPR)', 'Tebuconazole'] },
     { id: 'pharma', label: 'Pharma Raw Materials', href: 'pharma-raw-materials/', items: ['API Bulk Drugs', 'Lactose', 'Magnesium Stearate', 'Talc Powder', 'MCC (Microcrystalline Cellulose)'] },
-    { id: 'textile', label: 'Textile Chemicals', href: 'textile-chemicals/', items: ['Softeners', 'Dye Fixing Agents', 'Wetting Agents', 'Detergents', 'Scouring Agents', 'Enzymes'] },
-    { id: 'water', label: 'Water Treatment Chemicals', href: 'water-treatment-chemicals/', items: ['Alum', 'Hydrogen Peroxide', 'Poly-Aluminum Chloride', 'Feric Aluminium Sulphate', 'Sodium Chloride', 'Ferrous Chloride', 'Ferric Chloride', 'Polyelectrolyte', 'Chlorine Powder', 'Sodium Hypochlorite', 'Activated Carbon', 'Antiscalants'] },
-    { id: 'agro', label: 'Agro Chemicals', href: 'agro-chemicals/', items: ['Superplasticizers', 'Waterproofing Chemicals', 'Tile Adhesives', 'Epoxy Resin', 'Grouts'] },
-    { id: 'dyes', label: 'Dyes & Dye Intermediates', href: 'dyes-dye-intermediates/', items: ['Reactive Dyes', 'Acid Dyes', 'Direct Dyes', 'Vat Dyes', 'Pigments', 'Naphthalene Intermediates'] },
-    { id: 'lab', label: 'Laboratory Chemicals', href: 'laboratory-chemicals/', items: ['Laboratory Acids', 'LR Grade Solvents', 'Indicators', 'Reagents', 'Buffer Solutions'] },
-    { id: 'detergent', label: 'Detergent Chemicals', href: 'detergent-chemicals/', items: ['STPP', 'SLES Needles', 'SLES Paste', 'Acid Thickener', 'Turkish Red Oil', 'Creosote Oil', 'Alfox 200', 'Castor Oil'] },
-    { id: 'salts', label: 'Industrial Salts', href: 'industrial-salts/', items: ['Calcium Chloride Prills', 'Calcium Chloride Powder', 'Calcium Chloride Lumps', 'Aluminum Chloride', 'Potassium Chloride', 'Sodium Carbonate', 'Sodium Bi-Carbonate', 'Sodium Sulphate', 'Sodium Nitrate', 'Potassium Nitrate'] },
-    { id: 'custom', label: 'Custom-Formulated Products', href: 'custom-formulated-products/', items: ['Custom Blends', 'Specialty Formulations', 'Tailored Solutions'] },
+    { id: 'textile', label: 'Textile Chemicals', href: 'textile-chemicals/', items: ['Softeners', 'Wetting Agents', 'Scouring Agents', 'Dye Fixing Agents', 'Detergents', 'Enzymes'] },
+    { id: 'water', label: 'Water Treatment Chemicals', href: 'water-treatment-chemicals/', items: ['Alum', 'Poly-Aluminum Chloride', 'Sodium Chloride', 'Ferric Chloride', 'Chlorine Powder', 'Activated Carbon', 'Hydrogen Peroxide', 'Feric Aluminium Sulphate', 'Ferrous Chloride', 'Polyelectrolyte', 'Sodium Hypochlorite', 'Antiscalants'] },
+    { id: 'agro', label: 'Agro / Specialty Chemicals', href: 'agro-chemicals/', items: ['Superplasticizers', 'Tile Adhesives', 'Grouts', 'Waterproofing Chemicals', 'Epoxy Resin'] },
+    { id: 'dyes', label: 'Dyes & Dye Intermediates', href: 'dyes-dye-intermediates/', items: ['Reactive Dyes', 'Direct Dyes', 'Pigments', 'Acid Dyes', 'Vat Dyes', 'Naphthalene Intermediates'] },
+    { id: 'lab', label: 'Laboratory Chemicals', href: 'laboratory-chemicals/', items: ['Laboratory Acids', 'Indicators', 'Buffer Solutions', 'LR Grade Solvents', 'Reagents'] },
+    { id: 'detergent', label: 'Detergent Chemicals', href: 'detergent-chemicals/', items: ['STPP', 'SLES Paste', 'Turkish Red Oil', 'Alfox 200', 'SLES Needles', 'Acid Thickener', 'Creosote Oil', 'Castor Oil'] },
+    { id: 'salts', label: 'Industrial Salts', href: 'industrial-salts/', items: ['Calcium Chloride Prills', 'Calcium Chloride Lumps', 'Potassium Chloride', 'Sodium Bi-Carbonate', 'Sodium Nitrate', 'Calcium Chloride Powder', 'Aluminum Chloride', 'Sodium Carbonate', 'Sodium Sulphate', 'Potassium Nitrate'] },
+    { id: 'custom', label: 'Custom-Formulated Products', href: 'custom-formulated-products/', items: ['Custom Blends', 'Specialty Formulations', 'Tailored Solutions'], megaHidden: true },
   ],
 
   footerSitemap: [

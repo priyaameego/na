@@ -169,7 +169,7 @@ function initHeroSlider() {
 
   function startAuto() {
     clearInterval(timer);
-    timer = setInterval(() => goTo(current + 1), 6000);
+    timer = setInterval(() => goTo(current + 1), 7000);
   }
 
   prev?.addEventListener('click', () => { goTo(current - 1); startAuto(); });

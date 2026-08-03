@@ -309,6 +309,9 @@
       hero.appendChild(atmosphere);
     }
 
+    /* Homepage cinematic hero uses CSS Ken Burns — skip GSAP transform fights */
+    if (hero.classList.contains('hp-cinematic')) return;
+
     if (typeof gsap !== 'undefined') {
       hero.querySelectorAll('.hero-slide-bg').forEach((bg) => {
         if (bg.dataset.kenBurnsInit) return;
@@ -359,7 +362,7 @@
       hero.appendChild(hint);
     }
 
-    if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+    if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined' && !hero.classList.contains('hp-cinematic')) {
       hero.querySelectorAll('.hero-slide-bg').forEach((bg) => {
         if (bg.dataset.parallaxInit) return;
         bg.dataset.parallaxInit = '1';

@@ -13,7 +13,7 @@
   <link href="https://api.fontshare.com/v2/css?f[]=satoshi@700,900,500,400,300&f[]=general-sans@600,500,400,700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../assets/css/style.css?v=3">
-  <link rel="stylesheet" href="../assets/css/liquid-glass.css?v=5">
+  <link rel="stylesheet" href="../assets/css/liquid-glass.css?v=12">
   <link rel="stylesheet" href="../assets/css/nayara-fortune.css?v=3">
   <link rel="stylesheet" href="../assets/css/spatial-ui.css?v=3">
   <link rel="stylesheet" href="../assets/css/editorial-bento.css?v=3">
@@ -21,7 +21,8 @@
   <link rel="stylesheet" href="../assets/css/luxury-enterprise.css?v=4">
   <link rel="stylesheet" href="../assets/css/luxury-images.css?v=5">
   <link rel="stylesheet" href="../assets/css/premium-international.css?v=10">
-  <link rel="stylesheet" href="../assets/css/visual-premium.css?v=5">
+  <link rel="stylesheet" href="../assets/css/visual-premium.css?v=7">
+  <link rel="stylesheet" href="../assets/css/site-teal-bg.css?v=6">
   
 </head>
 <body class="overflow-x-hidden page-other-services page-b">
@@ -29,30 +30,22 @@
   <div id="header-container" data-base="../"></div>
   <main>
     
-  <section class="sp-page-hero page-hero-3d page-hero-3d--luxury">
-    <div class="sp-page-hero-bg">
-      <div class="page-hero-3d-photo" style="background-image:url('https://nayaragroup.com/wp-content/uploads/2026/01/Consultancy-ServiceS-scaled.jpg')" aria-hidden="true"></div>
-      <div class="page-hero-3d-overlay" aria-hidden="true"></div>
-      <div class="page-hero-3d-shimmer" aria-hidden="true"></div>
-      <canvas class="page-hero-3d-canvas"></canvas>
-      <div class="page-hero-3d-mesh" aria-hidden="true"></div>
-      <div class="page-hero-3d-glow"></div>
-    </div>
-    <div class="sp-page-hero-content page-hero-3d-content">
-      <div class="page-hero-glass-panel">
-        <nav class="page-hero-breadcrumb gs-blur" aria-label="Breadcrumb">
+  <section class="ph-banner ph-banner--bg">
+    <div class="ph-banner__media" style="background-image:url('https://nayaragroup.com/wp-content/uploads/2026/01/Consultancy-ServiceS-scaled.jpg')" role="img" aria-label="Other Services"></div>
+    <div class="ph-banner__veil" aria-hidden="true"></div>
+    <div class="ph-banner__inner ph-banner__inner--overlay">
+      <div class="ph-banner__copy">
+        <nav class="ph-banner__crumb" aria-label="Breadcrumb">
           <a href="../">Home</a>
-          <span class="page-hero-crumb-sep">/</span>
-          <span class="page-hero-crumb-current">Other Services</span>
+          <span class="ph-banner__crumb-sep">/</span>
+          <span class="ph-banner__crumb-current">Other Services</span>
         </nav>
-        <div class="page-hero-title-block gs-reveal">
-          <span class="page-hero-eyebrow">Nayara Industries</span>
-          <h1 class="page-hero-title">Other Services</h1>
-          <div class="page-hero-title-accent"></div>
-        </div>
+        <p class="ph-banner__eyebrow">Nayara Industries</p>
+        <h1 class="ph-banner__title">Other Services</h1>
+        
+        
       </div>
     </div>
-    <div class="page-hero-3d-accent"></div>
   </section>
     
   <section class="eb-zone eb-zone--mesh eb-zone--blueprint">
@@ -128,16 +121,15 @@
     </div>
   </section>
     
-  <section class="sp-zone relative overflow-hidden" style="background:var(--sp-bg,#FAFBFC)">
-    <div class="absolute inset-0 noise-overlay opacity-[0.04]"></div>
+  <section class="sp-zone pc-cta relative overflow-hidden">
     <div class="sp-zone-inner relative">
-      <div class="sp-contact">
+      <div class="sp-contact pc-cta__inner">
         <div class="sp-contact-copy gs-reveal-left">
           <span class="sp-section-eyebrow">Partner with us</span>
           <h2 class="sp-section-title mb-4">Ready to Partner With Us?</h2>
           <p class="sp-feature-text max-w-lg">Connect with Nayara Industries for quotations, product specifications, MSDS/TDS documentation, or custom sourcing requirements.</p>
         </div>
-        <div class="sp-contact-form-wrap gs-reveal-right card-3d flex items-center justify-center" style="min-height:200px">
+        <div class="sp-contact-form-wrap pc-cta__action gs-reveal-right flex items-center justify-center">
           <a href="../contact-us/" class="sp-btn sp-btn--primary magnetic-btn text-lg px-10 py-5">Get a Quotation</a>
         </div>
       </div>
@@ -146,11 +138,15 @@
   </main>
   <div id="footer-container" data-base="../"></div>
   <script src="../assets/js/data.js"></script>
-  <script src="../assets/js/components.js?v=3"></script>
+  <script src="../assets/js/components.js?v=7"></script>
   <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
   <script src="../assets/js/main.js"></script>
   <script src="../assets/js/premium.js"></script>
+  <script src="../assets/js/forms.js"></script>
+  
+  
+  
 </body>
 </html>

@@ -42,26 +42,21 @@
   }
 
   function initHeroKenBurns() {
-    if (reducedMotion || typeof gsap === 'undefined') return;
     const hero = document.getElementById('hero-swiper');
     if (!hero) return;
 
+    /* CSS Ken Burns handles active slides; mark init so premium.js does not fight it */
     hero.querySelectorAll('.hero-slide-bg').forEach((bg) => {
-      if (bg.dataset.homeKen) return;
       bg.dataset.homeKen = '1';
       bg.dataset.kenBurnsInit = '1';
-      gsap.fromTo(bg,
-        { backgroundPosition: '50% 50%', backgroundSize: '108%' },
-        {
-          backgroundPosition: '53% 47%',
-          backgroundSize: '116%',
-          duration: 24,
-          ease: 'none',
-          repeat: -1,
-          yoyo: true,
-        }
-      );
     });
+
+    if (reducedMotion) {
+      hero.querySelectorAll('.hero-slide-bg').forEach((bg) => {
+        bg.style.animation = 'none';
+        bg.style.transform = 'scale(1.08)';
+      });
+    }
   }
 
   function initHeroScrollParallax() {

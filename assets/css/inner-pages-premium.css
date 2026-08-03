@@ -5,25 +5,70 @@
 .page-about-us,
 .page-industries-we-serve,
 .page-careers {
-  --ipp-navy: #071A2F;
-  --ipp-navy-mid: #0A2540;
-  --ipp-teal: #0C4A6E;
-  --ipp-accent: #0EA5E9;
-  --ipp-bg: #F8FAFC;
-  --ipp-white: #FFFFFF;
-  --ipp-text: #64748B;
-  --ipp-heading: #071A2F;
-  --ipp-border: #E2E8F0;
+  --ipp-navy: #1a4056;
+  --ipp-navy-mid: #234d66;
+  --ipp-teal: #3d6d82;
+  --ipp-accent: #b8e6f0;
+  --ipp-bg: #3d6d82;
+  --ipp-white: rgba(255, 255, 255, 0.12);
+  --ipp-text: rgba(255, 255, 255, 0.85);
+  --ipp-heading: #ffffff;
+  --ipp-border: rgba(255, 255, 255, 0.2);
   --ipp-ease: cubic-bezier(0.25, 0.46, 0.45, 0.94);
   --ipp-max: 1280px;
+}
+
+/* Same light teal page background as service landings */
+html:has(body.page-about-us),
+html:has(body.page-industries-we-serve),
+html:has(body.page-careers),
+body.page-about-us,
+body.page-industries-we-serve,
+body.page-careers {
+  background: #3d6d82 !important;
+  background-color: #3d6d82 !important;
+  background-image: none !important;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+body.page-about-us::before,
+body.page-about-us::after,
+body.page-industries-we-serve::before,
+body.page-industries-we-serve::after,
+body.page-careers::before,
+body.page-careers::after {
+  display: none !important;
+  opacity: 0 !important;
+  background: none !important;
+  content: none !important;
+}
+
+body.page-about-us main,
+body.page-industries-we-serve main,
+body.page-careers main {
+  background: #3d6d82 !important;
+  background-color: #3d6d82 !important;
+}
+
+.page-about-us h1,
+.page-about-us h2,
+.page-about-us h3,
+.page-industries-we-serve h1,
+.page-industries-we-serve h2,
+.page-industries-we-serve h3,
+.page-careers h1,
+.page-careers h2,
+.page-careers h3 {
+  color: #fff !important;
 }
 
 /* ─── ENTERPRISE BANNER ─── */
 .ipp-banner {
   position: relative;
-  background: linear-gradient(125deg, #071A2F 0%, #0C4A6E 48%, #0A2540 100%);
+  background: linear-gradient(125deg, #2f5f74 0%, #3d6d82 48%, #355f72 100%);
   overflow: hidden;
   padding: clamp(5rem, 10vw, 7rem) clamp(1.25rem, 4vw, 2rem) clamp(4rem, 8vw, 5.5rem);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 .ipp-banner::before {
@@ -55,7 +100,7 @@
 }
 
 .ipp-banner__logo-card {
-  background: var(--ipp-white);
+  background: #ffffff;
   border-radius: 16px;
   padding: clamp(1.5rem, 3vw, 2rem);
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
@@ -131,8 +176,11 @@
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background: var(--ipp-white);
-  color: var(--ipp-navy);
+  background: rgba(255, 255, 255, 0.16);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   font-family: 'Manrope', sans-serif;
   font-size: 0.8125rem;
   font-weight: 700;
@@ -167,7 +215,7 @@
 
 /* ─── STATS ─── */
 .ipp-stats {
-  background: var(--ipp-white);
+  background: transparent;
   padding: clamp(2.5rem, 5vw, 3.5rem) clamp(1.25rem, 4vw, 2rem);
   border-bottom: 1px solid var(--ipp-border);
 }
@@ -184,7 +232,7 @@
   text-align: center;
   padding: 1.25rem;
   border-radius: 14px;
-  background: var(--ipp-bg);
+  background: rgba(255, 255, 255, 0.12);
   border: 1px solid var(--ipp-border);
   transition: transform 0.3s var(--ipp-ease), box-shadow 0.3s var(--ipp-ease);
 }
@@ -321,8 +369,8 @@
   box-shadow: 0 16px 40px rgba(7, 26, 47, 0.1);
 }
 
-.ipp-vm-card--vision { --vm-accent: #0EA5E9; background: linear-gradient(165deg, #F0F9FF, #fff); }
-.ipp-vm-card--mission { --vm-accent: #0284C7; background: linear-gradient(165deg, #E0F2FE, #fff); }
+.ipp-vm-card--vision { --vm-accent: #b8e6f0; background: rgba(255, 255, 255, 0.12); }
+.ipp-vm-card--mission { --vm-accent: #9fd8e8; background: rgba(255, 255, 255, 0.12); }
 
 .ipp-vm-card__tag {
   font-size: 0.625rem;
@@ -426,7 +474,7 @@
   align-items: flex-start;
   gap: 0.875rem;
   padding: 1.25rem 1.375rem;
-  background: var(--ipp-bg);
+  background: rgba(255, 255, 255, 0.12);
   border: 1px solid var(--ipp-border);
   border-radius: 14px;
   transition: transform 0.3s var(--ipp-ease), border-color 0.3s ease, box-shadow 0.3s ease;
@@ -460,7 +508,7 @@
 
 /* ─── INDUSTRIES DARK SECTION ─── */
 .ipp-industries {
-  background: linear-gradient(180deg, #071A2F 0%, #0A2540 100%);
+  background: #3d6d82;
   padding: clamp(4rem, 8vw, 6rem) clamp(1.25rem, 4vw, 2rem);
 }
 
@@ -627,7 +675,7 @@
 
 /* Why Work With Us — dark grid */
 .ipp-cr-why {
-  background: linear-gradient(180deg, #071A2F 0%, #0A2540 100%);
+  background: #3d6d82;
   padding: clamp(4rem, 8vw, 6rem) clamp(1.25rem, 4vw, 2rem);
 }
 
@@ -874,7 +922,7 @@
 /* Speculative application band */
 .ipp-cr-speculative {
   padding: clamp(3rem, 6vw, 4rem) clamp(1.25rem, 4vw, 2rem);
-  background: linear-gradient(125deg, #0C4A6E 0%, #071A2F 100%);
+  background: #355f72;
 }
 
 .ipp-cr-speculative__inner {
@@ -908,8 +956,9 @@
   display: inline-flex;
   margin-top: 1rem;
   padding: 0.875rem 2rem;
-  background: #fff;
-  color: var(--ipp-navy);
+  background: rgba(255, 255, 255, 0.16);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.35);
   font-family: 'Manrope', sans-serif;
   font-size: 0.8125rem;
   font-weight: 700;
@@ -917,13 +966,14 @@
   text-transform: uppercase;
   border-radius: 999px;
   text-decoration: none;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
 }
 
 .ipp-cr-speculative__link:hover {
   transform: translateY(-2px);
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
-  color: var(--ipp-navy);
+  background: rgba(255, 255, 255, 0.24);
+  color: #fff;
 }
 
 /* Apply section — split layout */
@@ -986,11 +1036,13 @@
 }
 
 .ipp-cr-form-card {
-  background: var(--ipp-white);
+  background: rgba(255, 255, 255, 0.14);
   border: 1px solid var(--ipp-border);
   border-radius: 20px;
   padding: clamp(1.75rem, 3vw, 2.25rem);
-  box-shadow: 0 8px 40px rgba(7, 26, 47, 0.06);
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.12);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }
 
 .ipp-cr-form-card__title {
@@ -1021,6 +1073,14 @@
 .ipp-cr-form__input,
 .ipp-cr-form__select {
   width: 100%;
+  background: rgba(255, 255, 255, 0.95) !important;
+  color: #0f172a !important;
+  border: 1px solid rgba(255, 255, 255, 0.35) !important;
+  border-radius: 10px;
+}
+
+.ipp-cr-form__input::placeholder {
+  color: #64748b !important;
 }
 
 .ipp-cr-form__select {

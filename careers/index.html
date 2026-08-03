@@ -13,7 +13,7 @@
   <link href="https://api.fontshare.com/v2/css?f[]=satoshi@700,900,500,400,300&f[]=general-sans@600,500,400,700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../assets/css/style.css?v=3">
-  <link rel="stylesheet" href="../assets/css/liquid-glass.css?v=5">
+  <link rel="stylesheet" href="../assets/css/liquid-glass.css?v=12">
   <link rel="stylesheet" href="../assets/css/nayara-fortune.css?v=3">
   <link rel="stylesheet" href="../assets/css/spatial-ui.css?v=3">
   <link rel="stylesheet" href="../assets/css/editorial-bento.css?v=3">
@@ -21,29 +21,29 @@
   <link rel="stylesheet" href="../assets/css/luxury-enterprise.css?v=4">
   <link rel="stylesheet" href="../assets/css/luxury-images.css?v=5">
   <link rel="stylesheet" href="../assets/css/premium-international.css?v=10">
-  <link rel="stylesheet" href="../assets/css/visual-premium.css?v=5">
-  <link rel="stylesheet" href="../assets/css/inner-pages-premium.css?v=4">
+  <link rel="stylesheet" href="../assets/css/visual-premium.css?v=7">
+  <link rel="stylesheet" href="../assets/css/site-teal-bg.css?v=6">
+  <link rel="stylesheet" href="../assets/css/inner-pages-premium.css?v=5">
 </head>
 <body class="overflow-x-hidden page-careers page-a">
   <div id="page-loader"><div class="relative flex items-center justify-center"><div class="loader-ring"></div><div class="loader-ring-spin"></div><span class="text-white font-heading font-bold text-xl tracking-[0.3em]">NI</span></div></div>
   <div id="header-container" data-base="../"></div>
   <main>
     
-  <section class="ipp-banner">
-    <div class="ipp-banner__mol" aria-hidden="true"></div>
-    <div class="ipp-banner__inner">
-      <div class="ipp-banner__logo-card gs-reveal">
-        <img src="https://nayaragroup.com/wp-content/uploads/2026/01/WhatsApp-Image-2026-01-30-at-12.23.01-PM.jpeg" alt="Nayara Industries" loading="eager">
-      </div>
-      <div class="ipp-banner__body gs-reveal">
-        <nav class="ipp-banner__crumb" aria-label="Breadcrumb">
-          <a href="../">NAYARA INDUSTRIES</a><span class="ipp-banner__crumb-sep">/</span>
-          <span>Careers</span>
+  <section class="ph-banner ph-banner--bg">
+    <div class="ph-banner__media" style="background-image:url('https://nayaragroup.com/wp-content/uploads/2026/01/lab-technician-dressed-protective-suit-as-safety-precaution-looking-test-tube-scaled-1.jpg')" role="img" aria-label="Careers"></div>
+    <div class="ph-banner__veil" aria-hidden="true"></div>
+    <div class="ph-banner__inner ph-banner__inner--overlay">
+      <div class="ph-banner__copy">
+        <nav class="ph-banner__crumb" aria-label="Breadcrumb">
+          <a href="../">Home</a>
+          <span class="ph-banner__crumb-sep">/</span>
+          <span class="ph-banner__crumb-current">Careers</span>
         </nav>
-        <span class="ipp-banner__eyebrow">Careers at Nayara Industries</span>
-        <h1 class="ipp-banner__title">Careers</h1>
-        <p class="ipp-banner__lead">At Nayara Industries, we believe that our people are the driving force behind our growth. As an emerging chemical manufacturing and trading company in GIDC Ankleshwar, we offer a work environment that values safety, learning, integrity, and long-term career development. Whether you are an experienced professional or a young talent beginning your industrial career, we provide opportunities that challenge you, inspire you, and help you build a meaningful future.</p>
-        <a href="../contact-us/" class="ipp-banner__cta magnetic-btn">Contact Us</a>
+        <p class="ph-banner__eyebrow">Careers at Nayara Industries</p>
+        <h1 class="ph-banner__title">Careers</h1>
+        <p class="ph-banner__lead">At Nayara Industries, we believe that our people are the driving force behind our growth. As an emerging chemical manufacturing and trading company in GIDC Ankleshwar, we offer a work environment that values safety, learning, integrity, and long-term career development. Whether you are an experienced professional or a young talent beginning your industrial career, we provide opportunities that challenge you, inspire you, and help you build a meaningful future.</p>
+        <a href="../contact-us/" class="ph-banner__cta">Contact Us</a>
       </div>
     </div>
   </section>
@@ -140,7 +140,7 @@
         <div class="ipp-cr-form-card">
           <h2 class="ipp-cr-form-card__title">Apply for a Position</h2>
           <p class="ipp-cr-form-card__sub">Please fill the form below and attach your resume. Our HR team will contact you shortly.</p>
-          <form class="ipp-cr-form space-y-5">
+          <form class="ipp-cr-form space-y-5" action="/api/careers" method="post" enctype="multipart/form-data" data-form="careers">
             <div>
               <label class="ipp-cr-form__label">Your Full Name *</label>
               <input type="text" name="name" placeholder="Enter your name" class="premium-input ipp-cr-form__input" required>
@@ -178,11 +178,15 @@
   </main>
   <div id="footer-container" data-base="../"></div>
   <script src="../assets/js/data.js"></script>
-  <script src="../assets/js/components.js?v=3"></script>
+  <script src="../assets/js/components.js?v=7"></script>
   <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
   <script src="../assets/js/main.js"></script>
   <script src="../assets/js/premium.js"></script>
+  <script src="../assets/js/forms.js"></script>
+  
+  
+  
 </body>
 </html>

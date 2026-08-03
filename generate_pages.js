@@ -83,17 +83,17 @@ const BEVERAGES_PAGE = {
   hero: {
     title: 'Beverages & Mineral Water Plant',
     intro: 'End-to-end design, installation, and commissioning of mineral water, packaged drinking water, and beverage manufacturing plants.',
-    bg: 'https://nayaragroup.com/wp-content/uploads/2026/01/creative-assortment-with-hamburger-menu-scaled.jpg',
+    bg: 'https://images.unsplash.com/photo-1548839140-29a749e1cf4d?auto=format&fit=crop&w=1800&q=80',
   },
   intro: {
     title: 'Complete Beverage & Mineral Water Solutions',
     text: 'Nayara Industries provides turnkey solutions for mineral water and beverage manufacturing plants, covering plant layout, water treatment, bottling lines, and statutory compliance in accordance with BIS, FSSAI, and IS standards.',
-    image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1200&q=80',
+    image: 'https://images.unsplash.com/photo-1523362628745-0c100150b504?auto=format&fit=crop&w=1200&q=80',
   },
   whatIs: {
     title: 'What Is a Mineral Water & Beverage Plant?',
     text: 'A mineral water and beverage plant processes raw water through advanced purification systems and packages it into bottles, jars, or pouches under hygienic and controlled conditions.',
-    image: 'https://nayaragroup.com/wp-content/uploads/2025/12/Water-Treatment-scaled.jpg',
+    image: 'https://images.unsplash.com/photo-1544145945-f90425340c7e?auto=format&fit=crop&w=1200&q=80',
     features: [
       'Raw water treatment & purification',
       'RO, UV, Ozonation systems',
@@ -124,13 +124,13 @@ const BEVERAGES_PAGE = {
     {
       title: 'Commissioning & Trial Runs',
       text: 'System startup, quality validation, and production stabilization.',
-      image: 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=800&q=80',
+      image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80',
       span: 'normal',
     },
     {
       title: 'Quality & Lab Setup',
       text: 'Support for in-house testing labs and quality control systems.',
-      image: 'https://images.unsplash.com/photo-1532187863486-abf9db5811f6?auto=format&fit=crop&w=800&q=80',
+      image: 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=800&q=80',
       span: 'normal',
     },
     {
@@ -163,7 +163,7 @@ const BEVERAGES_PAGE = {
 const ETP_PAGE = {
   breadcrumb: 'ETP Solutions',
   hero: {
-    title: 'ETP Solutions',
+    title: 'Effluent Treatment Plant (ETP)',
     intro: 'Design, engineering, installation, and commissioning of industrial Effluent Treatment Plants for regulatory compliance and sustainable operations.',
     bg: 'https://nayaragroup.com/wp-content/uploads/2025/12/Water-Treatment-scaled.jpg',
   },
@@ -176,7 +176,7 @@ const ETP_PAGE = {
   whatIs: {
     title: 'What Is an Effluent Treatment Plant?',
     text: 'An Effluent Treatment Plant (ETP) is a system designed to treat industrial wastewater before discharge or reuse. It removes contaminants through physical, chemical, and biological treatment processes.',
-    image: 'https://nayaragroup.com/wp-content/uploads/2025/12/Water-Treatment.webp',
+    image: 'https://nayaragroup.com/wp-content/uploads/2025/12/Water-Treatment-scaled.jpg',
     features: [
       'Primary, secondary & tertiary treatment',
       'Reduction of BOD, COD, TDS & TSS',
@@ -213,13 +213,13 @@ const ETP_PAGE = {
     {
       title: 'O&M Support',
       text: 'Operation, maintenance, and optimization support for long-term performance.',
-      image: 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=800&q=80',
+      image: 'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&w=800&q=80',
       span: 'normal',
     },
     {
       title: 'Compliance Assistance',
       text: 'Support for pollution control approvals, audits, and reporting.',
-      image: 'https://images.unsplash.com/photo-1532187863486-abf9db5811f6?auto=format&fit=crop&w=800&q=80',
+      image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80',
       span: 'normal',
     },
   ],
@@ -229,9 +229,9 @@ const ETP_PAGE = {
     { num: 2, suffix: '', label: 'CPCB · SPCB' },
   ],
   cta: {
-    title: 'Ready to Partner With Us?',
-    text: 'Connect with Nayara Industries for quotations, product specifications, MSDS/TDS documentation, or custom sourcing requirements.',
-    btn: 'Get a Quotation',
+    title: 'Need an Efficient & Compliant ETP?',
+    text: 'Partner with Nayara Industries for reliable Effluent Treatment Plant design, installation, and commissioning services.',
+    btn: 'Contact Us',
     bg: 'https://nayaragroup.com/wp-content/uploads/2025/12/Water-Treatment-scaled.jpg',
   },
 };
@@ -655,30 +655,145 @@ const PAGE_CONTENT = {
 
 const PAGE_IMAGES = {
   'about-us': 'https://nayaragroup.com/wp-content/uploads/2025/12/environmental-pollution-factory-exterior.jpg',
-  'contact-us': 'https://nayaragroup.com/wp-content/uploads/2025/12/environmental-pollution-factory-exterior.jpg',
+  'contact-us': 'https://images.unsplash.com/photo-1423666639041-f56000c27a9a?auto=format&fit=crop&w=1600&q=80',
   'product': 'https://nayaragroup.com/wp-content/uploads/2025/12/Acrylic-Solvent.webp',
   'careers': 'https://nayaragroup.com/wp-content/uploads/2026/01/lab-technician-dressed-protective-suit-as-safety-precaution-looking-test-tube-scaled-1.jpg',
-  'quality-safety': 'https://nayaragroup.com/wp-content/uploads/2025/12/Industrial-Acid.webp',
-  'industries-we-serve': 'https://nayaragroup.com/wp-content/uploads/2025/12/Textile-Chemical.webp',
+  'quality-safety': 'https://images.unsplash.com/photo-1581093588401-fbb62a02f120?auto=format&fit=crop&w=1600&q=80',
+  'industries-we-serve': 'https://images.unsplash.com/photo-1565793298595-6a879b1d9492?auto=format&fit=crop&w=1600&q=80',
   'other-services': 'https://nayaragroup.com/wp-content/uploads/2026/01/Consultancy-ServiceS-scaled.jpg',
+  /* Product categories — unique working banner images */
   'solvents': 'https://nayaragroup.com/wp-content/uploads/2025/12/Acrylic-Solvent.webp',
-  'acids-alkalies': 'https://nayaragroup.com/wp-content/uploads/2025/12/Industrial-Acid.webp',
-  'intermediates': 'https://nayaragroup.com/wp-content/uploads/2025/12/Pharma-Intermediate.webp',
-  'pharma-raw-materials': 'https://nayaragroup.com/wp-content/uploads/2025/12/Pharma-Intermediate.webp',
-  'textile-chemicals': 'https://nayaragroup.com/wp-content/uploads/2025/12/Textile-Chemical.webp',
-  'water-treatment-chemicals': 'https://nayaragroup.com/wp-content/uploads/2025/12/Water-Treatment.webp',
-  'agro-chemicals': 'https://nayaragroup.com/wp-content/uploads/2025/12/Industrial-Acid.webp',
-  'dyes-dye-intermediates': 'https://nayaragroup.com/wp-content/uploads/2025/12/Textile-Chemical.webp',
+  'acids-alkalies': 'https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&w=1600&q=80',
+  'intermediates': 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1600&q=80',
+  'pharma-raw-materials': 'https://images.unsplash.com/photo-1603126857599-f6e157fa2fe6?auto=format&fit=crop&w=1600&q=80',
+  'textile-chemicals': 'https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&w=1600&q=80',
+  'water-treatment-chemicals': 'https://nayaragroup.com/wp-content/uploads/2025/12/Water-Treatment-scaled.jpg',
+  'agro-chemicals': 'https://images.unsplash.com/photo-1625246333195-78d9c38ad449?auto=format&fit=crop&w=1600&q=80',
+  'dyes-dye-intermediates': 'https://images.unsplash.com/photo-1513828583688-c52646db42da?auto=format&fit=crop&w=1600&q=80',
   'laboratory-chemicals': 'https://nayaragroup.com/wp-content/uploads/2026/01/lab-technician-dressed-protective-suit-as-safety-precaution-looking-test-tube-scaled-1.jpg',
-  'detergent-chemicals': 'https://nayaragroup.com/wp-content/uploads/2025/12/Industrial-Acid.webp',
-  'industrial-salts': 'https://nayaragroup.com/wp-content/uploads/2025/12/Industrial-Acid.webp',
-  'custom-formulated-products': 'https://nayaragroup.com/wp-content/uploads/2025/12/Pharma-Intermediate.webp',
-  'beverages-mineral-water': 'https://nayaragroup.com/wp-content/uploads/2026/01/creative-assortment-with-hamburger-menu-scaled.jpg',
+  'detergent-chemicals': 'https://images.unsplash.com/photo-1585421514284-efb74c2b69ba?auto=format&fit=crop&w=1600&q=80',
+  'industrial-salts': 'https://images.unsplash.com/photo-1611273426858-450d8e3c9fce?auto=format&fit=crop&w=1600&q=80',
+  'custom-formulated-products': 'https://images.unsplash.com/photo-1576086213369-97a306d36557?auto=format&fit=crop&w=1600&q=80',
+  'beverages-mineral-water': 'https://images.unsplash.com/photo-1548839140-29a749e1cf4d?auto=format&fit=crop&w=1600&q=80',
   'etp-solutions': 'https://nayaragroup.com/wp-content/uploads/2025/12/Water-Treatment-scaled.jpg',
   'greenfield-projects': 'https://nayaragroup.com/wp-content/uploads/2026/01/greenfield-news.jpg',
   'process-development': 'https://nayaragroup.com/wp-content/uploads/2026/01/lab-technician-dressed-protective-suit-as-safety-precaution-looking-test-tube-scaled-1.jpg',
   'consultancy': 'https://nayaragroup.com/wp-content/uploads/2026/01/Consultancy-ServiceS-scaled.jpg',
   default: 'https://nayaragroup.com/wp-content/uploads/2025/12/environmental-pollution-factory-exterior.jpg',
+};
+
+const PAGE_LEADS = {
+  product: 'Quality-assured industrial chemicals across solvents, acids, intermediates, and specialty categories.',
+  solvents: 'High-purity solvents for coatings, formulations, pharma, and industrial process applications.',
+  'acids-alkalies': 'Industrial acids and alkalies for metal treatment, neutralization, and process chemistry.',
+  intermediates: 'Reliable chemical intermediates supporting synthesis and manufacturing workflows.',
+  'pharma-raw-materials': 'Pharma-grade raw materials and excipients for API and formulation requirements.',
+  'textile-chemicals': 'Textile auxiliaries that improve wetting, dyeing, finishing, and fabric performance.',
+  'water-treatment-chemicals': 'Coagulants, oxidants, and treatment chemicals for industrial water systems.',
+  'agro-chemicals': 'Specialty agro and construction chemicals for field and industrial applications.',
+  'dyes-dye-intermediates': 'Dyes and dye intermediates for textile, printing, and colour chemistry needs.',
+  'laboratory-chemicals': 'LR-grade reagents, indicators, buffers, and laboratory chemical supplies.',
+  'detergent-chemicals': 'Surfactants and additives for detergent and cleaning product formulations.',
+  'industrial-salts': 'Process-grade industrial salts for manufacturing, treatment, and chemical use.',
+  'custom-formulated-products': 'Custom blends and specialty formulations tailored to your process needs.',
+};
+
+const PAGE_BANNER_GALLERY = {
+  product: [
+    'https://nayaragroup.com/wp-content/uploads/2025/12/Acrylic-Solvent.webp',
+    'https://nayaragroup.com/wp-content/uploads/2025/12/Industrial-Acid.webp',
+    'https://nayaragroup.com/wp-content/uploads/2025/12/Pharma-Intermediate.webp',
+  ],
+  solvents: [
+    'https://nayaragroup.com/wp-content/uploads/2025/12/Acrylic-Solvent.webp',
+    'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=900&q=80',
+    'https://images.unsplash.com/photo-1565793298595-6a879b1d9492?auto=format&fit=crop&w=900&q=80',
+  ],
+  'acids-alkalies': [
+    'https://nayaragroup.com/wp-content/uploads/2025/12/Industrial-Acid.webp',
+    'https://images.unsplash.com/photo-1581093588401-fbb62a02f120?auto=format&fit=crop&w=900&q=80',
+    'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&w=900&q=80',
+  ],
+  intermediates: [
+    'https://nayaragroup.com/wp-content/uploads/2025/12/Pharma-Intermediate.webp',
+    'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=900&q=80',
+    'https://images.unsplash.com/photo-1576086213369-97a306d36557?auto=format&fit=crop&w=900&q=80',
+  ],
+  'pharma-raw-materials': [
+    'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=900&q=80',
+    'https://nayaragroup.com/wp-content/uploads/2025/12/Pharma-Intermediate.webp',
+    'https://nayaragroup.com/wp-content/uploads/2026/01/lab-technician-dressed-protective-suit-as-safety-precaution-looking-test-tube-scaled-1.jpg',
+  ],
+  'textile-chemicals': [
+    'https://nayaragroup.com/wp-content/uploads/2025/12/Textile-Chemical.webp',
+    'https://images.unsplash.com/photo-1513828583688-c52646db42da?auto=format&fit=crop&w=900&q=80',
+    'https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&w=900&q=80',
+  ],
+  'water-treatment-chemicals': [
+    'https://nayaragroup.com/wp-content/uploads/2025/12/Water-Treatment-scaled.jpg',
+    'https://nayaragroup.com/wp-content/uploads/2025/12/Water-Treatment.webp',
+    'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=900&q=80',
+  ],
+  'agro-chemicals': [
+    'https://images.unsplash.com/photo-1625246333195-78d9c38ad449?auto=format&fit=crop&w=900&q=80',
+    'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&w=900&q=80',
+    'https://nayaragroup.com/wp-content/uploads/2025/12/Industrial-Acid.webp',
+  ],
+  'dyes-dye-intermediates': [
+    'https://images.unsplash.com/photo-1513828583688-c52646db42da?auto=format&fit=crop&w=900&q=80',
+    'https://nayaragroup.com/wp-content/uploads/2025/12/Textile-Chemical.webp',
+    'https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&w=900&q=80',
+  ],
+  'laboratory-chemicals': [
+    'https://nayaragroup.com/wp-content/uploads/2026/01/lab-technician-dressed-protective-suit-as-safety-precaution-looking-test-tube-scaled-1.jpg',
+    'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=900&q=80',
+    'https://images.unsplash.com/photo-1576086213369-97a306d36557?auto=format&fit=crop&w=900&q=80',
+  ],
+  'detergent-chemicals': [
+    'https://images.unsplash.com/photo-1585421514284-efb74c2b69ba?auto=format&fit=crop&w=900&q=80',
+    'https://images.unsplash.com/photo-1631549916768-4119b2e5f926?auto=format&fit=crop&w=900&q=80',
+    'https://nayaragroup.com/wp-content/uploads/2025/12/Industrial-Acid.webp',
+  ],
+  'industrial-salts': [
+    'https://images.unsplash.com/photo-1631549916768-4119b2e5f926?auto=format&fit=crop&w=900&q=80',
+    'https://images.unsplash.com/photo-1565793298595-6a879b1d9492?auto=format&fit=crop&w=900&q=80',
+    'https://nayaragroup.com/wp-content/uploads/2025/12/Industrial-Acid.webp',
+  ],
+  'custom-formulated-products': [
+    'https://images.unsplash.com/photo-1576086213369-97a306d36557?auto=format&fit=crop&w=900&q=80',
+    'https://nayaragroup.com/wp-content/uploads/2025/12/Pharma-Intermediate.webp',
+    'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=900&q=80',
+  ],
+  'quality-safety': [
+    'https://images.unsplash.com/photo-1581093588401-fbb62a02f120?auto=format&fit=crop&w=900&q=80',
+    'https://nayaragroup.com/wp-content/uploads/2026/01/lab-technician-dressed-protective-suit-as-safety-precaution-looking-test-tube-scaled-1.jpg',
+    'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=900&q=80',
+  ],
+  'other-services': [
+    'https://nayaragroup.com/wp-content/uploads/2026/01/Consultancy-ServiceS-scaled.jpg',
+    'https://nayaragroup.com/wp-content/uploads/2025/12/Water-Treatment-scaled.jpg',
+    'https://nayaragroup.com/wp-content/uploads/2026/01/greenfield-news.jpg',
+  ],
+  'contact-us': [
+    'https://images.unsplash.com/photo-1423666639041-f56000c27a9a?auto=format&fit=crop&w=900&q=80',
+    'https://nayaragroup.com/wp-content/uploads/2025/12/environmental-pollution-factory-exterior.jpg',
+    'https://images.unsplash.com/photo-1565793298595-6a879b1d9492?auto=format&fit=crop&w=900&q=80',
+  ],
+  'about-us': [
+    'https://nayaragroup.com/wp-content/uploads/2025/12/environmental-pollution-factory-exterior.jpg',
+    'https://images.unsplash.com/photo-1565793298595-6a879b1d9492?auto=format&fit=crop&w=900&q=80',
+    'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&w=900&q=80',
+  ],
+  'careers': [
+    'https://nayaragroup.com/wp-content/uploads/2026/01/lab-technician-dressed-protective-suit-as-safety-precaution-looking-test-tube-scaled-1.jpg',
+    'https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=900&q=80',
+    'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=900&q=80',
+  ],
+  'industries-we-serve': [
+    'https://nayaragroup.com/wp-content/uploads/2025/12/Textile-Chemical.webp',
+    'https://nayaragroup.com/wp-content/uploads/2025/12/Water-Treatment-scaled.jpg',
+    'https://nayaragroup.com/wp-content/uploads/2025/12/Pharma-Intermediate.webp',
+  ],
 };
 
 function getPageImage(slug) {
@@ -688,6 +803,21 @@ function getPageImage(slug) {
 function getPageLayout(slug) {
   const layouts = ['page-a', 'page-b', 'page-c'];
   return layouts[slug.split('').reduce((a, c) => a + c.charCodeAt(0), 0) % layouts.length];
+}
+
+function getPremiumCategoryIntro(content, slug, title) {
+  const img = getPageImage(slug);
+  return `
+  <section class="pc-intro">
+    <div class="pc-intro__stage">
+      <figure class="pc-intro__media">
+        <img src="${img}" alt="${title}" loading="lazy" decoding="async">
+      </figure>
+      <article class="pc-intro__glass">
+        <div class="pc-intro__copy sp-cms cms-content cms-content-premium">${content}</div>
+      </article>
+    </div>
+  </section>`;
 }
 
 function getContentSection(content, slug, title) {
@@ -782,7 +912,7 @@ function getHead(title, description, basePath, canonical, options = {}) {
   <link href="https://api.fontshare.com/v2/css?f[]=satoshi@700,900,500,400,300&f[]=general-sans@600,500,400,700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="${basePath}assets/css/style.css?v=3">
-  <link rel="stylesheet" href="${basePath}assets/css/liquid-glass.css?v=5">
+  <link rel="stylesheet" href="${basePath}assets/css/liquid-glass.css?v=12">
   <link rel="stylesheet" href="${basePath}assets/css/nayara-fortune.css?v=3">
   <link rel="stylesheet" href="${basePath}assets/css/spatial-ui.css?v=3">
   <link rel="stylesheet" href="${basePath}assets/css/editorial-bento.css?v=3">
@@ -790,7 +920,8 @@ function getHead(title, description, basePath, canonical, options = {}) {
   <link rel="stylesheet" href="${basePath}assets/css/luxury-enterprise.css?v=4">
   <link rel="stylesheet" href="${basePath}assets/css/luxury-images.css?v=5">
   <link rel="stylesheet" href="${basePath}assets/css/premium-international.css?v=10">
-  <link rel="stylesheet" href="${basePath}assets/css/visual-premium.css?v=5">
+  <link rel="stylesheet" href="${basePath}assets/css/visual-premium.css?v=7">
+  <link rel="stylesheet" href="${basePath}assets/css/site-teal-bg.css?v=6">
   ${extraCss}
 </head>
 <body class="${bodyClass}">`;
@@ -836,28 +967,29 @@ function getIndustryIcon(type) {
   return icons[type] || icons.pharma;
 }
 
-function getEnterpriseBanner({ title, eyebrow, lead, basePath, breadcrumb }) {
+function getEnterpriseBanner({ title, eyebrow, lead, basePath, breadcrumb, slug }) {
   const crumbs = breadcrumb.map((c, i) => {
-    if (i === breadcrumb.length - 1) return `<span>${c.label}</span>`;
-    return `<a href="${basePath}${c.href}">${c.label}</a><span class="ipp-banner__crumb-sep">/</span>`;
+    if (i === breadcrumb.length - 1) return `<span class="ph-banner__crumb-current">${c.label}</span>`;
+    return `<a href="${basePath}${c.href}">${c.label}</a><span class="ph-banner__crumb-sep">/</span>`;
   }).join('');
 
+  const heroImage = getPageImage(slug || 'about-us');
+
   return `
-  <section class="ipp-banner">
-    <div class="ipp-banner__mol" aria-hidden="true"></div>
-    <div class="ipp-banner__inner">
-      <div class="ipp-banner__logo-card gs-reveal">
-        <img src="${SITE_LOGO}" alt="Nayara Industries" loading="eager">
-      </div>
-      <div class="ipp-banner__body gs-reveal">
-        <nav class="ipp-banner__crumb" aria-label="Breadcrumb">
-          <a href="${basePath}">NAYARA INDUSTRIES</a><span class="ipp-banner__crumb-sep">/</span>
+  <section class="ph-banner ph-banner--bg">
+    <div class="ph-banner__media" style="background-image:url('${heroImage}')" role="img" aria-label="${title}"></div>
+    <div class="ph-banner__veil" aria-hidden="true"></div>
+    <div class="ph-banner__inner ph-banner__inner--overlay">
+      <div class="ph-banner__copy">
+        <nav class="ph-banner__crumb" aria-label="Breadcrumb">
+          <a href="${basePath}">Home</a>
+          <span class="ph-banner__crumb-sep">/</span>
           ${crumbs}
         </nav>
-        <span class="ipp-banner__eyebrow">${eyebrow}</span>
-        <h1 class="ipp-banner__title">${title}</h1>
-        <p class="ipp-banner__lead">${lead}</p>
-        <a href="${basePath}contact-us/" class="ipp-banner__cta magnetic-btn">Contact Us</a>
+        <p class="ph-banner__eyebrow">${eyebrow}</p>
+        <h1 class="ph-banner__title">${title}</h1>
+        <p class="ph-banner__lead">${lead}</p>
+        <a href="${basePath}contact-us/" class="ph-banner__cta">Contact Us</a>
       </div>
     </div>
   </section>`;
@@ -1084,7 +1216,7 @@ function getPremiumCareersPage(basePath) {
         <div class="ipp-cr-form-card">
           <h2 class="ipp-cr-form-card__title">Apply for a Position</h2>
           <p class="ipp-cr-form-card__sub">Please fill the form below and attach your resume. Our HR team will contact you shortly.</p>
-          <form class="ipp-cr-form space-y-5">
+          <form class="ipp-cr-form space-y-5" action="/api/careers" method="post" enctype="multipart/form-data" data-form="careers">
             <div>
               <label class="ipp-cr-form__label">Your Full Name *</label>
               <input type="text" name="name" placeholder="Enter your name" class="premium-input ipp-cr-form__input" required>
@@ -1122,36 +1254,30 @@ function getPremiumCareersPage(basePath) {
 
 function getPageHero(title, breadcrumb, basePath, slug) {
   const heroImage = getPageImage(slug);
+  const lead = PAGE_LEADS[slug] || '';
+  const showCta = Boolean(CATEGORY_PRODUCTS[slug] || slug === 'product');
   const crumbs = breadcrumb.map((c, i) => {
-    if (i === breadcrumb.length - 1) return `<span class="page-hero-crumb-current">${c.label}</span>`;
-    return `<a href="${basePath}${c.href}">${c.label}</a><span class="page-hero-crumb-sep">/</span>`;
+    if (i === breadcrumb.length - 1) return `<span class="ph-banner__crumb-current">${c.label}</span>`;
+    return `<a href="${basePath}${c.href}">${c.label}</a><span class="ph-banner__crumb-sep">/</span>`;
   }).join('');
 
   return `
-  <section class="sp-page-hero page-hero-3d page-hero-3d--luxury">
-    <div class="sp-page-hero-bg">
-      <div class="page-hero-3d-photo" style="background-image:url('${heroImage}')" aria-hidden="true"></div>
-      <div class="page-hero-3d-overlay" aria-hidden="true"></div>
-      <div class="page-hero-3d-shimmer" aria-hidden="true"></div>
-      <canvas class="page-hero-3d-canvas"></canvas>
-      <div class="page-hero-3d-mesh" aria-hidden="true"></div>
-      <div class="page-hero-3d-glow"></div>
-    </div>
-    <div class="sp-page-hero-content page-hero-3d-content">
-      <div class="page-hero-glass-panel">
-        <nav class="page-hero-breadcrumb gs-blur" aria-label="Breadcrumb">
+  <section class="ph-banner ph-banner--bg">
+    <div class="ph-banner__media" style="background-image:url('${heroImage}')" role="img" aria-label="${title}"></div>
+    <div class="ph-banner__veil" aria-hidden="true"></div>
+    <div class="ph-banner__inner ph-banner__inner--overlay">
+      <div class="ph-banner__copy">
+        <nav class="ph-banner__crumb" aria-label="Breadcrumb">
           <a href="${basePath}">Home</a>
-          <span class="page-hero-crumb-sep">/</span>
+          <span class="ph-banner__crumb-sep">/</span>
           ${crumbs}
         </nav>
-        <div class="page-hero-title-block gs-reveal">
-          <span class="page-hero-eyebrow">Nayara Industries</span>
-          <h1 class="page-hero-title">${title}</h1>
-          <div class="page-hero-title-accent"></div>
-        </div>
+        <p class="ph-banner__eyebrow">Nayara Industries</p>
+        <h1 class="ph-banner__title">${title}</h1>
+        ${lead ? `<p class="ph-banner__lead">${lead}</p>` : ''}
+        ${showCta ? `<a href="${basePath}contact-us/" class="ph-banner__cta">Request Quote</a>` : ''}
       </div>
     </div>
-    <div class="page-hero-3d-accent"></div>
   </section>`;
 }
 
@@ -1443,54 +1569,349 @@ ${showWhy ? `
 }
 
 function getPremiumBeveragesPage(basePath) {
-  return getPremiumServiceLandingPage(BEVERAGES_PAGE, basePath, {
-    introContentFirst: false,
-    showTimeline: true,
-    showWhy: true,
-    ctaButtonText: 'Contact Us',
-    introEyebrow: 'Introduction',
-  });
+  const p = BEVERAGES_PAGE;
+  const whatImg = 'https://images.unsplash.com/photo-1544145945-f90425340c7e?auto=format&fit=crop&w=1200&q=80';
+  const gallery = [
+    { src: 'https://images.unsplash.com/photo-1523362628745-0c100150b504?auto=format&fit=crop&w=900&q=80', alt: 'Packaged drinking water bottles' },
+    { src: 'https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=900&q=80', alt: 'Colorful beverage glasses' },
+    { src: 'https://images.unsplash.com/photo-1600271886742-f049cd451bba?auto=format&fit=crop&w=900&q=80', alt: 'Fresh orange juice pour' },
+    { src: 'https://images.unsplash.com/photo-1437418747212-8d9709afab22?auto=format&fit=crop&w=900&q=80', alt: 'Fresh fruit juice beverages' },
+  ];
+
+  const bullets = (p.whatIs.features || []).map((f) => `<li>${f}</li>`).join('');
+
+  const serviceCards = (p.services || []).map((s, i) => `
+    <article class="bwm-v2-svc bwm-v2-reveal" style="--i:${i}">
+      <div class="bwm-v2-svc__media">
+        <img src="${s.image}" alt="${s.title}" loading="lazy" decoding="async">
+        <span class="bwm-v2-svc__glow" aria-hidden="true"></span>
+      </div>
+      <div class="bwm-v2-svc__body">
+        <h3 class="bwm-v2-svc__title">${s.title}</h3>
+        <p class="bwm-v2-svc__text">${s.text}</p>
+      </div>
+    </article>`).join('');
+
+  const galleryCards = gallery.map((g, i) => `
+    <figure class="bwm-v2-gallery__item bwm-v2-reveal" style="--i:${i}">
+      <img src="${g.src}" alt="${g.alt}" loading="lazy" decoding="async">
+    </figure>`).join('');
+
+  return `
+  <section class="bwm-v2-hero">
+    <div class="bwm-v2-hero__frame">
+      <div class="bwm-v2-hero__bg" style="background-image:url('${p.hero.bg}')"></div>
+      <div class="bwm-v2-hero__veil"></div>
+      <div class="bwm-v2-hero__content bwm-v2-reveal" style="--i:0">
+        <nav class="bwm-v2-breadcrumb" aria-label="Breadcrumb">
+          <a href="${basePath}">Home</a>
+          <span>/</span>
+          <span>${p.breadcrumb}</span>
+        </nav>
+        <h1 class="bwm-v2-hero__title">${p.hero.title}</h1>
+        <p class="bwm-v2-hero__lead">${p.hero.intro}</p>
+        <a href="${basePath}contact-us/" class="bwm-v2-btn bwm-v2-btn--glass">Contact Us</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="bwm-v2-zone bwm-v2-intro">
+    <div class="bwm-v2-inner bwm-v2-reveal" style="--i:0">
+      <h2 class="bwm-v2-heading">${p.intro.title}</h2>
+      <p class="bwm-v2-text">${p.intro.text}</p>
+    </div>
+  </section>
+
+  <section class="bwm-v2-zone bwm-v2-what">
+    <div class="bwm-v2-inner bwm-v2-what__grid">
+      <div class="bwm-v2-what__copy bwm-v2-reveal" style="--i:0">
+        <h2 class="bwm-v2-heading">${p.whatIs.title}</h2>
+        <p class="bwm-v2-text">${p.whatIs.text}</p>
+        <ul class="bwm-v2-list">${bullets}</ul>
+      </div>
+      <div class="bwm-v2-what__visual bwm-v2-reveal" style="--i:1">
+        <img src="${whatImg}" alt="Infused mineral water bottles" loading="lazy" decoding="async">
+      </div>
+    </div>
+  </section>
+
+  <section class="bwm-v2-zone bwm-v2-services">
+    <div class="bwm-v2-inner">
+      <h2 class="bwm-v2-heading bwm-v2-reveal">${p.servicesTitle}</h2>
+      <div class="bwm-v2-svc-grid">${serviceCards}</div>
+    </div>
+  </section>
+
+  <section class="bwm-v2-zone bwm-v2-gallery">
+    <div class="bwm-v2-inner">
+      <h2 class="bwm-v2-heading bwm-v2-reveal">Plant &amp; Packaging Insights</h2>
+      <p class="bwm-v2-text bwm-v2-gallery__lead bwm-v2-reveal" style="--i:1">A closer look at water, bottling, and facility environments that shape modern beverage plants.</p>
+      <div class="bwm-v2-gallery__grid">${galleryCards}</div>
+    </div>
+  </section>
+
+  <section class="bwm-v2-zone bwm-v2-cta">
+    <div class="bwm-v2-inner">
+      <div class="bwm-v2-cta__panel bwm-v2-reveal">
+        <h2 class="bwm-v2-heading">${p.cta.title}</h2>
+        <p class="bwm-v2-text">${p.cta.text}</p>
+        <a href="${basePath}contact-us/" class="bwm-v2-btn bwm-v2-btn--soft">Contact Us</a>
+      </div>
+    </div>
+  </section>`;
 }
 
 function getPremiumEtpPage(basePath) {
-  return getPremiumServiceLandingPage(ETP_PAGE, basePath, {
-    introContentFirst: true,
-    showTimeline: false,
-    showWhy: false,
-    ctaButtonText: ETP_PAGE.cta.btn || 'Get a Quotation',
-    introEyebrow: ETP_PAGE.intro.eyebrow || 'ETP Solutions',
-  });
+  const p = ETP_PAGE;
+  const gallery = [
+    { src: 'https://nayaragroup.com/wp-content/uploads/2025/12/Water-Treatment-scaled.jpg', alt: 'Industrial effluent treatment facility' },
+    { src: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=900&q=80', alt: 'ETP clarifier tanks aerial view' },
+    { src: 'https://images.unsplash.com/photo-1565793298595-6a879b1d9492?auto=format&fit=crop&w=900&q=80', alt: 'Industrial plant infrastructure' },
+    { src: 'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&w=900&q=80', alt: 'Engineering and plant operations' },
+  ];
+
+  const bullets = (p.whatIs.features || []).map((f) => `<li>${f}</li>`).join('');
+
+  const serviceCards = (p.services || []).map((s, i) => `
+    <article class="etp-v2-svc etp-v2-reveal" style="--i:${i}">
+      <span class="etp-v2-svc__index" aria-hidden="true">${String(i + 1).padStart(2, '0')}</span>
+      <h3 class="etp-v2-svc__title">${s.title}</h3>
+      <p class="etp-v2-svc__text">${s.text}</p>
+    </article>`).join('');
+
+  const galleryCards = gallery.map((g, i) => `
+    <figure class="etp-v2-gallery__item etp-v2-reveal" style="--i:${i}">
+      <img src="${g.src}" alt="${g.alt}" loading="lazy" decoding="async">
+    </figure>`).join('');
+
+  return `
+  <section class="etp-v2-hero">
+    <div class="etp-v2-hero__frame">
+      <div class="etp-v2-hero__bg" style="background-image:url('${p.hero.bg}')"></div>
+      <div class="etp-v2-hero__veil"></div>
+      <div class="etp-v2-hero__content etp-v2-reveal" style="--i:0">
+        <nav class="etp-v2-breadcrumb" aria-label="Breadcrumb">
+          <a href="${basePath}">Home</a>
+          <span>/</span>
+          <span>${p.breadcrumb}</span>
+        </nav>
+        <h1 class="etp-v2-hero__title">${p.hero.title}</h1>
+        <p class="etp-v2-hero__lead">${p.hero.intro}</p>
+        <a href="${basePath}contact-us/" class="etp-v2-btn etp-v2-btn--glass">${p.cta.btn || 'Contact Us'}</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="etp-v2-zone etp-v2-intro">
+    <div class="etp-v2-inner etp-v2-reveal" style="--i:0">
+      <h2 class="etp-v2-heading">${p.intro.title}</h2>
+      <p class="etp-v2-text">${p.intro.text}</p>
+    </div>
+  </section>
+
+  <section class="etp-v2-zone etp-v2-what">
+    <div class="etp-v2-inner etp-v2-what__grid">
+      <div class="etp-v2-what__copy etp-v2-reveal" style="--i:0">
+        <h2 class="etp-v2-heading">${p.whatIs.title}</h2>
+        <p class="etp-v2-text">${p.whatIs.text}</p>
+        <ul class="etp-v2-list">${bullets}</ul>
+      </div>
+      <div class="etp-v2-what__visual etp-v2-reveal" style="--i:1">
+        <img src="${p.whatIs.image}" alt="Effluent treatment plant aerial view" loading="lazy" decoding="async">
+      </div>
+    </div>
+  </section>
+
+  <section class="etp-v2-zone etp-v2-services">
+    <div class="etp-v2-inner">
+      <h2 class="etp-v2-heading etp-v2-reveal">${p.servicesTitle}</h2>
+      <div class="etp-v2-svc-grid">${serviceCards}</div>
+    </div>
+  </section>
+
+  <section class="etp-v2-zone etp-v2-gallery">
+    <div class="etp-v2-inner">
+      <h2 class="etp-v2-heading etp-v2-reveal">Treatment Plant Insights</h2>
+      <p class="etp-v2-text etp-v2-gallery__lead etp-v2-reveal" style="--i:1">Facilities and process environments that define reliable industrial effluent treatment.</p>
+      <div class="etp-v2-gallery__grid">${galleryCards}</div>
+    </div>
+  </section>
+
+  <section class="etp-v2-zone etp-v2-cta">
+    <div class="etp-v2-inner">
+      <div class="etp-v2-cta__panel etp-v2-reveal">
+        <h2 class="etp-v2-heading">${p.cta.title}</h2>
+        <p class="etp-v2-text">${p.cta.text}</p>
+        <a href="${basePath}contact-us/" class="etp-v2-btn etp-v2-btn--soft">${p.cta.btn || 'Contact Us'}</a>
+      </div>
+    </div>
+  </section>`;
+}
+
+function getServicePremiumV2Page(p, basePath, options = {}) {
+  const {
+    showServices = true,
+    gallery = null,
+    galleryTitle = 'Project Insights',
+    galleryLead = 'A closer look at the environments and systems that shape industrial project delivery.',
+    extraSections = '',
+  } = options;
+
+  const ctaBtn = (p.cta && p.cta.btn) || 'Contact Us';
+  const bullets = ((p.whatIs && p.whatIs.features) || []).map((f) => `<li>${f}</li>`).join('');
+
+  const serviceCards = ((p.services || [])).map((s, i) => `
+    <article class="svc-v2-svc svc-v2-reveal" style="--i:${i}">
+      <span class="svc-v2-svc__index" aria-hidden="true">${String(i + 1).padStart(2, '0')}</span>
+      <h3 class="svc-v2-svc__title">${s.title}</h3>
+      <p class="svc-v2-svc__text">${s.text}</p>
+    </article>`).join('');
+
+  const galleryItems = (gallery || [
+    { src: p.hero.bg, alt: p.hero.title },
+    { src: (p.intro && p.intro.image) || p.hero.bg, alt: (p.intro && p.intro.title) || p.hero.title },
+    { src: (p.whatIs && p.whatIs.image) || p.hero.bg, alt: (p.whatIs && p.whatIs.title) || p.hero.title },
+    { src: (p.cta && p.cta.bg) || p.hero.bg, alt: 'Nayara Industries facility' },
+  ]).map((g, i) => `
+    <figure class="svc-v2-gallery__item svc-v2-reveal" style="--i:${i}">
+      <img src="${g.src}" alt="${g.alt}" loading="lazy" decoding="async">
+    </figure>`).join('');
+
+  const whatHtml = p.whatIs ? `
+  <section class="svc-v2-zone svc-v2-what">
+    <div class="svc-v2-inner svc-v2-what__grid">
+      <div class="svc-v2-what__copy svc-v2-reveal" style="--i:0">
+        <h2 class="svc-v2-heading">${p.whatIs.title}</h2>
+        <p class="svc-v2-text">${p.whatIs.text}</p>
+        ${bullets ? `<ul class="svc-v2-list">${bullets}</ul>` : ''}
+      </div>
+      <div class="svc-v2-what__visual svc-v2-reveal" style="--i:1">
+        <img src="${p.whatIs.image}" alt="${p.whatIs.title}" loading="lazy" decoding="async">
+      </div>
+    </div>
+  </section>` : '';
+
+  const servicesHtml = showServices && p.services && p.services.length ? `
+  <section class="svc-v2-zone svc-v2-services">
+    <div class="svc-v2-inner">
+      <h2 class="svc-v2-heading svc-v2-reveal">${p.servicesTitle || 'Our Services'}</h2>
+      <div class="svc-v2-svc-grid">${serviceCards}</div>
+    </div>
+  </section>` : '';
+
+  return `
+  <section class="svc-v2-hero">
+    <div class="svc-v2-hero__frame">
+      <div class="svc-v2-hero__bg" style="background-image:url('${p.hero.bg}')"></div>
+      <div class="svc-v2-hero__veil"></div>
+      <div class="svc-v2-hero__content svc-v2-reveal" style="--i:0">
+        <nav class="svc-v2-breadcrumb" aria-label="Breadcrumb">
+          <a href="${basePath}">Home</a>
+          <span>/</span>
+          <span>${p.breadcrumb}</span>
+        </nav>
+        <h1 class="svc-v2-hero__title">${p.hero.title}</h1>
+        <p class="svc-v2-hero__lead">${p.hero.intro}</p>
+        <a href="${basePath}contact-us/" class="svc-v2-btn svc-v2-btn--glass">${ctaBtn}</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="svc-v2-zone svc-v2-intro">
+    <div class="svc-v2-inner svc-v2-reveal" style="--i:0">
+      <h2 class="svc-v2-heading">${p.intro.title}</h2>
+      <p class="svc-v2-text">${p.intro.text}</p>
+    </div>
+  </section>
+
+  ${whatHtml}
+  ${servicesHtml}
+  ${extraSections}
+
+  <section class="svc-v2-zone svc-v2-gallery">
+    <div class="svc-v2-inner">
+      <h2 class="svc-v2-heading svc-v2-reveal">${galleryTitle}</h2>
+      <p class="svc-v2-text svc-v2-gallery__lead svc-v2-reveal" style="--i:1">${galleryLead}</p>
+      <div class="svc-v2-gallery__grid">${galleryItems}</div>
+    </div>
+  </section>
+
+  <section class="svc-v2-zone svc-v2-cta">
+    <div class="svc-v2-inner">
+      <div class="svc-v2-cta__panel svc-v2-reveal">
+        <h2 class="svc-v2-heading">${p.cta.title}</h2>
+        <p class="svc-v2-text">${p.cta.text}</p>
+        <a href="${basePath}contact-us/" class="svc-v2-btn svc-v2-btn--soft">${ctaBtn}</a>
+      </div>
+    </div>
+  </section>`;
 }
 
 function getPremiumGreenfieldPage(basePath) {
-  return getPremiumServiceLandingPage(GREENFIELD_PAGE, basePath, {
-    introContentFirst: true,
-    showTimeline: false,
-    showWhy: false,
-    ctaButtonText: 'Contact Us',
-    introEyebrow: 'Greenfield Projects',
+  return getServicePremiumV2Page(GREENFIELD_PAGE, basePath, {
+    galleryTitle: 'Plant Commissioning Insights',
+    galleryLead: 'From layout planning to trial production — environments that define greenfield execution.',
   });
 }
 
 function getPremiumProcessDevelopmentPage(basePath) {
-  return getPremiumServiceLandingPage(PROCESS_DEVELOPMENT_PAGE, basePath, {
-    introContentFirst: true,
-    showTimeline: false,
-    showWhy: false,
+  const tt = PROCESS_DEVELOPMENT_PAGE.technologyTransfer;
+  const ttCards = (tt.features || []).map((f, i) => `
+    <article class="svc-v2-svc svc-v2-reveal" style="--i:${i}">
+      <span class="svc-v2-svc__index" aria-hidden="true">${String(i + 1).padStart(2, '0')}</span>
+      <h3 class="svc-v2-svc__title">${f}</h3>
+      <p class="svc-v2-svc__text">Structured support for reliable transfer into commercial manufacturing.</p>
+    </article>`).join('');
+
+  const extraSections = `
+  <section class="svc-v2-zone svc-v2-what">
+    <div class="svc-v2-inner svc-v2-what__grid">
+      <div class="svc-v2-what__copy svc-v2-reveal" style="--i:0">
+        <h2 class="svc-v2-heading">${tt.title}</h2>
+        <p class="svc-v2-text">${tt.text}</p>
+      </div>
+      <div class="svc-v2-what__visual svc-v2-reveal" style="--i:1">
+        <img src="${tt.image}" alt="${tt.title}" loading="lazy" decoding="async">
+      </div>
+    </div>
+  </section>
+  <section class="svc-v2-zone svc-v2-services">
+    <div class="svc-v2-inner">
+      <h2 class="svc-v2-heading svc-v2-reveal">Technology Transfer Capabilities</h2>
+      <div class="svc-v2-svc-grid">${ttCards}</div>
+    </div>
+  </section>`;
+
+  return getServicePremiumV2Page(PROCESS_DEVELOPMENT_PAGE, basePath, {
     showServices: false,
-    ctaButtonText: 'Contact Us',
-    introEyebrow: 'Process Development',
+    extraSections,
+    galleryTitle: 'Lab to Plant Insights',
+    galleryLead: 'Development and transfer environments that connect R&D with commercial production.',
   });
 }
 
 function getPremiumConsultancyPage(basePath) {
-  return getPremiumServiceLandingPage(CONSULTANCY_PAGE, basePath, {
-    introContentFirst: true,
-    showTimeline: false,
-    showWhy: false,
+  const approach = CONSULTANCY_PAGE.approach;
+  const approachCards = ((approach && approach.features) || []).map((f, i) => `
+    <article class="svc-v2-svc svc-v2-reveal" style="--i:${i}">
+      <span class="svc-v2-svc__index" aria-hidden="true">${String(i + 1).padStart(2, '0')}</span>
+      <h3 class="svc-v2-svc__title">${f}</h3>
+      <p class="svc-v2-svc__text">Practical advisory support aligned to industrial project goals.</p>
+    </article>`).join('');
+
+  const extraSections = approach ? `
+  <section class="svc-v2-zone svc-v2-services">
+    <div class="svc-v2-inner">
+      <h2 class="svc-v2-heading svc-v2-reveal">${approach.title}</h2>
+      <div class="svc-v2-svc-grid">${approachCards}</div>
+    </div>
+  </section>` : '';
+
+  return getServicePremiumV2Page(CONSULTANCY_PAGE, basePath, {
     showServices: true,
-    ctaButtonText: 'Contact Us',
-    introEyebrow: 'Consultancy',
+    extraSections,
+    galleryTitle: 'Consultancy Insights',
+    galleryLead: 'Advisory contexts across planning, compliance, engineering, and operational excellence.',
   });
 }
 
@@ -1698,7 +2119,7 @@ function getPremiumContactSection(basePath) {
           ${cardsHtml}
         </div>
         <div class="eb-connect-form eb-form-glass card-3d gs-reveal-right">
-          <form action="#" method="post" class="space-y-5">
+          <form action="/api/contact" method="post" class="space-y-5" data-form="contact">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
               <div class="form-group">
                 <input type="text" id="name" name="name" placeholder=" " class="premium-input peer" required>
@@ -1739,7 +2160,7 @@ function getContactForm(basePath) {
           <p class="sp-feature-text">Connect with our team for quotations, specifications, and custom sourcing.</p>
         </div>
         <div class="sp-contact-form-wrap gs-reveal-right card-3d">
-          <form action="#" method="post" class="space-y-5">
+          <form action="/api/contact" method="post" class="space-y-5" data-form="contact">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
               <div class="form-group">
                 <input type="text" id="name" name="name" placeholder=" " class="premium-input peer" required>
@@ -1768,16 +2189,15 @@ function getContactForm(basePath) {
 
 function getCtaSection(basePath) {
   return `
-  <section class="sp-zone relative overflow-hidden" style="background:var(--sp-bg,#FAFBFC)">
-    <div class="absolute inset-0 noise-overlay opacity-[0.04]"></div>
+  <section class="sp-zone pc-cta relative overflow-hidden">
     <div class="sp-zone-inner relative">
-      <div class="sp-contact">
+      <div class="sp-contact pc-cta__inner">
         <div class="sp-contact-copy gs-reveal-left">
           <span class="sp-section-eyebrow">Partner with us</span>
           <h2 class="sp-section-title mb-4">Ready to Partner With Us?</h2>
           <p class="sp-feature-text max-w-lg">Connect with Nayara Industries for quotations, product specifications, MSDS/TDS documentation, or custom sourcing requirements.</p>
         </div>
-        <div class="sp-contact-form-wrap gs-reveal-right card-3d flex items-center justify-center" style="min-height:200px">
+        <div class="sp-contact-form-wrap pc-cta__action gs-reveal-right flex items-center justify-center">
           <a href="${basePath}contact-us/" class="sp-btn sp-btn--primary magnetic-btn text-lg px-10 py-5">Get a Quotation</a>
         </div>
       </div>
@@ -1813,34 +2233,76 @@ function getStatsSection() {
   </section>`;
 }
 
+const CATEGORY_PRODUCTS = {
+  'solvents': { label: 'Solvents', tone: 0, items: ['Acetone', 'Bromin', 'Toluene', 'Isopropyl Alcohol (IPA)', 'Ethylene Glycol', 'Ethyl Acetate', 'Butanol', 'Acetic Acid', 'Methylene Chloride (MDC)', 'KBR', 'HBR', 'NABR', 'KCL', 'Pyridine'] },
+  'acids-alkalies': { label: 'Acids & Alkalies', tone: 1, items: ['Sulfuric Acid', 'Phosphoric Acid', 'Boric Acid', 'Hydrochloric Acid', 'Nitric Acid', 'Caustic Soda Flakes', 'Caustic Potash', 'Citric Acid', 'Sulfamic Acid', 'Ammonium Sulphate', 'Sodium Lauryl Sulphate Powder', 'Di-Calcium Phosphate', 'Magnesium Oxide', 'Soda Ash', 'Potassium Carbonate'] },
+  'intermediates': { label: 'Intermediates', tone: 2, items: ['MCA (Mono Chloro Acetic Acid)', 'Chlorinated Paraffin', 'Sodium Acetate', 'Sodium Formate', 'DMF', 'DMAc', 'Sodium Mono Chloro Acetate (SMCA)', 'Thiophanate Methyl (TPM)', 'Pymetrozine (PMT)', 'Chloraniliprole (CTPR)', 'Tebuconazole'] },
+  'pharma-raw-materials': { label: 'Pharma Raw Materials', tone: 3, items: ['API Bulk Drugs', 'Lactose', 'Magnesium Stearate', 'Talc Powder', 'MCC (Microcrystalline Cellulose)'] },
+  'textile-chemicals': { label: 'Textile Chemicals', tone: 4, items: ['Softeners', 'Wetting Agents', 'Scouring Agents', 'Dye Fixing Agents', 'Detergents', 'Enzymes'] },
+  'water-treatment-chemicals': { label: 'Water Treatment Chemicals', tone: 5, items: ['Alum', 'Poly-Aluminum Chloride', 'Sodium Chloride', 'Ferric Chloride', 'Chlorine Powder', 'Activated Carbon', 'Hydrogen Peroxide', 'Feric Aluminium Sulphate', 'Ferrous Chloride', 'Polyelectrolyte', 'Sodium Hypochlorite', 'Antiscalants'] },
+  'agro-chemicals': { label: 'Agro / Specialty Chemicals', tone: 0, items: ['Superplasticizers', 'Tile Adhesives', 'Grouts', 'Waterproofing Chemicals', 'Epoxy Resin'] },
+  'dyes-dye-intermediates': { label: 'Dyes & Dye Intermediates', tone: 1, items: ['Reactive Dyes', 'Direct Dyes', 'Pigments', 'Acid Dyes', 'Vat Dyes', 'Naphthalene Intermediates'] },
+  'laboratory-chemicals': { label: 'Laboratory Chemicals', tone: 2, items: ['Laboratory Acids', 'Indicators', 'Buffer Solutions', 'LR Grade Solvents', 'Reagents'] },
+  'detergent-chemicals': { label: 'Detergent Chemicals', tone: 3, items: ['STPP', 'SLES Paste', 'Turkish Red Oil', 'Alfox 200', 'SLES Needles', 'Acid Thickener', 'Creosote Oil', 'Castor Oil'] },
+  'industrial-salts': { label: 'Industrial Salts', tone: 4, items: ['Calcium Chloride Prills', 'Calcium Chloride Lumps', 'Potassium Chloride', 'Sodium Bi-Carbonate', 'Sodium Nitrate', 'Calcium Chloride Powder', 'Aluminum Chloride', 'Sodium Carbonate', 'Sodium Sulphate', 'Potassium Nitrate'] },
+  'custom-formulated-products': { label: 'Custom-Formulated Products', tone: 5, items: ['Custom Blends', 'Specialty Formulations', 'Tailored Solutions'] },
+};
+
+function getCategoryProductsSection(slug, basePath) {
+  const cat = CATEGORY_PRODUCTS[slug];
+  if (!cat) return '';
+
+  const cards = cat.items.map((name) => `
+    <article class="pc-card">
+      <h3 class="pc-card__title">${name}</h3>
+      <a href="${basePath}contact-us/" class="pc-card__btn">Enquire</a>
+    </article>`).join('');
+
+  return `
+  <section class="pc-products" data-tone="${cat.tone}" id="category-products">
+    <div class="pc-products__inner">
+      <header class="pc-products__head">
+        <span class="pc-products__bar" aria-hidden="true"></span>
+        <div>
+          <h2 class="pc-products__title">${cat.label}</h2>
+          <p class="pc-products__count">${cat.items.length} products available</p>
+        </div>
+      </header>
+      <div class="pc-products__grid">
+        ${cards}
+      </div>
+    </div>
+  </section>`;
+}
+
 function getProductGrid(basePath) {
   const categories = [
-    { name: 'Solvents', href: 'solvents/', img: 'Acrylic-Solvent.webp' },
-    { name: 'Acids & Alkalies', href: 'acids-alkalies/', img: 'Industrial-Acid.webp' },
-    { name: 'Intermediates', href: 'intermediates/', img: 'Pharma-Intermediate.webp' },
-    { name: 'Pharma Raw Materials', href: 'pharma-raw-materials/', img: 'Pharma-Intermediate.webp' },
-    { name: 'Textile Chemicals', href: 'textile-chemicals/', img: 'Textile-Chemical.webp' },
-    { name: 'Water Treatment', href: 'water-treatment-chemicals/', img: 'Water-Treatment.webp' },
-    { name: 'Agro Chemicals', href: 'agro-chemicals/', img: 'Water-Treatment.webp' },
-    { name: 'Dyes & Intermediates', href: 'dyes-dye-intermediates/', img: 'Textile-Chemical.webp' },
-    { name: 'Laboratory Chemicals', href: 'laboratory-chemicals/', img: 'Industrial-Acid.webp' },
-    { name: 'Detergent Chemicals', href: 'detergent-chemicals/', img: 'Acrylic-Solvent.webp' },
-    { name: 'Industrial Salts', href: 'industrial-salts/', img: 'Water-Treatment.webp' },
-    { name: 'Custom Formulated', href: 'custom-formulated-products/', img: 'Pharma-Intermediate.webp' },
+    { name: 'Solvents', href: 'solvents/', slug: 'solvents' },
+    { name: 'Acids & Alkalies', href: 'acids-alkalies/', slug: 'acids-alkalies' },
+    { name: 'Intermediates', href: 'intermediates/', slug: 'intermediates' },
+    { name: 'Pharma Raw Materials', href: 'pharma-raw-materials/', slug: 'pharma-raw-materials' },
+    { name: 'Textile Chemicals', href: 'textile-chemicals/', slug: 'textile-chemicals' },
+    { name: 'Water Treatment', href: 'water-treatment-chemicals/', slug: 'water-treatment-chemicals' },
+    { name: 'Agro Chemicals', href: 'agro-chemicals/', slug: 'agro-chemicals' },
+    { name: 'Dyes & Intermediates', href: 'dyes-dye-intermediates/', slug: 'dyes-dye-intermediates' },
+    { name: 'Laboratory Chemicals', href: 'laboratory-chemicals/', slug: 'laboratory-chemicals' },
+    { name: 'Detergent Chemicals', href: 'detergent-chemicals/', slug: 'detergent-chemicals' },
+    { name: 'Industrial Salts', href: 'industrial-salts/', slug: 'industrial-salts' },
+    { name: 'Custom Formulated', href: 'custom-formulated-products/', slug: 'custom-formulated-products' },
   ];
 
   return `
-  <section class="sp-zone" style="background:var(--sp-bg-2,#F4F6F9)">
+  <section class="sp-zone pc-catalog">
     <div class="sp-zone-inner">
       <div class="sp-section-head gs-blur mb-12">
         <span class="sp-section-eyebrow">Catalogue</span>
         <h2 class="sp-section-title">Our Product Categories</h2>
       </div>
-      <div class="sp-bento sp-bento--catalog">
-        ${categories.map((c, i) => `
-        <a href="${basePath}${c.href}" class="sp-tile card-3d gs-reveal group${i === 0 ? '' : ''}">
+      <div class="sp-bento sp-bento--catalog pc-catalog__grid">
+        ${categories.map((c) => `
+        <a href="${basePath}${c.href}" class="sp-tile card-3d gs-reveal group pc-catalog__card">
           <div class="sp-tile-inner">
-            <div class="sp-product-visual"><img src="https://nayaragroup.com/wp-content/uploads/2025/12/${c.img}" alt="${c.name}" loading="lazy" decoding="async"></div>
+            <div class="sp-product-visual pc-catalog__visual"><img src="${getPageImage(c.slug)}" alt="${c.name}" loading="lazy" decoding="async"></div>
             <h3 class="sp-product-name">${c.name}</h3>
             <span class="sp-link">Explore <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></span>
           </div>
@@ -1885,18 +2347,33 @@ function generatePage(slug, data) {
     mainContent = getPremiumCareersPage(basePath);
   } else if (slug === 'other-services') {
     mainContent = getOtherServicesHub(basePath);
+  } else if (CATEGORY_PRODUCTS[slug]) {
+    mainContent = getPremiumCategoryIntro(content || `<p>${description}</p>`, slug, title)
+      + getCategoryProductsSection(slug, basePath);
   } else {
     mainContent = getContentSection(content || `<p>${description}</p>`, slug, title);
   }
 
-  const isServiceLanding = slug === 'beverages-mineral-water' || slug === 'etp-solutions' || slug === 'greenfield-projects' || slug === 'process-development' || slug === 'consultancy';
+  const isBeveragesPage = slug === 'beverages-mineral-water';
+  const isEtpPage = slug === 'etp-solutions';
+  const isSharedServicePremium = slug === 'greenfield-projects' || slug === 'process-development' || slug === 'consultancy';
+  const isServiceLanding = isBeveragesPage || isEtpPage || isSharedServicePremium;
   const isPremiumInner = slug === 'about-us' || slug === 'industries-we-serve' || slug === 'careers';
+  const isProductCategory = Boolean(CATEGORY_PRODUCTS[slug]);
   const pageLayout = getPageLayout(slug);
-  const headOpts = isServiceLanding
-    ? { extraCss: ['assets/css/beverages-landing.css?v=7'], bodyClass: `overflow-x-hidden bwm-page page-${slug}` }
-    : isPremiumInner
-      ? { extraCss: ['assets/css/inner-pages-premium.css?v=4'], bodyClass: `overflow-x-hidden page-${slug} ${pageLayout}` }
-      : { bodyClass: `overflow-x-hidden page-${slug} ${pageLayout}` };
+  const headOpts = isBeveragesPage
+    ? { extraCss: ['assets/css/beverages-premium.css?v=7'], bodyClass: `overflow-x-hidden bwm-page page-${slug}` }
+    : isEtpPage
+      ? { extraCss: ['assets/css/etp-premium.css?v=2'], bodyClass: `overflow-x-hidden bwm-page page-${slug}` }
+      : isSharedServicePremium
+        ? { extraCss: ['assets/css/service-premium.css?v=1'], bodyClass: `overflow-x-hidden bwm-page page-${slug}` }
+        : isPremiumInner
+          ? { extraCss: ['assets/css/inner-pages-premium.css?v=5'], bodyClass: `overflow-x-hidden page-${slug} ${pageLayout}` }
+          : isProductCategory
+            ? { extraCss: ['assets/css/product-category.css?v=4'], bodyClass: `overflow-x-hidden page-${slug} ${pageLayout}` }
+            : slug === 'product'
+              ? { extraCss: ['assets/css/product-category.css?v=4'], bodyClass: `overflow-x-hidden page-${slug} ${pageLayout}` }
+              : { bodyClass: `overflow-x-hidden page-${slug} ${pageLayout}` };
 
   const aboutLead = 'Learn about Nayara Industries, a chemical manufacturing and trading company in GIDC Ankleshwar specializing in solvents, intermediates, and industrial chemicals with strict QC systems.';
   const industriesLead = 'Nayara Industries provides chemical solutions for pharmaceuticals, agrochemicals, textiles, dyes, paints, water treatment, rubber, and specialty applications.';
@@ -1916,6 +2393,7 @@ function generatePage(slug, data) {
           lead: premiumLead,
           basePath,
           breadcrumb,
+          slug,
         })
       : getPageHero(title, breadcrumb, basePath, slug)}
     ${mainContent}
@@ -1923,12 +2401,16 @@ function generatePage(slug, data) {
   </main>
   <div id="footer-container" data-base="${basePath}"></div>
   <script src="${basePath}assets/js/data.js"></script>
-  <script src="${basePath}assets/js/components.js?v=3"></script>
+  <script src="${basePath}assets/js/components.js?v=7"></script>
   <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
   <script src="${basePath}assets/js/main.js"></script>
   <script src="${basePath}assets/js/premium.js"></script>
+  <script src="${basePath}assets/js/forms.js"></script>
+  ${isBeveragesPage ? `<script src="${basePath}assets/js/beverages-premium.js?v=1"></script>` : ''}
+  ${isEtpPage ? `<script src="${basePath}assets/js/etp-premium.js?v=1"></script>` : ''}
+  ${isSharedServicePremium ? `<script src="${basePath}assets/js/service-premium.js?v=1"></script>` : ''}
 </body>
 </html>`;
 

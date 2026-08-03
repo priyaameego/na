@@ -27,33 +27,33 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   const renderMega = (item) => {
-    const catLinks = data.productCategories.map((c, i) => `
-      <a href="${basePath}${c.href}" class="lg-mega-cat${i === 0 ? ' is-active' : ''}${isActive(c.href) ? ' active' : ''}" data-mega-cat="${c.id}">${c.label}</a>`).join('');
+    /* White split dropdown — category hover shows related product links */
+    const megaCats = data.productCategories.filter((c) => !c.megaHidden);
 
-    const panels = data.productCategories.map((c, i) => {
+    const catLinks = megaCats.map((c, i) => `
+      <button type="button" class="lg-mega-cat${i === 0 ? ' is-active' : ''}${isActive(c.href) ? ' active' : ''}" data-mega-cat="${c.id}" data-mega-href="${basePath}${c.href}" role="menuitem">${c.label}</button>`).join('');
+
+    const panels = megaCats.map((c, i) => {
       const subItems = (c.items || []).map((sub) =>
         `<a href="${basePath}${c.href}" class="lg-mega-subitem">${sub}</a>`
       ).join('');
       return `
-      <div class="lg-mega-panel${i === 0 ? ' is-visible' : ''}" data-mega-panel="${c.id}">
-        <div class="lg-mega-subgrid">${subItems || `<span class="lg-mega-subempty">View all ${c.label}</span>`}</div>
+      <div class="lg-mega-panel${i === 0 ? ' is-visible' : ''}" data-mega-panel="${c.id}" role="region" aria-label="${c.label} products">
+        <div class="lg-mega-subgrid">${subItems || `<a href="${basePath}${c.href}" class="lg-mega-subempty">View all ${c.label} →</a>`}</div>
       </div>`;
     }).join('');
 
     return `
     <div class="lg-nav-item relative" data-nav="mega">
-      <a href="${basePath}${item.href}" class="lg-nav-link inline-flex items-center ${isParentActive(item) ? 'active' : ''}">${item.label}${chevron}</a>
-      <div class="lg-mega">
-        <div class="lg-mega-inner liquid-glass">
-          <div class="liquid-glass-blob liquid-glass-blob-1"></div>
-          <div class="liquid-glass-blob liquid-glass-blob-2"></div>
-          <div class="lg-mega-header">
-            <div class="lg-mega-title">Our Products</div>
-            <a href="${basePath}product/" class="lg-mega-all">View All →</a>
-          </div>
+      <a href="${basePath}${item.href}" class="lg-nav-link inline-flex items-center ${isParentActive(item) ? 'active' : ''}" aria-haspopup="true">${item.label}${chevron}</a>
+      <div class="lg-mega" role="menu" aria-label="Product categories">
+        <div class="lg-mega-inner lg-mega-inner--split">
           <div class="lg-mega-split">
-            <div class="lg-mega-cats">${catLinks}</div>
+            <div class="lg-mega-cats" role="presentation">${catLinks}</div>
             <div class="lg-mega-panels">${panels}</div>
+          </div>
+          <div class="lg-mega-footer">
+            <a href="${basePath}product/" class="lg-mega-all">View All Products →</a>
           </div>
         </div>
       </div>
@@ -248,23 +248,47 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function initMegaPanels() {
   document.querySelectorAll('[data-nav="mega"]').forEach((mega) => {
+    const catsWrap = mega.querySelector('.lg-mega-cats');
     const cats = mega.querySelectorAll('.lg-mega-cat');
     const panels = mega.querySelectorAll('.lg-mega-panel');
     if (!cats.length || !panels.length) return;
 
     const showPanel = (id) => {
-      panels.forEach((p) => p.classList.toggle('is-visible', p.dataset.megaPanel === id));
-      cats.forEach((c) => c.classList.toggle('is-active', c.dataset.megaCat === id));
+      if (!id) return;
+      panels.forEach((p) => {
+        const on = p.getAttribute('data-mega-panel') === id;
+        p.classList.toggle('is-visible', on);
+        p.setAttribute('aria-hidden', on ? 'false' : 'true');
+      });
+      cats.forEach((c) => {
+        const on = c.getAttribute('data-mega-cat') === id;
+        c.classList.toggle('is-active', on);
+        c.setAttribute('aria-current', on ? 'true' : 'false');
+      });
     };
 
+    /* Hover / focus any category → show its related products (Intermediates, Pharma, Textile, etc.) */
+    if (catsWrap) {
+      catsWrap.addEventListener('mouseover', (e) => {
+        const cat = e.target.closest('.lg-mega-cat');
+        if (cat && catsWrap.contains(cat)) showPanel(cat.getAttribute('data-mega-cat'));
+      });
+    }
+
     cats.forEach((cat) => {
-      cat.addEventListener('mouseenter', () => showPanel(cat.dataset.megaCat));
+      cat.addEventListener('focus', () => showPanel(cat.getAttribute('data-mega-cat')));
+      cat.addEventListener('click', () => {
+        const href = cat.getAttribute('data-mega-href');
+        if (href) window.location.href = href;
+      });
     });
 
     mega.addEventListener('mouseenter', () => {
       const active = mega.querySelector('.lg-mega-cat.is-active') || cats[0];
-      if (active) showPanel(active.dataset.megaCat);
+      if (active) showPanel(active.getAttribute('data-mega-cat'));
     });
+
+    showPanel(cats[0].getAttribute('data-mega-cat'));
   });
 }
 
