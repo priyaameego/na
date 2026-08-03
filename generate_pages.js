@@ -912,7 +912,7 @@ function getHead(title, description, basePath, canonical, options = {}) {
   <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="${basePath}assets/css/style.css?v=3">
-  <link rel="stylesheet" href="${basePath}assets/css/liquid-glass.css?v=12">
+  <link rel="stylesheet" href="${basePath}assets/css/liquid-glass.css?v=14">
   <link rel="stylesheet" href="${basePath}assets/css/nayara-fortune.css?v=3">
   <link rel="stylesheet" href="${basePath}assets/css/spatial-ui.css?v=3">
   <link rel="stylesheet" href="${basePath}assets/css/editorial-bento.css?v=3">
@@ -2428,7 +2428,7 @@ function generatePage(slug, data) {
   </main>
   <div id="footer-container" data-base="${basePath}"></div>
   <script src="${basePath}assets/js/data.js"></script>
-  <script src="${basePath}assets/js/components.js?v=7"></script>
+  <script src="${basePath}assets/js/components.js?v=8"></script>
   <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>

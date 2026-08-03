@@ -132,8 +132,14 @@ document.addEventListener('DOMContentLoaded', () => {
     <a href="${data.site.social.twitter}" target="_blank" rel="noopener" class="pf-social" aria-label="X"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
     <a href="${data.site.social.linkedin}" target="_blank" rel="noopener" class="pf-social" aria-label="LinkedIn"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a-2.063 2.063 0 110 4.126 2.063 2.063 0 010-4.126zM7.119 20.452H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>`;
 
+  const pfChevron = `<svg class="pf-link-ico" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg>`;
+
   const pfProducts = data.productCategories.slice(0, 6).map(c =>
-    `<li><a href="${basePath}${c.href}">${c.label}</a></li>`
+    `<li><a href="${basePath}${c.href}">${pfChevron}<span>${c.label}</span></a></li>`
+  ).join('');
+
+  const pfQuickLinks = data.footerSitemap.map(l =>
+    `<li><a href="${basePath}${l.href}">${pfChevron}<span>${l.label}</span></a></li>`
   ).join('');
 
   headerContainer.innerHTML = `
@@ -179,6 +185,15 @@ document.addEventListener('DOMContentLoaded', () => {
   if (footerContainer) {
     footerContainer.innerHTML = `
 <footer class="premium-footer gs-reveal">
+  <div class="pf-edge">
+    <svg class="pf-wave" viewBox="0 0 1440 72" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M0,40 C240,80 480,0 720,28 C960,56 1200,8 1440,36 L1440,0 L0,0 Z" fill="currentColor"/>
+    </svg>
+    <button type="button" class="pf-top" aria-label="Back to top" id="pf-back-top">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M5 15l7-7 7 7"/></svg>
+    </button>
+  </div>
+
   <div class="pf-cta">
     <div class="pf-cta-inner">
       <div class="pf-cta-text">
@@ -193,40 +208,43 @@ document.addEventListener('DOMContentLoaded', () => {
   </div>
 
   <div class="pf-main">
-    <div class="pf-glow pf-glow-1"></div>
-    <div class="pf-glow pf-glow-2"></div>
+    <div class="pf-main__media" aria-hidden="true"></div>
+    <div class="pf-main__veil" aria-hidden="true"></div>
+
     <div class="pf-grid">
       <div class="pf-brand">
-        <img src="${data.site.logo}" alt="${data.site.name}" class="pf-logo" loading="lazy">
+        <div class="pf-logo-plate">
+          <img src="${data.site.logo}" alt="${data.site.name}" class="pf-logo" loading="lazy">
+        </div>
         <p class="pf-about">Chemical manufacturing &amp; trading from GIDC Ankleshwar — quality, safety, and reliable delivery for every industrial need.</p>
         <div class="pf-social-row">${pfSocial}</div>
       </div>
 
       <div class="pf-col">
-        <h4 class="pf-heading"><span class="pf-heading-line"></span>Quick Links</h4>
-        <ul class="pf-links">${data.footerSitemap.map(l => `<li><a href="${basePath}${l.href}">${l.label}</a></li>`).join('')}</ul>
+        <h4 class="pf-heading">Quick Links<span class="pf-heading-line"></span></h4>
+        <ul class="pf-links">${pfQuickLinks}</ul>
       </div>
 
       <div class="pf-col">
-        <h4 class="pf-heading"><span class="pf-heading-line"></span>Products</h4>
+        <h4 class="pf-heading">Products<span class="pf-heading-line"></span></h4>
         <ul class="pf-links">${pfProducts}</ul>
         <a href="${basePath}product/" class="pf-view-all">View all products →</a>
       </div>
 
-      <div class="pf-col">
-        <h4 class="pf-heading"><span class="pf-heading-line"></span>Get in Touch</h4>
+      <div class="pf-col pf-col--contact">
+        <h4 class="pf-heading">Get in Touch<span class="pf-heading-line"></span></h4>
         <div class="pf-contact-cards">
-          <a href="https://www.google.com/maps/place/GIDC+Ankleshwar" target="_blank" rel="noopener" class="pf-contact-card">
-            <span class="pf-contact-icon"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg></span>
-            <span>${data.site.address}</span>
+          <a href="mailto:${data.site.email}" class="pf-contact-card">
+            <span class="pf-contact-icon"><svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg></span>
+            <span>${data.site.email}</span>
           </a>
           <a href="tel:${data.site.phone.replace(/\s/g, '')}" class="pf-contact-card">
-            <span class="pf-contact-icon"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg></span>
+            <span class="pf-contact-icon"><svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg></span>
             <span>${data.site.phone}</span>
           </a>
-          <a href="mailto:${data.site.email}" class="pf-contact-card">
-            <span class="pf-contact-icon"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg></span>
-            <span>${data.site.email}</span>
+          <a href="https://www.google.com/maps/place/GIDC+Ankleshwar" target="_blank" rel="noopener" class="pf-contact-card">
+            <span class="pf-contact-icon"><svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg></span>
+            <span>${data.site.address}</span>
           </a>
         </div>
       </div>
@@ -234,10 +252,17 @@ document.addEventListener('DOMContentLoaded', () => {
   </div>
 
   <div class="pf-bottom">
-    <p>© ${new Date().getFullYear()} Nayara Industries. All rights reserved.</p>
-    <p class="pf-credit">Crafted by <a href="https://uplinktech.in/" target="_blank" rel="noopener">UPLINK TECHNOLOGY</a></p>
+    <p>Copyright ${new Date().getFullYear()} <strong>Nayara Industries</strong>. All rights reserved.</p>
+    <p class="pf-credit">Design &amp; Developed By <a href="https://uplinktech.in/" target="_blank" rel="noopener">UPLINK TECHNOLOGY</a></p>
   </div>
 </footer>`;
+
+    const topBtn = document.getElementById('pf-back-top');
+    if (topBtn) {
+      topBtn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    }
   }
 
   initLiquidNav();

@@ -126,8 +126,7 @@ main > section:not(.sp-page-hero):not(.page-hero-3d):not(.sp-hero):not(.hero-swi
 .bwm-zone,
 .bwm-section,
 .inner-cta-premium,
-.sp-cta-band,
-.pf-cta {
+.sp-cta-band {
   background-color: transparent !important;
 }
 
@@ -1214,44 +1213,23 @@ h3, h4, .sp-section-title, .section-title, .bwm-section-title, .sp-page-hero-tit
   box-shadow: var(--vp-shadow) !important;
 }
 
-/* ─── ENTERPRISE FOOTER ─── */
+/* ─── ENTERPRISE FOOTER — defer to liquid-glass premium footer ─── */
 .premium-footer {
   position: relative;
-  overflow: hidden;
-}
-
-.pf-main {
-  position: relative;
-  background:
-    linear-gradient(180deg, rgba(11, 31, 58, 0.94) 0%, rgba(17, 24, 39, 0.97) 100%),
-    var(--vp-factory-bg) center/cover no-repeat fixed !important;
+  overflow: visible;
 }
 
 .pf-main::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(ellipse 60% 50% at 20% 0%, rgba(201, 169, 110, 0.12), transparent 55%);
-  pointer-events: none;
-}
-
-.pf-cta {
-  background: var(--vp-navy-mist) !important;
-  border-bottom: 1px solid rgba(201, 169, 110, 0.2);
+  display: none !important;
+  content: none !important;
 }
 
 .pf-cta-title {
-  font-family: var(--font-display) !important;
   letter-spacing: -0.02em;
 }
 
 .pf-heading {
-  font-family: var(--font-editorial) !important;
   color: #fff !important;
-}
-
-.pf-heading-line {
-  background: var(--vp-gold) !important;
 }
 
 .pf-links a {
@@ -1259,26 +1237,19 @@ h3, h4, .sp-section-title, .section-title, .bwm-section-title, .sp-page-hero-tit
 }
 
 .pf-links a:hover {
-  color: var(--vp-gold) !important;
-  transform: translateX(4px);
+  color: #7DDBB8 !important;
 }
 
 .pf-contact-card {
-  background: rgba(255, 255, 255, 0.06) !important;
-  border: 1px solid rgba(201, 169, 110, 0.18) !important;
-  border-radius: 14px !important;
-  backdrop-filter: blur(12px);
-  transition: background 0.35s ease, border-color 0.35s ease;
+  background: transparent !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  backdrop-filter: none;
 }
 
 .pf-contact-card:hover {
-  background: rgba(201, 169, 110, 0.1) !important;
-  border-color: rgba(201, 169, 110, 0.35) !important;
-}
-
-.pf-bottom {
-  background: rgba(17, 24, 39, 0.98) !important;
-  border-top: 1px solid rgba(201, 169, 110, 0.15);
+  background: transparent !important;
+  border-color: transparent !important;
 }
 
 /* ─── CARD ARCHETYPES ─── */
