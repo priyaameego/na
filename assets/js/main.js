@@ -145,6 +145,7 @@ function initHeroSlider() {
   }
 
   const panels = root.querySelectorAll('.hero-slide-panel');
+  if (!panels.length) return;
   const dots = root.querySelectorAll('.hero-swiper-dot');
   const prev = root.querySelector('.hero-swiper-prev');
   const next = root.querySelector('.hero-swiper-next');
@@ -154,10 +155,22 @@ function initHeroSlider() {
   function goTo(idx) {
     current = (idx + panels.length) % panels.length;
     panels.forEach((p, i) => p.classList.toggle('is-active', i === current));
-    dots.forEach((d, i) => d.classList.toggle('is-active', i === current));
+    dots.forEach((d, i) => {
+      const on = i === current;
+      d.classList.toggle('is-active', on);
+      d.setAttribute('aria-selected', on ? 'true' : 'false');
+    });
+    const currentEl = root.querySelector('.hp-hero-tabs__current');
+    if (currentEl) currentEl.textContent = String(current + 1).padStart(2, '0');
+    const progress = root.querySelector('.hp-hero-tabs__progress');
+    if (progress) {
+      progress.style.animation = 'none';
+      void progress.offsetWidth;
+      progress.style.animation = '';
+    }
     panels.forEach((p, i) => {
       if (i === current) {
-        p.querySelectorAll('.sp-hero-title, .sp-hero-lead, .sp-eyebrow, .sp-btn, .hero-slide-heading, .hero-slide-title, .hero-slide-desc, .hero-slide-btn').forEach(el => {
+        p.querySelectorAll('.sp-hero-title, .sp-hero-lead, .hp-hero-lead, .sp-eyebrow, .sp-btn, .hero-slide-heading, .hero-slide-title, .hero-slide-desc, .hero-slide-btn').forEach(el => {
           el.style.animation = 'none';
           void el.offsetWidth;
           el.style.animation = '';

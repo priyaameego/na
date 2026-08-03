@@ -1,13 +1,12 @@
 /* ═══════════════════════════════════════════════════════════════
-   Site-wide animated soft aurora background
-   Fixed layer behind all pages (home + inner)
+   Site-wide page background — pure white (all pages)
    ═══════════════════════════════════════════════════════════════ */
 
 html,
 body {
-  --site-bg: #F8FAFC;
-  background: #F8FAFC !important;
-  background-color: #F8FAFC !important;
+  --site-bg: #FFFFFF;
+  background: #FFFFFF !important;
+  background-color: #FFFFFF !important;
   background-image: none !important;
 }
 
@@ -15,53 +14,16 @@ body:not(.page-home) {
   color: #334155;
 }
 
-/* Soft drifting aurora orbs */
-body::before {
-  content: '' !important;
-  position: fixed !important;
-  inset: 0 !important;
-  z-index: 0 !important;
-  pointer-events: none !important;
-  display: block !important;
-  opacity: 1 !important;
-  background:
-    radial-gradient(ellipse 58% 48% at 12% 18%, rgba(14, 165, 233, 0.18), transparent 58%),
-    radial-gradient(ellipse 52% 42% at 88% 12%, rgba(100, 116, 139, 0.14), transparent 55%),
-    radial-gradient(ellipse 48% 52% at 72% 82%, rgba(2, 132, 199, 0.12), transparent 58%),
-    linear-gradient(165deg, #F8FAFC 0%, #EEF2F7 48%, #F1F5F9 100%) !important;
-  background-size: 140% 140% !important;
-  animation: siteAuroraDrift 28s ease-in-out infinite alternate !important;
-  will-change: transform;
-}
-
+/* Remove aurora / tinted overlays on every page */
+body::before,
 body::after {
-  content: '' !important;
-  position: fixed !important;
-  inset: 0 !important;
-  z-index: 0 !important;
-  pointer-events: none !important;
-  display: block !important;
-  opacity: 1 !important;
-  background:
-    radial-gradient(ellipse 44% 38% at 38% 62%, rgba(56, 189, 248, 0.12), transparent 60%),
-    radial-gradient(ellipse 40% 34% at 8% 88%, rgba(148, 163, 184, 0.14), transparent 55%),
-    radial-gradient(ellipse 36% 30% at 92% 48%, rgba(14, 165, 233, 0.08), transparent 50%) !important;
-  background-size: 160% 160% !important;
-  animation: siteAuroraDriftAlt 34s ease-in-out infinite alternate-reverse !important;
-  will-change: transform;
+  display: none !important;
+  content: none !important;
+  opacity: 0 !important;
+  animation: none !important;
+  background: none !important;
 }
 
-@keyframes siteAuroraDrift {
-  from { transform: translate3d(-2%, -1.5%, 0) scale(1); }
-  to { transform: translate3d(3.5%, 2.5%, 0) scale(1.08); }
-}
-
-@keyframes siteAuroraDriftAlt {
-  from { transform: translate3d(2.5%, 1%, 0) scale(1.06); }
-  to { transform: translate3d(-3%, -2%, 0) scale(1); }
-}
-
-/* Content above the fixed aurora (do not clamp header — nav needs high z-index) */
 main,
 body > footer,
 body > .site-footer {
@@ -70,11 +32,11 @@ body > .site-footer {
 }
 
 main {
-  background: transparent !important;
-  background-color: transparent !important;
+  background: #FFFFFF !important;
+  background-color: #FFFFFF !important;
 }
 
-main > section:not(.ph-banner):not(.ph-banner--bg):not(.ipp-banner):not(.sp-hero):not(.hero-swiper):not(#hero-swiper):not(.hp-cinematic):not(.hp-corporate),
+main > section:not(.ph-banner):not(.ph-banner--bg):not(.ipp-banner):not(.sp-hero):not(.hero-swiper):not(#hero-swiper):not(.hp-cinematic):not(.hp-corporate):not(#company-stats):not(.f5-stats):not(#cta-band):not(.f5-cta),
 .sp-zone,
 .sp-zone--mesh,
 .sp-zone--industrial,
@@ -110,17 +72,16 @@ main > section:not(.ph-banner):not(.ph-banner--bg):not(.ipp-banner):not(.sp-hero
 .ipp-cr-speculative,
 .ipp-cr-jobs,
 .ipp-cr-apply {
-  background: transparent !important;
-  background-color: transparent !important;
+  background: #FFFFFF !important;
+  background-color: #FFFFFF !important;
   background-image: none !important;
 }
 
-/* Keep designed dark corporate band (white text needs dark surface) */
+/* Homepage corporate is white editorial (see home-white-premium.css) */
 .page-home .hp-corporate {
-  background-color: #071A2F !important;
-  background-image:
-    linear-gradient(135deg, #030f1a 0%, #071A2F 25%, #0a3d5c 55%, #071A2F 80%, #051525 100%) !important;
-  background-size: 200% 200% !important;
+  background: #FFFFFF !important;
+  background-color: #FFFFFF !important;
+  background-image: none !important;
 }
 
 /* Footer CTA — keep dark band + white text on all pages */

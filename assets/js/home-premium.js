@@ -11,7 +11,7 @@
     const hero = document.getElementById('hero-swiper');
     if (!hero || typeof gsap === 'undefined') return;
 
-    hero.querySelectorAll('.sp-hero-copy .sp-eyebrow, .sp-hero-copy .sp-hero-title, .sp-hero-copy .sp-hero-lead, .sp-hero-copy .sp-hero-actions').forEach((el) => {
+    hero.querySelectorAll('.sp-hero-copy .sp-eyebrow, .sp-hero-copy .sp-hero-title, .sp-hero-copy .sp-hero-lead, .sp-hero-copy .hp-hero-lead, .sp-hero-copy .sp-hero-actions').forEach((el) => {
       el.classList.add('home-hero-text-item');
     });
 
@@ -62,7 +62,7 @@
   function initHeroScrollParallax() {
     if (reducedMotion || typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
     const hero = document.getElementById('hero-swiper');
-    if (!hero) return;
+    if (!hero || hero.classList.contains('hp-hero-ail')) return;
 
     hero.querySelectorAll('.sp-hero-copy').forEach((el) => {
       gsap.to(el, {

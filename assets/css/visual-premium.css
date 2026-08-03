@@ -119,7 +119,7 @@ main {
   background: transparent !important;
 }
 
-main > section:not(.sp-page-hero):not(.page-hero-3d):not(.sp-hero):not(.hero-swiper):not(#hero-swiper),
+main > section:not(.sp-page-hero):not(.page-hero-3d):not(.sp-hero):not(.hero-swiper):not(#hero-swiper):not(#company-stats):not(.f5-stats):not(#cta-band):not(.f5-cta),
 .eb-zone,
 .eb-connect-zone,
 .sp-zone,
@@ -218,29 +218,20 @@ section[style*="background"] {
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.35);
 }
 
-/* ─── HOMEPAGE SECTION ATMOSPHERE ─── */
-.page-home #products {
-  background-image: var(--vp-radial-gold), linear-gradient(180deg, #E9EEF3 0%, #F3F5F8 100%) !important;
-}
-
-.page-home #about {
-  background-image: var(--vp-radial-gold), linear-gradient(165deg, #EEF2F7 0%, #E9EEF3 100%) !important;
-}
-
-.page-home #certificates {
-  background-image: var(--vp-radial-gold), var(--vp-bg) !important;
-}
-
-.page-home #why-choose {
-  background-image: var(--vp-radial-navy), linear-gradient(180deg, #F3F5F8 0%, #E9EEF3 100%) !important;
+/* ─── HOMEPAGE SECTION ATMOSPHERE — pure white ─── */
+.page-home #products,
+.page-home #about,
+.page-home #certificates,
+.page-home #why-choose,
+.page-home #contact,
+.page-home #corporate-intro {
+  background: #FFFFFF !important;
+  background-color: #FFFFFF !important;
+  background-image: none !important;
 }
 
 .page-home #cta {
   background: var(--vp-navy-mist) !important;
-}
-
-.page-home #contact {
-  background-image: var(--vp-radial-gold), var(--vp-editorial) !important;
 }
 
 .page-home .eb-cta-band {

@@ -15,9 +15,7 @@
   <link rel="icon" href="https://nayaragroup.com/wp-content/uploads/2025/12/cropped-1-011-32x32.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preconnect" href="https://api.fontshare.com" crossorigin>
-  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./assets/css/style.css?v=3">
   <link rel="stylesheet" href="./assets/css/liquid-glass.css?v=12">
   <link rel="stylesheet" href="./assets/css/nayara-fortune.css?v=3">
@@ -27,15 +25,18 @@
   <link rel="stylesheet" href="./assets/css/luxury-enterprise.css?v=4">
   <link rel="stylesheet" href="./assets/css/luxury-images.css?v=5">
   <link rel="stylesheet" href="./assets/css/premium-international.css?v=10">
-  <link rel="stylesheet" href="./assets/css/visual-premium.css?v=8">
+  <link rel="stylesheet" href="./assets/css/visual-premium.css?v=10">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
   <link rel="stylesheet" href="./assets/css/home-premium.css?v=34">
-  <link rel="stylesheet" href="./assets/css/site-teal-bg.css?v=10">
+  <link rel="stylesheet" href="./assets/css/site-teal-bg.css?v=13">
+  <link rel="stylesheet" href="./assets/css/site-pages.css?v=1">
+  <link rel="stylesheet" href="./assets/css/home-clean.css?v=18">
+  <link rel="stylesheet" href="./assets/css/home-f500.css?v=7">
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"Organization","name":"Nayara Industries","url":"https://nayaragroup.com","logo":"https://nayaragroup.com/wp-content/uploads/2026/01/WhatsApp-Image-2026-01-30-at-12.23.01-PM.jpeg","description":"Chemical manufacturing and trading company in GIDC Ankleshwar","address":{"@type":"PostalAddress","addressLocality":"Bharuch","addressRegion":"Gujarat","postalCode":"392001","addressCountry":"IN"},"contactPoint":{"@type":"ContactPoint","telephone":"+91-85111-63373","email":"info@nayaragroup.com","contactType":"sales"}}
   </script>
 </head>
-<body class="overflow-x-hidden page-home home-enterprise">
+<body class="overflow-x-hidden page-home home-f500">
 
   <div id="page-loader">
     <div class="relative flex items-center justify-center">
@@ -48,241 +49,75 @@
   <div id="header-container" data-base="./"></div>
 
   <main>
-    <!-- PREMIUM CINEMATIC HERO -->
-    <section class="sp-hero hero-swiper hero-premium hp-cinematic" id="hero-swiper" aria-label="Hero">
-      <div class="hero-slide-panel is-active" data-slide="0" data-ken="a">
-        <div class="sp-hero-bg">
-          <div class="hero-slide-bg" style="background-image:url('https://nayaragroup.com/wp-content/uploads/2025/12/environmental-pollution-factory-exterior.jpg')"></div>
+    <!-- 1. HERO -->
+    <section class="f5-hero" id="hero-swiper" aria-label="Hero">
+      <div class="f5-hero__slides" id="f5-hero-slides">
+        <div class="f5-hero__slide is-active" data-ken="a" style="background-image:url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=2200&q=85')"></div>
+        <div class="f5-hero__slide" data-ken="b" style="background-image:url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=2200&q=85')"></div>
+        <div class="f5-hero__slide" data-ken="c" style="background-image:url('https://images.unsplash.com/photo-1532094349884-543bc11b843d?auto=format&fit=crop&w=2200&q=85')"></div>
+        <div class="f5-hero__slide" data-ken="a" style="background-image:url('https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&w=2200&q=85')"></div>
+        <div class="f5-hero__slide" data-ken="b" style="background-image:url('https://images.unsplash.com/photo-1576086213369-97a306d36557?auto=format&fit=crop&w=2200&q=85')"></div>
+      </div>
+      <div class="f5-hero__overlay" aria-hidden="true"></div>
+      <div class="f5-hero__particles" id="f5-particles" aria-hidden="true"></div>
+      <div class="f5-container f5-hero__content">
+        <p class="f5-hero__eyebrow f5-reveal">GIDC Ankleshwar · Chemical Manufacturing &amp; Trading</p>
+        <h1 class="f5-hero__title f5-reveal">Precision Chemistry.<br>Reliable Supply.</h1>
+        <p class="f5-hero__lead f5-reveal">Nayara Industries is a professionally managed chemical manufacturing and trading company delivering quality, consistency, and timely deliveries for industrial applications across India and export markets.</p>
+        <div class="f5-hero__actions f5-reveal">
+          <a href="contact-us/" class="f5-btn f5-btn--primary">Request Quote</a>
+          <a href="#products" class="f5-btn f5-btn--ghost">Explore Products</a>
         </div>
-        <div class="hero-slide-overlay"></div>
-        <div class="hp-hero-center sp-hero-copy">
-          <span class="sp-eyebrow hp-hero-eyebrow">Welcome to</span>
-          <h1 class="sp-hero-title hp-hero-title">Nayara Industries</h1>
-          <div class="sp-hero-actions hp-hero-actions">
-            <a href="contact-us/" class="hp-hero-cta magnetic-btn">Contact Us</a>
-          </div>
+        <div class="f5-hero__stats f5-reveal">
+          <div class="f5-hero__stat"><strong data-counter="120" data-suffix="+">0</strong><span>Products</span></div>
+          <div class="f5-hero__stat"><strong data-counter="20" data-suffix="+">0</strong><span>Categories</span></div>
+          <div class="f5-hero__stat"><strong data-counter="20" data-suffix="+">0</strong><span>Industries</span></div>
         </div>
       </div>
-
-      <div class="hero-slide-panel" data-slide="1" data-ken="b">
-        <div class="sp-hero-bg">
-          <div class="hero-slide-bg" style="background-image:url('https://images.unsplash.com/photo-1513828583688-c52646db42da?auto=format&fit=crop&w=1920&q=80')"></div>
-        </div>
-        <div class="hero-slide-overlay"></div>
-        <div class="hp-hero-center sp-hero-copy">
-          <h1 class="sp-hero-title hp-hero-title hp-hero-title--wide">Trusted Chemical Manufacturing &amp; Trading Partner in GIDC Ankleshwar</h1>
-          <div class="sp-hero-actions hp-hero-actions">
-            <a href="contact-us/" class="hp-hero-cta magnetic-btn">Contact Us</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="hero-slide-panel" data-slide="2" data-ken="c">
-        <div class="sp-hero-bg">
-          <div class="hero-slide-bg" style="background-image:url('https://nayaragroup.com/wp-content/uploads/2025/12/Water-Treatment-scaled.jpg')"></div>
-        </div>
-        <div class="hero-slide-overlay"></div>
-        <div class="hp-hero-center sp-hero-copy">
-          <span class="sp-eyebrow hp-hero-eyebrow">Process Excellence</span>
-          <h1 class="sp-hero-title hp-hero-title">Quality. Consistency. Delivery.</h1>
-          <div class="sp-hero-actions hp-hero-actions">
-            <a href="contact-us/" class="hp-hero-cta magnetic-btn">Contact Us</a>
-            <a href="product/" class="hp-hero-cta hp-hero-cta--ghost">Explore Products</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="hero-slide-panel" data-slide="3" data-ken="a">
-        <div class="sp-hero-bg">
-          <div class="hero-slide-bg" style="background-image:url('https://images.unsplash.com/photo-1565793298595-6a879b1d9492?auto=format&fit=crop&w=1920&q=80')"></div>
-        </div>
-        <div class="hero-slide-overlay"></div>
-        <div class="hp-hero-center sp-hero-copy">
-          <span class="sp-eyebrow hp-hero-eyebrow">Welcome to</span>
-          <h1 class="sp-hero-title hp-hero-title">Nayara Industries</h1>
-          <div class="sp-hero-actions hp-hero-actions">
-            <a href="contact-us/" class="hp-hero-cta magnetic-btn">Contact Us</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="hero-slide-panel" data-slide="4" data-ken="b">
-        <div class="sp-hero-bg">
-          <div class="hero-slide-bg" style="background-image:url('https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&w=1920&q=80')"></div>
-        </div>
-        <div class="hero-slide-overlay"></div>
-        <div class="hp-hero-center sp-hero-copy">
-          <span class="sp-eyebrow hp-hero-eyebrow">Industrial Solutions</span>
-          <h1 class="sp-hero-title hp-hero-title">Built for Chemical Manufacturing</h1>
-          <div class="sp-hero-actions hp-hero-actions">
-            <a href="contact-us/" class="hp-hero-cta magnetic-btn">Contact Us</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="hero-slide-panel" data-slide="5" data-ken="c">
-        <div class="sp-hero-bg">
-          <div class="hero-slide-bg" style="background-image:url('https://nayaragroup.com/wp-content/uploads/2026/01/lab-technician-dressed-protective-suit-as-safety-precaution-looking-test-tube-scaled-1.jpg')"></div>
-        </div>
-        <div class="hero-slide-overlay"></div>
-        <div class="hp-hero-center sp-hero-copy">
-          <span class="sp-eyebrow hp-hero-eyebrow">GIDC Ankleshwar</span>
-          <h1 class="sp-hero-title hp-hero-title">From Lab to Plant Scale</h1>
-          <div class="sp-hero-actions hp-hero-actions">
-            <a href="contact-us/" class="hp-hero-cta magnetic-btn">Contact Us</a>
-            <a href="about-us/" class="hp-hero-cta hp-hero-cta--ghost">About Us</a>
-          </div>
-        </div>
-      </div>
-
-      <button type="button" class="hero-swiper-prev" aria-label="Previous slide">
-        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 1000 1000"><path d="M646 125C629 125 613 133 604 142L308 442C296 454 292 471 292 487 292 504 296 521 308 533L604 854C617 867 629 875 646 875 663 875 679 871 692 858 704 846 713 829 713 812 713 796 708 779 692 767L438 487 692 225C700 217 708 204 708 187 708 171 704 154 692 142 675 129 663 125 646 125Z"/></svg>
-      </button>
-      <button type="button" class="hero-swiper-next" aria-label="Next slide">
-        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 1000 1000"><path d="M696 533C708 521 713 504 713 487 713 471 708 454 696 446L400 146C388 133 375 125 354 125 338 125 325 129 313 142 300 154 292 171 292 187 292 204 296 221 308 233L563 492 304 771C292 783 288 800 288 817 288 833 296 850 308 863 321 871 338 875 354 875 371 875 388 867 400 854L696 533Z"/></svg>
-      </button>
-      <div class="hero-swiper-pagination">
-        <button type="button" class="hero-swiper-dot is-active" aria-label="Slide 1" data-go="0"></button>
-        <button type="button" class="hero-swiper-dot" aria-label="Slide 2" data-go="1"></button>
-        <button type="button" class="hero-swiper-dot" aria-label="Slide 3" data-go="2"></button>
-        <button type="button" class="hero-swiper-dot" aria-label="Slide 4" data-go="3"></button>
-        <button type="button" class="hero-swiper-dot" aria-label="Slide 5" data-go="4"></button>
-        <button type="button" class="hero-swiper-dot" aria-label="Slide 6" data-go="5"></button>
-      </div>
-      <div class="sp-scroll-indicator" aria-hidden="true">Scroll<span></span></div>
+      <a href="#trusted-by" class="f5-hero__scroll" aria-label="Scroll to content">
+        <span></span>
+        Scroll
+      </a>
     </section>
 
-    <!-- ═══ CORPORATE INTRO — Premium split (post-hero) ═══ -->
-    <section class="hp-corporate" id="corporate-intro">
-      <div class="hp-corporate__bg" aria-hidden="true">
-        <div class="hp-corporate__orb hp-corporate__orb--1"></div>
-        <div class="hp-corporate__orb hp-corporate__orb--2"></div>
-        <div class="hp-corporate__orb hp-corporate__orb--3"></div>
-        <div class="hp-corporate__mesh"></div>
-        <div class="hp-corporate__beam"></div>
+    <!-- 2. TRUSTED BY -->
+    <section class="f5-trusted" id="trusted-by">
+      <div class="f5-container">
+        <p class="f5-trusted__label">Trusted certifications &amp; memberships</p>
       </div>
-      <div class="hp-corporate__inner">
-        <div class="hp-corporate__visual">
-          <div class="hp-corporate__stats">
-            <div class="hp-corporate__stat hp-corporate__stat--a">
-              <span class="hp-corporate__stat-num"><span data-counter="120" data-suffix="+">0</span></span>
-              <span class="hp-corporate__stat-label">Products</span>
-            </div>
-            <div class="hp-corporate__stat-div" aria-hidden="true"></div>
-            <div class="hp-corporate__stat hp-corporate__stat--b">
-              <span class="hp-corporate__stat-num"><span data-counter="20" data-suffix="+">0</span></span>
-              <span class="hp-corporate__stat-label">Categories</span>
-            </div>
-            <div class="hp-corporate__stat-div" aria-hidden="true"></div>
-            <div class="hp-corporate__stat hp-corporate__stat--c">
-              <span class="hp-corporate__stat-num"><span data-counter="20" data-suffix="+">0</span></span>
-              <span class="hp-corporate__stat-label">I.W.S</span>
-            </div>
-          </div>
-          <div class="hp-corporate__figure">
-            <div class="hp-corporate__figure-ring" aria-hidden="true"></div>
-            <div class="hp-corporate__figure-glow" aria-hidden="true"></div>
-            <img class="hp-corporate__mol" src="https://nayaragroup.com/wp-content/uploads/2025/12/colorful-molecular-structure-vibrant-atoms-bonded-together-science-illustration-1024x1024.png" alt="Molecular structure representing Nayara Industries chemical expertise" loading="lazy" decoding="async">
-          </div>
-        </div>
-        <div class="hp-corporate__content">
-          <span class="hp-corporate__eyebrow"><span class="hp-corporate__eyebrow-dot"></span>Serve As Manufacturer For All Industrial And Chemical Needs!</span>
-          <h2 class="hp-corporate__title">Developing Corporate Strengths To Maintain A Strong Core Values That Truly Reflect Our Philosophy.</h2>
-          <p class="hp-corporate__lead">We are a professionally managed chemical manufacturing and trading company located in <strong>GIDC Ankleshwar</strong>, India's largest chemical hub. With advanced production infrastructure, a strong supply chain, and a customer-first approach, we ensure quality, consistency, and timely deliveries for all industrial applications.</p>
-          <a href="contact-us/" class="hp-corporate__cta magnetic-btn"><span>Contact Us</span></a>
-          <div class="hp-corporate__certs">
-            <span class="hp-corporate__certs-label">Our Certificate</span>
-            <div class="hp-corporate__certs-row">
-              <div class="hp-corporate__cert hp-corporate__cert--1"><img src="https://nayaragroup.com/wp-content/uploads/2026/01/images.png" alt="IAF ISO Certification" loading="lazy"></div>
-              <div class="hp-corporate__cert hp-corporate__cert--2"><img src="https://nayaragroup.com/wp-content/uploads/2026/01/IEC.png" alt="IEC Import Export Code" loading="lazy"></div>
-              <div class="hp-corporate__cert hp-corporate__cert--3"><img src="https://nayaragroup.com/wp-content/uploads/2025/12/GST-NAYARA.png" alt="GST Registration" loading="lazy"></div>
-            </div>
-          </div>
+      <div class="f5-marquee" aria-label="Certification logos">
+        <div class="f5-marquee__track">
+          <div class="f5-marquee__item"><img src="https://nayaragroup.com/wp-content/uploads/2026/01/images.png" alt="ISO"><span>ISO</span></div>
+          <div class="f5-marquee__item"><img src="https://nayaragroup.com/wp-content/uploads/2025/12/CHEMEXCIL.png" alt="CHEMEXCIL"><span>CHEMEXCIL</span></div>
+          <div class="f5-marquee__item"><img src="https://nayaragroup.com/wp-content/uploads/2025/12/FIEO-NAYARA.png" alt="FIEO"><span>FIEO</span></div>
+          <div class="f5-marquee__item"><img src="https://nayaragroup.com/wp-content/uploads/2025/12/MAME-NAYARA.png" alt="MAME"><span>MAME</span></div>
+          <div class="f5-marquee__item"><img src="https://nayaragroup.com/wp-content/uploads/2026/01/IEC.png" alt="IEC"><span>IEC</span></div>
+          <div class="f5-marquee__item"><img src="https://nayaragroup.com/wp-content/uploads/2025/12/GST-NAYARA.png" alt="GST"><span>GST</span></div>
+          <div class="f5-marquee__item"><img src="https://nayaragroup.com/wp-content/uploads/2026/01/images.png" alt="ISO"><span>ISO</span></div>
+          <div class="f5-marquee__item"><img src="https://nayaragroup.com/wp-content/uploads/2025/12/CHEMEXCIL.png" alt="CHEMEXCIL"><span>CHEMEXCIL</span></div>
+          <div class="f5-marquee__item"><img src="https://nayaragroup.com/wp-content/uploads/2025/12/FIEO-NAYARA.png" alt="FIEO"><span>FIEO</span></div>
+          <div class="f5-marquee__item"><img src="https://nayaragroup.com/wp-content/uploads/2025/12/MAME-NAYARA.png" alt="MAME"><span>MAME</span></div>
+          <div class="f5-marquee__item"><img src="https://nayaragroup.com/wp-content/uploads/2026/01/IEC.png" alt="IEC"><span>IEC</span></div>
+          <div class="f5-marquee__item"><img src="https://nayaragroup.com/wp-content/uploads/2025/12/GST-NAYARA.png" alt="GST"><span>GST</span></div>
         </div>
       </div>
     </section>
 
-    <!-- ═══ ABOUT — Editorial Bento + Molecule Stage ═══ -->
-    <section class="eb-zone eb-zone--blueprint eb-zone--mesh" id="about">
-      <div class="eb-inner">
-        <div class="eb-head gs-blur mb-10">
-          <span class="sp-section-eyebrow">About Nayara Industries</span>
-          <h2 class="sp-section-title">Vision, Mission &amp; Excellence</h2>
+    <!-- 3. PRODUCTS — cards unchanged -->
+    <section class="eb-zone eb-zone--industrial f5-products" id="products">
+      <div class="eb-inner f5-container">
+        <div class="f5-section-head f5-section-head--center f5-reveal">
+          <span class="f5-eyebrow">Our Products</span>
+          <h2 class="f5-title">PRODUCTS</h2>
+          <p class="f5-lead">Explore our range of high-quality products designed to meet everyday and specialized needs. Backed by science and trusted by professionals, our formulations ensure safety, efficacy, and consistent results.</p>
         </div>
-        <div class="eb-bento eb-bento--about">
-          <article class="eb-cell eb-cell--vision card-3d gs-reveal">
-            <div class="eb-cell-body">
-              <span class="eb-cell-tag">Vision</span>
-              <h3 class="eb-cell-title">Vision Mission Core Values</h3>
-              <p class="eb-cell-text">To become a leading, trusted, and innovation-driven chemical manufacturer delivering sustainable solutions to industries across India and global markets.</p>
-            </div>
-          </article>
-          <article class="eb-cell eb-cell--mission card-3d gs-reveal">
-            <div class="eb-cell-body">
-              <span class="eb-cell-tag">Mission</span>
-              <h3 class="eb-cell-title">Our Mission</h3>
-              <ul class="eb-cell-list">
-                <li>Deliver world-class quality at competitive pricing.</li>
-                <li>Expand product capabilities through R&amp;D and process innovation.</li>
-                <li>Maintain long-term customer relationships built on trust.</li>
-                <li>Ensure safe, compliant, and eco-friendly operations.</li>
-                <li>Achieve excellence through continuous improvement.</li>
-              </ul>
-            </div>
-          </article>
-          <article class="eb-cell eb-cell--quality card-3d gs-reveal">
-            <div class="eb-cell-body">
-              <span class="eb-cell-tag">Quality</span>
-              <h3 class="eb-cell-title">Quality Assurance</h3>
-              <p class="eb-cell-text">At Nayara Industries, quality and safety are foundational to every operation. Our comprehensive quality management systems ensure consistent product purity and regulatory compliance.</p>
-            </div>
-          </article>
-          <article class="eb-cell eb-cell--mfg card-3d gs-reveal">
-            <div class="eb-cell-body">
-              <span class="eb-cell-tag">Manufacturing</span>
-              <h3 class="eb-cell-title">Manufacturing Excellence</h3>
-              <p class="eb-cell-text">Strong manufacturing processes</p>
-            </div>
-          </article>
-          <article class="eb-cell eb-cell--exp card-3d gs-reveal">
-            <div class="eb-cell-body">
-              <span class="eb-cell-tag">Experience</span>
-              <h3 class="eb-cell-title">Industry Experience</h3>
-              <p class="eb-cell-text">NAYARA INDUSTRIES is a chemical manufacturing and distribution company committed to delivering dependable and high-quality chemical products for industrial use. With a strong foundation in process expertise, supply chain management, and regulatory compliance, we serve industries that demand reliability, purity, and consistency.</p>
-            </div>
-          </article>
-          <article class="eb-cell eb-cell--supply card-3d gs-reveal">
-            <div class="eb-cell-body">
-              <span class="eb-cell-tag">Supply Chain</span>
-              <h3 class="eb-cell-title">Supply Chain</h3>
-              <p class="eb-cell-text">Reliable trading network</p>
-              <p class="eb-cell-text"><strong>Integrity · Quality · Commitment · Safety · Innovation · Sustainability</strong></p>
-              <p class="eb-cell-text">Our values guide decisions and operations — ensuring trust, safety, and environmental responsibility while pursuing innovation.</p>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- ═══ PRODUCTS — Premium Showcase Bento ═══ -->
-    <section class="eb-zone eb-zone--industrial" id="products">
-      <div class="eb-inner">
-        <div class="eb-head eb-head--center gs-blur">
-          <span class="sp-section-eyebrow">OUR PRODUCTS</span>
-          <h2 class="sp-section-title">PRODUCTS</h2>
-          <p class="sp-feature-text mt-4">Explore our range of high-quality products designed to meet everyday and specialized needs. Backed by science and trusted by professionals, our formulations ensure safety, efficacy, and consistent results.</p>
-        </div>
-
         <div class="home-products-wrap">
           <div class="home-products-grid" id="home-products-grid">
 
           <a href="solvents/" class="eb-prod card-3d hp-prod-card">
             <div class="eb-prod-glow"></div>
             <div class="eb-prod-inner">
-              <div class="eb-prod-visual">
-                <span class="eb-prod-badge">Solvents</span>
-                <img src="https://nayaragroup.com/wp-content/uploads/2025/12/Acrylic-Solvent.webp" alt="Solvents" loading="lazy">
-              </div>
+              <div class="eb-prod-bg" aria-hidden="true"><img src="https://images.unsplash.com/photo-1532094349884-543bc11b843d?auto=format&fit=crop&w=900&q=80" alt="" loading="lazy"></div>
               <h3 class="eb-prod-name">Solvents</h3>
               <p class="eb-prod-desc">High-purity solvents for coatings, formulations, and industrial applications.</p>
               <span class="eb-enquire magnetic-btn">Enquire <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></span>
@@ -292,10 +127,7 @@
           <a href="acids-alkalies/" class="eb-prod card-3d hp-prod-card">
             <div class="eb-prod-glow"></div>
             <div class="eb-prod-inner">
-              <div class="eb-prod-visual">
-                <span class="eb-prod-badge">Acids</span>
-                <img src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&w=900&q=80" alt="Acids &amp; Alkalies" loading="lazy">
-              </div>
+              <div class="eb-prod-bg" aria-hidden="true"><img src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&w=900&q=80" alt="" loading="lazy"></div>
               <h3 class="eb-prod-name">Acids &amp; Alkalies</h3>
               <p class="eb-prod-desc">Industrial acids and alkalies for metal treatment and process chemistry.</p>
               <span class="eb-enquire magnetic-btn">Enquire <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></span>
@@ -305,10 +137,7 @@
           <a href="intermediates/" class="eb-prod card-3d hp-prod-card">
             <div class="eb-prod-glow"></div>
             <div class="eb-prod-inner">
-              <div class="eb-prod-visual">
-                <span class="eb-prod-badge">Intermediates</span>
-                <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=900&q=80" alt="Intermediates" loading="lazy">
-              </div>
+              <div class="eb-prod-bg" aria-hidden="true"><img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=900&q=80" alt="" loading="lazy"></div>
               <h3 class="eb-prod-name">Intermediates</h3>
               <p class="eb-prod-desc">High-grade chemical intermediates for synthesis and manufacturing.</p>
               <span class="eb-enquire magnetic-btn">Enquire <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></span>
@@ -318,10 +147,7 @@
           <a href="pharma-raw-materials/" class="eb-prod card-3d hp-prod-card">
             <div class="eb-prod-glow"></div>
             <div class="eb-prod-inner">
-              <div class="eb-prod-visual">
-                <span class="eb-prod-badge">Pharma</span>
-                <img src="https://images.unsplash.com/photo-1603126857599-f6e157fa2fe6?auto=format&fit=crop&w=900&q=80" alt="Pharma Raw Materials" loading="lazy">
-              </div>
+              <div class="eb-prod-bg" aria-hidden="true"><img src="https://images.unsplash.com/photo-1603126857599-f6e157fa2fe6?auto=format&fit=crop&w=900&q=80" alt="" loading="lazy"></div>
               <h3 class="eb-prod-name">Pharma Raw Materials</h3>
               <p class="eb-prod-desc">Pharmaceutical-grade raw materials for API and formulation use.</p>
               <span class="eb-enquire magnetic-btn">Enquire <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></span>
@@ -331,10 +157,7 @@
           <a href="textile-chemicals/" class="eb-prod card-3d hp-prod-card">
             <div class="eb-prod-glow"></div>
             <div class="eb-prod-inner">
-              <div class="eb-prod-visual">
-                <span class="eb-prod-badge">Textile</span>
-                <img src="https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&w=900&q=80" alt="Textile Chemicals" loading="lazy">
-              </div>
+              <div class="eb-prod-bg" aria-hidden="true"><img src="https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&w=900&q=80" alt="" loading="lazy"></div>
               <h3 class="eb-prod-name">Textile Chemicals</h3>
               <p class="eb-prod-desc">Eco-friendly textile auxiliaries improving dye uptake and finishing.</p>
               <span class="eb-enquire magnetic-btn">Enquire <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></span>
@@ -344,10 +167,7 @@
           <a href="water-treatment-chemicals/" class="eb-prod card-3d hp-prod-card">
             <div class="eb-prod-glow"></div>
             <div class="eb-prod-inner">
-              <div class="eb-prod-visual">
-                <span class="eb-prod-badge">Water</span>
-                <img src="https://nayaragroup.com/wp-content/uploads/2025/12/Water-Treatment-scaled.jpg" alt="Water Treatment Chemicals" loading="lazy">
-              </div>
+              <div class="eb-prod-bg" aria-hidden="true"><img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=1920&q=80" alt="" loading="lazy"></div>
               <h3 class="eb-prod-name">Water Treatment Chemicals</h3>
               <p class="eb-prod-desc">Coagulant blends for municipal and industrial water treatment.</p>
               <span class="eb-enquire magnetic-btn">Enquire <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></span>
@@ -357,10 +177,7 @@
           <a href="agro-chemicals/" class="eb-prod card-3d hp-prod-card">
             <div class="eb-prod-glow"></div>
             <div class="eb-prod-inner">
-              <div class="eb-prod-visual">
-                <span class="eb-prod-badge">Agro</span>
-                <img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?auto=format&fit=crop&w=900&q=80" alt="Agro Chemicals" loading="lazy">
-              </div>
+              <div class="eb-prod-bg" aria-hidden="true"><img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?auto=format&fit=crop&w=900&q=80" alt="" loading="lazy"></div>
               <h3 class="eb-prod-name">Agro Chemicals</h3>
               <p class="eb-prod-desc">Crop protection intermediates and agricultural formulation chemicals.</p>
               <span class="eb-enquire magnetic-btn">Enquire <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></span>
@@ -370,10 +187,7 @@
           <a href="dyes-dye-intermediates/" class="eb-prod card-3d hp-prod-card">
             <div class="eb-prod-glow"></div>
             <div class="eb-prod-inner">
-              <div class="eb-prod-visual">
-                <span class="eb-prod-badge">Dyes</span>
-                <img src="https://images.unsplash.com/photo-1513828583688-c52646db42da?auto=format&fit=crop&w=900&q=80" alt="Dyes &amp; Dye Intermediates" loading="lazy">
-              </div>
+              <div class="eb-prod-bg" aria-hidden="true"><img src="https://images.unsplash.com/photo-1513828583688-c52646db42da?auto=format&fit=crop&w=900&q=80" alt="" loading="lazy"></div>
               <h3 class="eb-prod-name">Dyes &amp; Dye Intermediates</h3>
               <p class="eb-prod-desc">Reactive dyes and intermediates for textile and printing industries.</p>
               <span class="eb-enquire magnetic-btn">Enquire <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></span>
@@ -383,10 +197,7 @@
           <a href="laboratory-chemicals/" class="eb-prod card-3d hp-prod-card">
             <div class="eb-prod-glow"></div>
             <div class="eb-prod-inner">
-              <div class="eb-prod-visual">
-                <span class="eb-prod-badge">Laboratory</span>
-                <img src="https://nayaragroup.com/wp-content/uploads/2026/01/lab-technician-dressed-protective-suit-as-safety-precaution-looking-test-tube-scaled-1.jpg" alt="Laboratory Chemicals" loading="lazy">
-              </div>
+              <div class="eb-prod-bg" aria-hidden="true"><img src="https://images.unsplash.com/photo-1576086213369-97a306d36557?auto=format&fit=crop&w=1920&q=80" alt="" loading="lazy"></div>
               <h3 class="eb-prod-name">Laboratory Chemicals</h3>
               <p class="eb-prod-desc">LR grade reagents, indicators, and lab-grade chemical supplies.</p>
               <span class="eb-enquire magnetic-btn">Enquire <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></span>
@@ -396,10 +207,7 @@
           <a href="detergent-chemicals/" class="eb-prod card-3d hp-prod-card">
             <div class="eb-prod-glow"></div>
             <div class="eb-prod-inner">
-              <div class="eb-prod-visual">
-                <span class="eb-prod-badge">Detergent</span>
-                <img src="https://images.unsplash.com/photo-1585421514284-efb74c2b69ba?auto=format&fit=crop&w=900&q=80" alt="Detergent Chemicals" loading="lazy">
-              </div>
+              <div class="eb-prod-bg" aria-hidden="true"><img src="https://images.unsplash.com/photo-1585421514284-efb74c2b69ba?auto=format&fit=crop&w=900&q=80" alt="" loading="lazy"></div>
               <h3 class="eb-prod-name">Detergent Chemicals</h3>
               <p class="eb-prod-desc">Surfactants and additives for detergent and cleaning formulations.</p>
               <span class="eb-enquire magnetic-btn">Enquire <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></span>
@@ -409,10 +217,7 @@
           <a href="industrial-salts/" class="eb-prod card-3d hp-prod-card">
             <div class="eb-prod-glow"></div>
             <div class="eb-prod-inner">
-              <div class="eb-prod-visual">
-                <span class="eb-prod-badge">Salts</span>
-                <img src="https://images.unsplash.com/photo-1611273426858-450d8e3c9fce?auto=format&fit=crop&w=900&q=80" alt="Industrial Salts" loading="lazy">
-              </div>
+              <div class="eb-prod-bg" aria-hidden="true"><img src="https://images.unsplash.com/photo-1611273426858-450d8e3c9fce?auto=format&fit=crop&w=900&q=80" alt="" loading="lazy"></div>
               <h3 class="eb-prod-name">Industrial Salts</h3>
               <p class="eb-prod-desc">Pure industrial salts for process, manufacturing, and treatment use.</p>
               <span class="eb-enquire magnetic-btn">Enquire <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></span>
@@ -424,170 +229,315 @@
       </div>
     </section>
 
-    <!-- ═══ CERTIFICATES — Premium Card Gallery ═══ -->
-    <section class="eb-zone hp-certs" id="certificates">
-      <div class="eb-inner">
-        <div class="eb-head eb-head--center gs-blur">
-          <span class="sp-section-eyebrow">Certifications</span>
-          <h2 class="sp-section-title">OUR CERTIFICATE</h2>
-          <p class="sp-feature-text mt-4">Trusted credentials that reflect our commitment to quality, compliance, and responsible chemical manufacturing.</p>
+    <!-- 4. ABOUT -->
+    <section class="f5-about" id="about">
+      <div class="f5-container">
+        <div class="f5-about__top">
+          <div class="f5-about__media f5-reveal">
+            <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=1600&q=85" alt="Nayara Industries manufacturing facility" loading="lazy">
+            <div class="f5-about__badge">
+              <strong>GIDC</strong>
+              <span>Ankleshwar Hub</span>
+            </div>
+            <div class="f5-about__float">
+              <div><strong data-counter="120" data-suffix="+">0</strong><span>Products</span></div>
+              <div><strong data-counter="20" data-suffix="+">0</strong><span>Categories</span></div>
+            </div>
+          </div>
+          <div class="f5-about__copy f5-reveal">
+            <span class="f5-eyebrow">About Nayara Industries</span>
+            <h2 class="f5-title f5-about__title">Developing Corporate Strengths With Strong Core Values</h2>
+            <p class="f5-about__kicker">Serve as manufacturer for all industrial and chemical needs.</p>
+            <p class="f5-about__text">We are a professionally managed chemical manufacturing and trading company located in <strong>GIDC Ankleshwar</strong>, India's largest chemical hub. With advanced production infrastructure, a strong supply chain, and a customer-first approach, we ensure quality, consistency, and timely deliveries for all industrial applications.</p>
+            <p class="f5-about__text">NAYARA INDUSTRIES is committed to delivering dependable, high-quality chemical products — with process expertise, supply chain management, and regulatory compliance.</p>
+            <a href="about-us/" class="f5-btn f5-btn--primary">About Us</a>
+          </div>
         </div>
-        <div class="hp-certs__grid gs-reveal">
-          <article class="hp-certs__card hp-certs__card--featured">
-            <span class="hp-certs__shine" aria-hidden="true"></span>
-            <span class="hp-certs__badge">Featured</span>
-            <div class="hp-certs__visual">
-              <img src="https://nayaragroup.com/wp-content/uploads/2025/12/GST-NAYARA.png" alt="GST Registration" loading="lazy">
-            </div>
-            <h3 class="hp-certs__label">GST</h3>
-            <p class="hp-certs__meta">Registered &amp; Compliant</p>
+        <div class="f5-about__features">
+          <article class="f5-feat f5-reveal">
+            <span class="f5-feat__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></span>
+            <h3>Vision</h3>
+            <p>To become a leading, trusted, and innovation-driven chemical manufacturer delivering sustainable solutions across India and global markets.</p>
           </article>
-          <article class="hp-certs__card hp-certs__card--featured">
-            <span class="hp-certs__shine" aria-hidden="true"></span>
-            <span class="hp-certs__badge">Featured</span>
-            <div class="hp-certs__visual">
-              <img src="https://nayaragroup.com/wp-content/uploads/2026/01/images.png" alt="IAF ISO Certification" loading="lazy">
-            </div>
-            <h3 class="hp-certs__label">IAF &amp; ISO</h3>
-            <p class="hp-certs__meta">Quality Standards</p>
+          <article class="f5-feat f5-reveal">
+            <span class="f5-feat__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/></svg></span>
+            <h3>Mission</h3>
+            <p>Deliver world-class quality at competitive pricing, expand through R&amp;D, and maintain long-term relationships built on trust and safe operations.</p>
           </article>
-          <article class="hp-certs__card">
-            <span class="hp-certs__shine" aria-hidden="true"></span>
-            <div class="hp-certs__visual">
-              <img src="https://nayaragroup.com/wp-content/uploads/2026/01/IEC.png" alt="IEC Import Export Code" loading="lazy">
-            </div>
-            <h3 class="hp-certs__label">IEC</h3>
-            <p class="hp-certs__meta">Import Export Code</p>
+          <article class="f5-feat f5-reveal">
+            <span class="f5-feat__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-6h6v6"/></svg></span>
+            <h3>Manufacturing Excellence</h3>
+            <p>Strong manufacturing processes powered by advanced infrastructure in India's largest chemical industrial zone.</p>
           </article>
-          <article class="hp-certs__card">
-            <span class="hp-certs__shine" aria-hidden="true"></span>
-            <div class="hp-certs__visual">
-              <img src="https://nayaragroup.com/wp-content/uploads/2025/12/CHEMEXCIL.png" alt="CHEMEXCIL" loading="lazy">
-            </div>
-            <h3 class="hp-certs__label">CHEMEXCIL</h3>
-            <p class="hp-certs__meta">Chemical Export Council</p>
+          <article class="f5-feat f5-reveal">
+            <span class="f5-feat__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M9 12l2 2 4-4m5.6-4A12 12 0 003.4 8a12 12 0 0017.2 0z"/></svg></span>
+            <h3>Quality Assurance</h3>
+            <p>Quality and safety are foundational — comprehensive systems ensure consistent purity and regulatory compliance.</p>
           </article>
-          <article class="hp-certs__card">
-            <span class="hp-certs__shine" aria-hidden="true"></span>
-            <div class="hp-certs__visual">
-              <img src="https://nayaragroup.com/wp-content/uploads/2025/12/MAME-NAYARA.png" alt="MAME" loading="lazy">
-            </div>
-            <h3 class="hp-certs__label">MAME</h3>
-            <p class="hp-certs__meta">Industry Membership</p>
+          <article class="f5-feat f5-reveal">
+            <span class="f5-feat__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 7h13l5 5v9H3V7z"/><path d="M16 7v5h5"/></svg></span>
+            <h3>Supply Chain</h3>
+            <p>Reliable trading network with Integrity, Quality, Commitment, Safety, Innovation, and Sustainability guiding every decision.</p>
           </article>
-          <article class="hp-certs__card">
-            <span class="hp-certs__shine" aria-hidden="true"></span>
-            <div class="hp-certs__visual">
-              <img src="https://nayaragroup.com/wp-content/uploads/2025/12/FIEO-NAYARA.png" alt="FIEO" loading="lazy">
-            </div>
-            <h3 class="hp-certs__label">FIEO</h3>
-            <p class="hp-certs__meta">Export Organization</p>
-          </article>
-          <article class="hp-certs__card">
-            <span class="hp-certs__shine" aria-hidden="true"></span>
-            <div class="hp-certs__visual">
-              <img src="https://nayaragroup.com/wp-content/uploads/2025/12/1.jpg" alt="Certificate" loading="lazy">
-            </div>
-            <h3 class="hp-certs__label">Quality Assurance</h3>
-            <p class="hp-certs__meta">Process Excellence</p>
+          <article class="f5-feat f5-reveal">
+            <span class="f5-feat__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a7 7 0 0114 0v1"/></svg></span>
+            <h3>Industry Experience</h3>
+            <p>Deep process expertise serving industries that demand reliability, purity, and consistent chemical supply.</p>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- ═══ WHY CHOOSE — Premium Split Editorial ═══ -->
-    <section class="eb-zone hp-why" id="why-choose">
-      <div class="hp-why__bg" aria-hidden="true">
-        <span class="hp-why__orb hp-why__orb--1"></span>
-        <span class="hp-why__orb hp-why__orb--2"></span>
-        <span class="hp-why__mesh"></span>
+    <!-- 5. MANUFACTURING PROCESS -->
+    <section class="f5-process" id="process">
+      <div class="f5-container">
+        <div class="f5-section-head f5-section-head--center f5-reveal">
+          <span class="f5-eyebrow">Operations</span>
+          <h2 class="f5-title">Manufacturing Process</h2>
+          <p class="f5-lead">A disciplined end-to-end workflow from raw material intake to dispatch — engineered for purity, safety, and on-time delivery.</p>
+        </div>
+        <ol class="f5-process__rail f5-reveal" id="f5-process-rail">
+          <li class="f5-process__step"><span>01</span><strong>Raw Material</strong></li>
+          <li class="f5-process__step"><span>02</span><strong>Quality Inspection</strong></li>
+          <li class="f5-process__step"><span>03</span><strong>Manufacturing</strong></li>
+          <li class="f5-process__step"><span>04</span><strong>Laboratory Testing</strong></li>
+          <li class="f5-process__step"><span>05</span><strong>Packaging</strong></li>
+          <li class="f5-process__step"><span>06</span><strong>Dispatch</strong></li>
+        </ol>
       </div>
-      <div class="eb-inner">
-        <div class="hp-why__layout">
-          <aside class="hp-why__intro hp-why-reveal">
-            <div class="hp-why__intro-inner">
-              <span class="sp-section-eyebrow">Excellence</span>
-              <h2 class="sp-section-title">Why Choose Nayara Industries</h2>
-              <p class="sp-feature-text mt-4">A reliable chemical manufacturing and trading partner focused on quality, safety, and consistency.</p>
-              <a href="contact-us/" class="hp-why__cta magnetic-btn">
-                <span class="hp-why__cta-shine" aria-hidden="true"></span>
-                <span class="hp-why__cta-label">Request a Quote</span>
-                <svg class="hp-why__cta-icon" width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-              </a>
-            </div>
-            <div class="hp-why__intro-visual">
-              <img src="https://nayaragroup.com/wp-content/uploads/2025/12/environmental-pollution-factory-exterior.jpg" alt="Nayara Industries manufacturing facility" loading="lazy">
-              <div class="hp-why__intro-visual-overlay"></div>
-            </div>
-          </aside>
+    </section>
 
-          <div class="hp-why__features">
-            <article class="hp-why-item hp-why-item--1 hp-why-reveal">
-              <span class="hp-why-item__index">01</span>
-              <div class="hp-why-item__icon"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg></div>
-              <div class="hp-why-item__body">
-                <h3 class="sp-feature-title">Quality-Driven Manufacturing</h3>
-                <p class="sp-feature-text">Rigorous quality control at every stage of production ensures consistent, high-purity chemical outputs.</p>
+    <!-- 6. INDUSTRIES -->
+    <section class="f5-industries" id="industries">
+      <div class="f5-container">
+        <div class="f5-section-head f5-section-head--center f5-reveal">
+          <span class="f5-eyebrow">Markets</span>
+          <h2 class="f5-title">Industries We Serve</h2>
+          <p class="f5-lead">Nayara Industries serves a diverse range of industrial sectors with high-quality chemical products and reliable supply chain solutions from GIDC Ankleshwar.</p>
+        </div>
+        <div class="f5-industries__grid">
+          <a href="industries-we-serve/" class="f5-ind-card f5-reveal" style="background-image:url('https://images.unsplash.com/photo-1582719471384-894fbb16e074?auto=format&fit=crop&w=1200&q=80')"><span>Pharmaceuticals</span></a>
+          <a href="industries-we-serve/" class="f5-ind-card f5-reveal" style="background-image:url('https://images.unsplash.com/photo-1625246333195-78d9c38ad449?auto=format&fit=crop&w=1200&q=80')"><span>Agrochemicals</span></a>
+          <a href="industries-we-serve/" class="f5-ind-card f5-reveal" style="background-image:url('https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&w=1200&q=80')"><span>Textile &amp; Dyes</span></a>
+          <a href="industries-we-serve/" class="f5-ind-card f5-reveal" style="background-image:url('https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=1200&q=80')"><span>Water Treatment</span></a>
+          <a href="industries-we-serve/" class="f5-ind-card f5-reveal" style="background-image:url('https://images.unsplash.com/photo-1562259949-e8e704c693e3?auto=format&fit=crop&w=1200&q=80')"><span>Paints &amp; Coatings</span></a>
+          <a href="industries-we-serve/" class="f5-ind-card f5-reveal" style="background-image:url('https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&w=1200&q=80')"><span>Plastic &amp; Rubber</span></a>
+          <a href="industries-we-serve/" class="f5-ind-card f5-reveal" style="background-image:url('https://images.unsplash.com/photo-1585421514284-efb74c2b69ba?auto=format&fit=crop&w=1200&q=80')"><span>Detergent &amp; Cleaning</span></a>
+          <a href="industries-we-serve/" class="f5-ind-card f5-reveal" style="background-image:url('https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?auto=format&fit=crop&w=1200&q=80')"><span>Export &amp; Trade</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Beyond Chemicals (preserved content) -->
+    <section class="f5-services" id="other-services-home">
+      <div class="f5-container">
+        <div class="f5-section-head f5-reveal">
+          <span class="f5-eyebrow">Nayara Group</span>
+          <h2 class="f5-title">Beyond Chemicals</h2>
+          <p class="f5-lead">Nayara Industries delivers turnkey engineering, consultancy, and plant solutions for chemical, pharmaceutical, and industrial projects across India.</p>
+        </div>
+        <div class="f5-services__grid">
+          <a href="beverages-mineral-water/" class="f5-service-card f5-reveal">
+            <span class="f5-service-card__num">01</span>
+            <h3 class="f5-service-card__title">Beverages &amp; Mineral Water</h3>
+            <p class="f5-service-card__desc">End-to-end plant design, installation, and commissioning for beverage and mineral water projects.</p>
+            <span class="f5-service-card__go" aria-hidden="true">→</span>
+          </a>
+          <a href="etp-solutions/" class="f5-service-card f5-reveal">
+            <span class="f5-service-card__num">02</span>
+            <h3 class="f5-service-card__title">ETP Solutions</h3>
+            <p class="f5-service-card__desc">Industrial effluent treatment plants for regulatory compliance and sustainable operations.</p>
+            <span class="f5-service-card__go" aria-hidden="true">→</span>
+          </a>
+          <a href="greenfield-projects/" class="f5-service-card f5-reveal">
+            <span class="f5-service-card__num">03</span>
+            <h3 class="f5-service-card__title">Greenfield Projects</h3>
+            <p class="f5-service-card__desc">Concept-to-commissioning support for new chemical and industrial facilities.</p>
+            <span class="f5-service-card__go" aria-hidden="true">→</span>
+          </a>
+          <a href="process-development/" class="f5-service-card f5-reveal">
+            <span class="f5-service-card__num">04</span>
+            <h3 class="f5-service-card__title">Process Development</h3>
+            <p class="f5-service-card__desc">Laboratory-to-commercial scale-up with process expertise and technical guidance.</p>
+            <span class="f5-service-card__go" aria-hidden="true">→</span>
+          </a>
+          <a href="consultancy/" class="f5-service-card f5-reveal">
+            <span class="f5-service-card__num">05</span>
+            <h3 class="f5-service-card__title">Consultancy</h3>
+            <p class="f5-service-card__desc">Strategic, technical, and regulatory consultancy for chemical and industrial projects.</p>
+            <span class="f5-service-card__go" aria-hidden="true">→</span>
+          </a>
+        </div>
+        <a href="other-services/" class="f5-link">View all services →</a>
+      </div>
+    </section>
+
+    <!-- 7. COMPANY STATISTICS -->
+    <section class="f5-stats" id="company-stats">
+      <div class="f5-container">
+        <div class="f5-section-head f5-section-head--center f5-section-head--light f5-reveal">
+          <span class="f5-eyebrow">Scale</span>
+          <h2 class="f5-title">Company Statistics</h2>
+        </div>
+        <div class="f5-stats__grid">
+          <div class="f5-stats__item f5-reveal"><strong data-counter="120" data-suffix="+">0</strong><span>Products</span></div>
+          <div class="f5-stats__item f5-reveal"><strong data-counter="20" data-suffix="+">0</strong><span>Categories</span></div>
+          <div class="f5-stats__item f5-reveal"><strong data-counter="500" data-suffix="+">0</strong><span>Satisfied Clients</span></div>
+          <div class="f5-stats__item f5-reveal"><strong data-counter="15" data-suffix="+">0</strong><span>States Served</span></div>
+          <div class="f5-stats__item f5-reveal"><strong data-counter="1000" data-suffix="+">0</strong><span>Successful Deliveries</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. CERTIFICATIONS -->
+    <section class="f5-certs" id="certificates">
+      <div class="f5-container">
+        <div class="f5-certs__layout">
+          <div class="f5-certs__iso f5-reveal">
+            <span class="f5-eyebrow">Certifications</span>
+            <h2 class="f5-title">OUR CERTIFICATE</h2>
+            <p class="f5-lead">Trusted credentials that reflect our commitment to quality, compliance, and responsible chemical manufacturing.</p>
+            <div class="f5-certs__featured">
+              <img src="https://nayaragroup.com/wp-content/uploads/2026/01/images.png" alt="IAF ISO Certification" loading="lazy">
+              <div>
+                <h3>IAF &amp; ISO</h3>
+                <p>Quality Standards — featured certification highlighting our process excellence and compliance framework.</p>
               </div>
-              <span class="hp-why-item__line" aria-hidden="true"></span>
-            </article>
-            <article class="hp-why-item hp-why-item--2 hp-why-reveal">
-              <span class="hp-why-item__index">02</span>
-              <div class="hp-why-item__icon"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/></svg></div>
-              <div class="hp-why-item__body">
-                <h3 class="sp-feature-title">Trusted Chemical Sourcing</h3>
-                <p class="sp-feature-text">Extensive network of verified suppliers across India's chemical hub for reliable procurement.</p>
-              </div>
-              <span class="hp-why-item__line" aria-hidden="true"></span>
-            </article>
-            <article class="hp-why-item hp-why-item--3 hp-why-reveal">
-              <span class="hp-why-item__index">03</span>
-              <div class="hp-why-item__icon"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg></div>
-              <div class="hp-why-item__body">
-                <h3 class="sp-feature-title">Safety &amp; Compliance First</h3>
-                <p class="sp-feature-text">Full adherence to regulatory standards with comprehensive MSDS/TDS documentation.</p>
-              </div>
-              <span class="hp-why-item__line" aria-hidden="true"></span>
-            </article>
-            <article class="hp-why-item hp-why-item--4 hp-why-reveal">
-              <span class="hp-why-item__index">04</span>
-              <div class="hp-why-item__icon"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
-              <div class="hp-why-item__body">
-                <h3 class="sp-feature-title">On-Time Delivery</h3>
-                <p class="sp-feature-text">Optimized logistics from GIDC Ankleshwar ensuring timely deliveries across India and exports.</p>
-              </div>
-              <span class="hp-why-item__line" aria-hidden="true"></span>
-            </article>
-            <article class="hp-why-item hp-why-item--5 hp-why-reveal">
-              <span class="hp-why-item__index">05</span>
-              <div class="hp-why-item__icon"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
-              <div class="hp-why-item__body">
-                <h3 class="sp-feature-title">Competitive Pricing</h3>
-                <p class="sp-feature-text">World-class quality at competitive pricing through efficient supply chain management.</p>
-              </div>
-              <span class="hp-why-item__line" aria-hidden="true"></span>
-            </article>
-            <article class="hp-why-item hp-why-item--6 hp-why-reveal">
-              <span class="hp-why-item__index">06</span>
-              <div class="hp-why-item__icon"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg></div>
-              <div class="hp-why-item__body">
-                <h3 class="sp-feature-title">Reliable Industry Partner</h3>
-                <p class="sp-feature-text">Long-term partnerships built on trust, transparency, and consistent service excellence.</p>
-              </div>
-              <span class="hp-why-item__line" aria-hidden="true"></span>
-            </article>
+            </div>
+          </div>
+          <div class="f5-certs__slider f5-reveal" id="f5-cert-slider">
+            <div class="f5-certs__slide"><img src="https://nayaragroup.com/wp-content/uploads/2025/12/GST-NAYARA.png" alt="GST"><span>GST</span></div>
+            <div class="f5-certs__slide"><img src="https://nayaragroup.com/wp-content/uploads/2026/01/IEC.png" alt="IEC"><span>IEC</span></div>
+            <div class="f5-certs__slide"><img src="https://nayaragroup.com/wp-content/uploads/2025/12/CHEMEXCIL.png" alt="CHEMEXCIL"><span>CHEMEXCIL</span></div>
+            <div class="f5-certs__slide"><img src="https://nayaragroup.com/wp-content/uploads/2025/12/MAME-NAYARA.png" alt="MAME"><span>MAME</span></div>
+            <div class="f5-certs__slide"><img src="https://nayaragroup.com/wp-content/uploads/2025/12/FIEO-NAYARA.png" alt="FIEO"><span>FIEO</span></div>
+            <div class="f5-certs__slide"><img src="https://nayaragroup.com/wp-content/uploads/2025/12/1.jpg" alt="Quality Assurance"><span>Quality Assurance</span></div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ═══ CONTACT — Split + Map ═══ -->
-    <section class="eb-zone relative overflow-hidden" id="contact">
+    <!-- 9. WHY CHOOSE -->
+    <section class="f5-why" id="why-choose">
+      <div class="f5-container">
+        <div class="f5-section-head f5-section-head--center f5-reveal">
+          <span class="f5-eyebrow">Excellence</span>
+          <h2 class="f5-title">Why Choose Nayara</h2>
+          <p class="f5-lead">Quality manufacturing, reliable sourcing, and on-time delivery from GIDC Ankleshwar — built for long-term partnerships.</p>
+        </div>
+        <div class="f5-why__grid">
+          <article class="f5-why-card f5-reveal">
+            <span class="f5-why-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M9 12l2 2 4-4m5.6-4A12 12 0 003.4 8a12 12 0 0017.2 0z"/></svg></span>
+            <h3>Quality</h3>
+            <p>Rigorous quality control at every stage ensures consistent, high-purity chemical outputs.</p>
+            <i class="f5-why-card__line" aria-hidden="true"></i>
+          </article>
+          <article class="f5-why-card f5-reveal">
+            <span class="f5-why-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 9v2m0 4h.01M10.3 4l-7 12a2 2 0 001.7 3h14a2 2 0 001.7-3l-7-12a2 2 0 00-3.4 0z"/></svg></span>
+            <h3>Safety</h3>
+            <p>Safe handling protocols and comprehensive documentation protect people, product, and plant.</p>
+            <i class="f5-why-card__line" aria-hidden="true"></i>
+          </article>
+          <article class="f5-why-card f5-reveal">
+            <span class="f5-why-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg></span>
+            <h3>Compliance</h3>
+            <p>Full adherence to regulatory standards with MSDS/TDS and industry-ready certifications.</p>
+            <i class="f5-why-card__line" aria-hidden="true"></i>
+          </article>
+          <article class="f5-why-card f5-reveal">
+            <span class="f5-why-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></span>
+            <h3>Delivery</h3>
+            <p>Optimized logistics from GIDC Ankleshwar for timely deliveries across India and exports.</p>
+            <i class="f5-why-card__line" aria-hidden="true"></i>
+          </article>
+          <article class="f5-why-card f5-reveal">
+            <span class="f5-why-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 8c-1.7 0-3 .9-3 2s1.3 2 3 2 3 .9 3 2-1.3 2-3 2m0-8V7m0 10v-1m9-4a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></span>
+            <h3>Pricing</h3>
+            <p>World-class quality at competitive pricing through efficient supply chain management.</p>
+            <i class="f5-why-card__line" aria-hidden="true"></i>
+          </article>
+          <article class="f5-why-card f5-reveal">
+            <span class="f5-why-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M17 20h5v-2a3 3 0 00-5.4-1.8M17 20H7m10 0v-2a3 3 0 00-.4-1.8M7 20H2v-2a3 3 0 015.4-1.8M7 20v-2a3 3 0 01.4-1.8m0 0a5 5 0 019.2 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg></span>
+            <h3>Customer Support</h3>
+            <p>Long-term partnerships built on trust, transparency, and consistent service excellence.</p>
+            <i class="f5-why-card__line" aria-hidden="true"></i>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 10. GLOBAL REACH -->
+    <section class="f5-global" id="global-reach">
+      <div class="f5-container f5-global__grid">
+        <div class="f5-global__copy f5-reveal">
+          <span class="f5-eyebrow">Reach</span>
+          <h2 class="f5-title">Nationwide Supply &amp; Export Capability</h2>
+          <p class="f5-lead">From GIDC Ankleshwar — India's largest chemical hub — we support domestic industries across states and export-ready supply chains with reliable logistics and documentation.</p>
+          <ul class="f5-global__list">
+            <li>Pan-India distribution network</li>
+            <li>Export-ready compliance (IEC, FIEO, CHEMEXCIL)</li>
+            <li>Hub advantage of Gujarat chemical ecosystem</li>
+          </ul>
+        </div>
+        <div class="f5-global__map f5-reveal" aria-hidden="true">
+          <svg class="f5-world" viewBox="0 0 800 420" role="img">
+            <defs>
+              <radialGradient id="f5glow" cx="62%" cy="48%" r="18%"><stop offset="0%" stop-color="#1FA87A" stop-opacity=".55"/><stop offset="100%" stop-color="#1FA87A" stop-opacity="0"/></radialGradient>
+            </defs>
+            <rect width="800" height="420" fill="#0B1F2A"/>
+            <g fill="#173445" opacity=".9">
+              <ellipse cx="180" cy="160" rx="90" ry="55"/><ellipse cx="320" cy="140" rx="70" ry="40"/><ellipse cx="430" cy="170" rx="55" ry="35"/><ellipse cx="560" cy="190" rx="100" ry="50"/><ellipse cx="680" cy="150" rx="60" ry="35"/><ellipse cx="250" cy="280" rx="70" ry="40"/><ellipse cx="500" cy="290" rx="80" ry="45"/>
+            </g>
+            <circle cx="500" cy="205" r="70" fill="url(#f5glow)"/>
+            <circle class="f5-india-dot" cx="500" cy="205" r="7" fill="#1FA87A"/>
+            <g class="f5-lines" stroke="#1FA87A" stroke-width="1.2" fill="none" opacity=".7">
+              <path d="M500 205 C420 160, 300 140, 200 150"/><path d="M500 205 C580 170, 660 140, 720 130"/><path d="M500 205 C540 250, 600 290, 680 300"/><path d="M500 205 C430 250, 340 300, 260 310"/>
+            </g>
+            <text x="512" y="198" fill="#FFFFFF" font-size="14" font-family="Plus Jakarta Sans,sans-serif" font-weight="700">India</text>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- 11. SUSTAINABILITY -->
+    <section class="f5-sustain" id="sustainability">
+      <div class="f5-container">
+        <div class="f5-section-head f5-section-head--center f5-reveal">
+          <span class="f5-eyebrow">Responsibility</span>
+          <h2 class="f5-title">Sustainability</h2>
+          <p class="f5-lead">Our values guide decisions and operations — ensuring trust, safety, and environmental responsibility while pursuing innovation.</p>
+        </div>
+        <div class="f5-sustain__grid">
+          <article class="f5-sustain__item f5-reveal"><h3>Eco Friendly Manufacturing</h3><p>Process discipline designed to reduce environmental impact across production cycles.</p></article>
+          <article class="f5-sustain__item f5-reveal"><h3>Responsible Sourcing</h3><p>Verified supply partners and ethical procurement practices across the chemical value chain.</p></article>
+          <article class="f5-sustain__item f5-reveal"><h3>Waste Management</h3><p>Compliant handling and disposal protocols aligned with industrial environmental standards.</p></article>
+          <article class="f5-sustain__item f5-reveal"><h3>Safety Standards</h3><p>Safety-first culture with trained teams and documented operational controls.</p></article>
+          <article class="f5-sustain__item f5-reveal"><h3>Energy Efficiency</h3><p>Continuous improvement in plant efficiency to support sustainable manufacturing goals.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 12. CTA -->
+    <section class="f5-cta" id="cta-band">
+      <div class="f5-cta__bg" style="background-image:url('https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&w=2200&q=85')" aria-hidden="true"></div>
+      <div class="f5-container f5-cta__content f5-reveal">
+        <h2 class="f5-title">Ready to Partner With Nayara Industries?</h2>
+        <p class="f5-lead">Request a quotation, product specifications, or speak with our sales team for reliable chemical supply.</p>
+        <div class="f5-hero__actions">
+          <a href="contact-us/" class="f5-btn f5-btn--primary">Request Quote</a>
+          <a href="mailto:sales@nayaragroup.com" class="f5-btn f5-btn--ghost">Contact Sales</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 13. CONTACT -->
+    <section class="f5-contact eb-zone relative overflow-hidden" id="contact">
       <div class="eb-inner relative">
         <div class="eb-contact-grid">
           <div class="gs-reveal-left">
             <span class="sp-section-eyebrow">Contact</span>
-            <h2 class="sp-section-title mb-6">Let's Talk</h2>
+            <h2 class="sp-section-title mb-3">Let's Connect with NAYARA GROUP</h2>
+            <p class="hp-contact-tagline">CHEMICAL MANUFACTURING | TRADING PARTNER</p>
             <p class="sp-feature-text mb-8 leading-relaxed">Looking for a reliable chemical manufacturing and trading partner? Connect with Nayara Industries for quotations, product specifications, MSDS/TDS documentation, or custom sourcing requirements. Our team ensures quick responses, competitive pricing, and dependable delivery.</p>
             <div class="eb-info-stack">
               <a href="https://www.google.com/maps/place/GIDC+Ankleshwar" target="_blank" rel="noopener" class="eb-info-card">
@@ -600,7 +550,15 @@
               </a>
               <a href="mailto:info@nayaragroup.com" class="eb-info-card">
                 <span class="eb-info-icon"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg></span>
-                <div><div class="eb-info-label">Email</div><div class="eb-info-value">info@nayaragroup.com</div></div>
+                <div><div class="eb-info-label">General</div><div class="eb-info-value">info@nayaragroup.com</div></div>
+              </a>
+              <a href="mailto:sales@nayaragroup.com" class="eb-info-card">
+                <span class="eb-info-icon"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg></span>
+                <div><div class="eb-info-label">Sales</div><div class="eb-info-value">sales@nayaragroup.com</div></div>
+              </a>
+              <a href="mailto:export@nayaragroup.com" class="eb-info-card">
+                <span class="eb-info-icon"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg></span>
+                <div><div class="eb-info-label">Export</div><div class="eb-info-value">export@nayaragroup.com</div></div>
               </a>
             </div>
           </div>
@@ -640,10 +598,11 @@
   <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
-  <script src="./assets/js/main.js"></script>
+  <script src="./assets/js/main.js?v=3"></script>
   <script src="./assets/js/premium.js"></script>
   <script src="./assets/js/forms.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-  <script src="./assets/js/home-premium.js?v=9"></script>
+  <script src="./assets/js/home-premium.js?v=10"></script>
+  <script src="./assets/js/home-f500.js?v=3"></script>
 </body>
 </html>

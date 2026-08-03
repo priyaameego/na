@@ -922,7 +922,8 @@ function getHead(title, description, basePath, canonical, options = {}) {
   <link rel="stylesheet" href="${basePath}assets/css/premium-international.css?v=10">
   <link rel="stylesheet" href="${basePath}assets/css/visual-premium.css?v=8">
   ${extraCss}
-  <link rel="stylesheet" href="${basePath}assets/css/site-teal-bg.css?v=10">
+  <link rel="stylesheet" href="${basePath}assets/css/site-teal-bg.css?v=12">
+  <link rel="stylesheet" href="${basePath}assets/css/site-pages.css?v=1">
 </head>
 <body class="${bodyClass}">`;
 }
