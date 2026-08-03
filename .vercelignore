@@ -1,0 +1,8 @@
+.env
+.env.*
+uploads/
+node_modules/
+.DS_Store
+*.log
+.cursor/
+agent-transcripts/

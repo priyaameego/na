@@ -9,7 +9,11 @@
     "build": "npm run build:css && npm run generate",
     "db:init": "node server/init-db.js",
     "start": "node server/index.js",
-    "dev": "node server/index.js"
+    "dev": "node server/index.js",
+    "vercel-build": "npm run build"
+  },
+  "engines": {
+    "node": ">=18"
   },
   "dependencies": {
     "cors": "^2.8.5",
