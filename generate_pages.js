@@ -5,7 +5,7 @@ const pagesData = JSON.parse(
   fs.readFileSync(path.join(__dirname, 'data', 'pages-content.json'), 'utf8')
 );
 
-const SKIP_SLUGS = ['home'];
+const SKIP_SLUGS = ['home', 'custom-formulated-products'];
 
 const CONTACT_PAGE = {
   headline: "Let's Connect with NAYARA GROUP",
@@ -921,8 +921,8 @@ function getHead(title, description, basePath, canonical, options = {}) {
   <link rel="stylesheet" href="${basePath}assets/css/luxury-images.css?v=5">
   <link rel="stylesheet" href="${basePath}assets/css/premium-international.css?v=10">
   <link rel="stylesheet" href="${basePath}assets/css/visual-premium.css?v=7">
-  <link rel="stylesheet" href="${basePath}assets/css/site-teal-bg.css?v=6">
   ${extraCss}
+  <link rel="stylesheet" href="${basePath}assets/css/site-teal-bg.css?v=10">
 </head>
 <body class="${bodyClass}">`;
 }
@@ -988,7 +988,7 @@ function getEnterpriseBanner({ title, eyebrow, lead, basePath, breadcrumb, slug 
         </nav>
         <p class="ph-banner__eyebrow">${eyebrow}</p>
         <h1 class="ph-banner__title">${title}</h1>
-        <p class="ph-banner__lead">${lead}</p>
+        ${lead ? `<p class="ph-banner__lead">${lead}</p>` : ''}
         <a href="${basePath}contact-us/" class="ph-banner__cta">Contact Us</a>
       </div>
     </div>
@@ -1674,9 +1674,12 @@ function getPremiumEtpPage(basePath) {
 
   const serviceCards = (p.services || []).map((s, i) => `
     <article class="etp-v2-svc etp-v2-reveal" style="--i:${i}">
-      <span class="etp-v2-svc__index" aria-hidden="true">${String(i + 1).padStart(2, '0')}</span>
-      <h3 class="etp-v2-svc__title">${s.title}</h3>
-      <p class="etp-v2-svc__text">${s.text}</p>
+      ${s.image ? `<div class="etp-v2-svc__media"><img src="${s.image}" alt="${s.title}" loading="lazy" decoding="async"><span class="etp-v2-svc__glow" aria-hidden="true"></span></div>` : ''}
+      <div class="etp-v2-svc__body">
+        <span class="etp-v2-svc__index" aria-hidden="true">${String(i + 1).padStart(2, '0')}</span>
+        <h3 class="etp-v2-svc__title">${s.title}</h3>
+        <p class="etp-v2-svc__text">${s.text}</p>
+      </div>
     </article>`).join('');
 
   const galleryCards = gallery.map((g, i) => `
@@ -1762,9 +1765,12 @@ function getServicePremiumV2Page(p, basePath, options = {}) {
 
   const serviceCards = ((p.services || [])).map((s, i) => `
     <article class="svc-v2-svc svc-v2-reveal" style="--i:${i}">
-      <span class="svc-v2-svc__index" aria-hidden="true">${String(i + 1).padStart(2, '0')}</span>
-      <h3 class="svc-v2-svc__title">${s.title}</h3>
-      <p class="svc-v2-svc__text">${s.text}</p>
+      ${s.image ? `<div class="svc-v2-svc__media"><img src="${s.image}" alt="${s.title}" loading="lazy" decoding="async"><span class="svc-v2-svc__glow" aria-hidden="true"></span></div>` : ''}
+      <div class="svc-v2-svc__body">
+        <span class="svc-v2-svc__index" aria-hidden="true">${String(i + 1).padStart(2, '0')}</span>
+        <h3 class="svc-v2-svc__title">${s.title}</h3>
+        <p class="svc-v2-svc__text">${s.text}</p>
+      </div>
     </article>`).join('');
 
   const galleryItems = (gallery || [
@@ -1856,11 +1862,20 @@ function getPremiumGreenfieldPage(basePath) {
 
 function getPremiumProcessDevelopmentPage(basePath) {
   const tt = PROCESS_DEVELOPMENT_PAGE.technologyTransfer;
+  const ttImages = [
+    'https://images.unsplash.com/photo-1532187863486-abf9db5811f6?auto=format&fit=crop&w=800&q=80',
+    'https://nayaragroup.com/wp-content/uploads/2026/01/lab-technician-dressed-protective-suit-as-safety-precaution-looking-test-tube-scaled-1.jpg',
+    'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80',
+    'https://nayaragroup.com/wp-content/uploads/2025/12/environmental-pollution-factory-exterior.jpg',
+  ];
   const ttCards = (tt.features || []).map((f, i) => `
     <article class="svc-v2-svc svc-v2-reveal" style="--i:${i}">
-      <span class="svc-v2-svc__index" aria-hidden="true">${String(i + 1).padStart(2, '0')}</span>
-      <h3 class="svc-v2-svc__title">${f}</h3>
-      <p class="svc-v2-svc__text">Structured support for reliable transfer into commercial manufacturing.</p>
+      <div class="svc-v2-svc__media"><img src="${ttImages[i % ttImages.length]}" alt="${f}" loading="lazy" decoding="async"><span class="svc-v2-svc__glow" aria-hidden="true"></span></div>
+      <div class="svc-v2-svc__body">
+        <span class="svc-v2-svc__index" aria-hidden="true">${String(i + 1).padStart(2, '0')}</span>
+        <h3 class="svc-v2-svc__title">${f}</h3>
+        <p class="svc-v2-svc__text">Structured support for reliable transfer into commercial manufacturing.</p>
+      </div>
     </article>`).join('');
 
   const extraSections = `
@@ -1892,11 +1907,21 @@ function getPremiumProcessDevelopmentPage(basePath) {
 
 function getPremiumConsultancyPage(basePath) {
   const approach = CONSULTANCY_PAGE.approach;
+  const approachImages = [
+    'https://nayaragroup.com/wp-content/uploads/2026/01/Consultancy-ServiceS-scaled.jpg',
+    'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80',
+    'https://images.unsplash.com/photo-1532187863486-abf9db5811f6?auto=format&fit=crop&w=800&q=80',
+    'https://images.unsplash.com/photo-1565793298595-6a879b1d9492?auto=format&fit=crop&w=800&q=80',
+    'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80',
+  ];
   const approachCards = ((approach && approach.features) || []).map((f, i) => `
     <article class="svc-v2-svc svc-v2-reveal" style="--i:${i}">
-      <span class="svc-v2-svc__index" aria-hidden="true">${String(i + 1).padStart(2, '0')}</span>
-      <h3 class="svc-v2-svc__title">${f}</h3>
-      <p class="svc-v2-svc__text">Practical advisory support aligned to industrial project goals.</p>
+      <div class="svc-v2-svc__media"><img src="${approachImages[i % approachImages.length]}" alt="${f}" loading="lazy" decoding="async"><span class="svc-v2-svc__glow" aria-hidden="true"></span></div>
+      <div class="svc-v2-svc__body">
+        <span class="svc-v2-svc__index" aria-hidden="true">${String(i + 1).padStart(2, '0')}</span>
+        <h3 class="svc-v2-svc__title">${f}</h3>
+        <p class="svc-v2-svc__text">Practical advisory support aligned to industrial project goals.</p>
+      </div>
     </article>`).join('');
 
   const extraSections = approach ? `
@@ -2235,17 +2260,16 @@ function getStatsSection() {
 
 const CATEGORY_PRODUCTS = {
   'solvents': { label: 'Solvents', tone: 0, items: ['Acetone', 'Bromin', 'Toluene', 'Isopropyl Alcohol (IPA)', 'Ethylene Glycol', 'Ethyl Acetate', 'Butanol', 'Acetic Acid', 'Methylene Chloride (MDC)', 'KBR', 'HBR', 'NABR', 'KCL', 'Pyridine'] },
-  'acids-alkalies': { label: 'Acids & Alkalies', tone: 1, items: ['Sulfuric Acid', 'Phosphoric Acid', 'Boric Acid', 'Hydrochloric Acid', 'Nitric Acid', 'Caustic Soda Flakes', 'Caustic Potash', 'Citric Acid', 'Sulfamic Acid', 'Ammonium Sulphate', 'Sodium Lauryl Sulphate Powder', 'Di-Calcium Phosphate', 'Magnesium Oxide', 'Soda Ash', 'Potassium Carbonate'] },
+  'acids-alkalies': { label: 'Acids & Alkalies', tone: 1, items: ['Sulfuric Acid', 'Phosphoric Acid', 'Boric Acid', 'Hydrochloric Acid', 'Nitric Acid', 'Caustic Soda Flakes', 'Caustic Potash', 'Citric Acid', 'Acetic Acid', 'Sulfamic Acid', 'Ammonium Sulphate', 'Sodium Lauryl Sulphate Powder', 'Di-Calcium Phosphate', 'Magnesium Oxide', 'Soda Ash', 'Potassium Carbonate'] },
   'intermediates': { label: 'Intermediates', tone: 2, items: ['MCA (Mono Chloro Acetic Acid)', 'Chlorinated Paraffin', 'Sodium Acetate', 'Sodium Formate', 'DMF', 'DMAc', 'Sodium Mono Chloro Acetate (SMCA)', 'Thiophanate Methyl (TPM)', 'Pymetrozine (PMT)', 'Chloraniliprole (CTPR)', 'Tebuconazole'] },
   'pharma-raw-materials': { label: 'Pharma Raw Materials', tone: 3, items: ['API Bulk Drugs', 'Lactose', 'Magnesium Stearate', 'Talc Powder', 'MCC (Microcrystalline Cellulose)'] },
-  'textile-chemicals': { label: 'Textile Chemicals', tone: 4, items: ['Softeners', 'Wetting Agents', 'Scouring Agents', 'Dye Fixing Agents', 'Detergents', 'Enzymes'] },
-  'water-treatment-chemicals': { label: 'Water Treatment Chemicals', tone: 5, items: ['Alum', 'Poly-Aluminum Chloride', 'Sodium Chloride', 'Ferric Chloride', 'Chlorine Powder', 'Activated Carbon', 'Hydrogen Peroxide', 'Feric Aluminium Sulphate', 'Ferrous Chloride', 'Polyelectrolyte', 'Sodium Hypochlorite', 'Antiscalants'] },
-  'agro-chemicals': { label: 'Agro / Specialty Chemicals', tone: 0, items: ['Superplasticizers', 'Tile Adhesives', 'Grouts', 'Waterproofing Chemicals', 'Epoxy Resin'] },
-  'dyes-dye-intermediates': { label: 'Dyes & Dye Intermediates', tone: 1, items: ['Reactive Dyes', 'Direct Dyes', 'Pigments', 'Acid Dyes', 'Vat Dyes', 'Naphthalene Intermediates'] },
-  'laboratory-chemicals': { label: 'Laboratory Chemicals', tone: 2, items: ['Laboratory Acids', 'Indicators', 'Buffer Solutions', 'LR Grade Solvents', 'Reagents'] },
-  'detergent-chemicals': { label: 'Detergent Chemicals', tone: 3, items: ['STPP', 'SLES Paste', 'Turkish Red Oil', 'Alfox 200', 'SLES Needles', 'Acid Thickener', 'Creosote Oil', 'Castor Oil'] },
-  'industrial-salts': { label: 'Industrial Salts', tone: 4, items: ['Calcium Chloride Prills', 'Calcium Chloride Lumps', 'Potassium Chloride', 'Sodium Bi-Carbonate', 'Sodium Nitrate', 'Calcium Chloride Powder', 'Aluminum Chloride', 'Sodium Carbonate', 'Sodium Sulphate', 'Potassium Nitrate'] },
-  'custom-formulated-products': { label: 'Custom-Formulated Products', tone: 5, items: ['Custom Blends', 'Specialty Formulations', 'Tailored Solutions'] },
+  'textile-chemicals': { label: 'Textile Chemicals', tone: 4, items: ['Softeners', 'Dye Fixing Agents', 'Wetting Agents', 'Detergents', 'Scouring Agents', 'Enzymes'] },
+  'water-treatment-chemicals': { label: 'Water Treatment Chemicals', tone: 5, items: ['Alum', 'Hydrogen Peroxide', 'Poly-Aluminum Chloride', 'Feric Aluminium Sulphate', 'Sodium Chloride', 'Ferrous Chloride', 'Ferric Chloride', 'Polyelectrolyte', 'Chlorine Powder', 'Sodium Hypochlorite', 'Activated Carbon', 'Antiscalants'] },
+  'agro-chemicals': { label: 'Agro / Specialty Chemicals', tone: 0, items: ['Superplasticizers', 'Waterproofing Chemicals', 'Tile Adhesives', 'Epoxy Resin', 'Grouts'] },
+  'dyes-dye-intermediates': { label: 'Dyes & Dye Intermediates', tone: 1, items: ['Reactive Dyes', 'Acid Dyes', 'Direct Dyes', 'Vat Dyes', 'Pigments', 'Naphthalene Intermediates'] },
+  'laboratory-chemicals': { label: 'Laboratory Chemicals', tone: 2, items: ['Laboratory Acids', 'LR Grade Solvents', 'Indicators', 'Reagents', 'Buffer Solutions'] },
+  'detergent-chemicals': { label: 'Detergent Chemicals', tone: 3, items: ['STPP', 'SLES Needles', 'SLES Paste', 'Acid Thickener', 'Turkish Red Oil', 'Creosote Oil', 'Alfox 200', 'Castor Oil'] },
+  'industrial-salts': { label: 'Industrial Salts', tone: 4, items: ['Calcium Chloride Prills', 'Calcium Chloride Powder', 'Calcium Chloride Lumps', 'Aluminum Chloride', 'Potassium Chloride', 'Sodium Carbonate', 'Sodium Bi-Carbonate', 'Sodium Sulphate', 'Sodium Nitrate', 'Potassium Nitrate'] },
 };
 
 function getCategoryProductsSection(slug, basePath) {
@@ -2288,7 +2312,6 @@ function getProductGrid(basePath) {
     { name: 'Laboratory Chemicals', href: 'laboratory-chemicals/', slug: 'laboratory-chemicals' },
     { name: 'Detergent Chemicals', href: 'detergent-chemicals/', slug: 'detergent-chemicals' },
     { name: 'Industrial Salts', href: 'industrial-salts/', slug: 'industrial-salts' },
-    { name: 'Custom Formulated', href: 'custom-formulated-products/', slug: 'custom-formulated-products' },
   ];
 
   return `
@@ -2357,30 +2380,33 @@ function generatePage(slug, data) {
   const isBeveragesPage = slug === 'beverages-mineral-water';
   const isEtpPage = slug === 'etp-solutions';
   const isSharedServicePremium = slug === 'greenfield-projects' || slug === 'process-development' || slug === 'consultancy';
+  const isOtherServicesHub = slug === 'other-services';
   const isServiceLanding = isBeveragesPage || isEtpPage || isSharedServicePremium;
+  const isOtherServicesFamily = isServiceLanding || isOtherServicesHub;
   const isPremiumInner = slug === 'about-us' || slug === 'industries-we-serve' || slug === 'careers';
   const isProductCategory = Boolean(CATEGORY_PRODUCTS[slug]);
   const pageLayout = getPageLayout(slug);
+  const svc3dCss = 'assets/css/service-3d-premium.css?v=2';
   const headOpts = isBeveragesPage
-    ? { extraCss: ['assets/css/beverages-premium.css?v=7'], bodyClass: `overflow-x-hidden bwm-page page-${slug}` }
+    ? { extraCss: ['assets/css/beverages-premium.css?v=11', svc3dCss], bodyClass: `overflow-x-hidden bwm-page page-${slug}` }
     : isEtpPage
-      ? { extraCss: ['assets/css/etp-premium.css?v=2'], bodyClass: `overflow-x-hidden bwm-page page-${slug}` }
+      ? { extraCss: ['assets/css/etp-premium.css?v=5', svc3dCss], bodyClass: `overflow-x-hidden bwm-page page-${slug}` }
       : isSharedServicePremium
-        ? { extraCss: ['assets/css/service-premium.css?v=1'], bodyClass: `overflow-x-hidden bwm-page page-${slug}` }
+        ? { extraCss: ['assets/css/service-premium.css?v=4', svc3dCss], bodyClass: `overflow-x-hidden bwm-page page-${slug}` }
+        : isOtherServicesHub
+          ? { extraCss: [svc3dCss], bodyClass: `overflow-x-hidden page-${slug} ${pageLayout}` }
         : isPremiumInner
-          ? { extraCss: ['assets/css/inner-pages-premium.css?v=5'], bodyClass: `overflow-x-hidden page-${slug} ${pageLayout}` }
+          ? { extraCss: ['assets/css/inner-pages-premium.css?v=8', ...(slug === 'careers' ? [svc3dCss] : [])], bodyClass: `overflow-x-hidden page-${slug} ${pageLayout}` }
           : isProductCategory
-            ? { extraCss: ['assets/css/product-category.css?v=4'], bodyClass: `overflow-x-hidden page-${slug} ${pageLayout}` }
+            ? { extraCss: ['assets/css/product-category.css?v=6'], bodyClass: `overflow-x-hidden page-${slug} ${pageLayout}` }
             : slug === 'product'
-              ? { extraCss: ['assets/css/product-category.css?v=4'], bodyClass: `overflow-x-hidden page-${slug} ${pageLayout}` }
+              ? { extraCss: ['assets/css/product-category.css?v=6'], bodyClass: `overflow-x-hidden page-${slug} ${pageLayout}` }
               : { bodyClass: `overflow-x-hidden page-${slug} ${pageLayout}` };
 
   const aboutLead = 'Learn about Nayara Industries, a chemical manufacturing and trading company in GIDC Ankleshwar specializing in solvents, intermediates, and industrial chemicals with strict QC systems.';
   const industriesLead = 'Nayara Industries provides chemical solutions for pharmaceuticals, agrochemicals, textiles, dyes, paints, water treatment, rubber, and specialty applications.';
-  const careersLead = 'At Nayara Industries, we believe that our people are the driving force behind our growth. As an emerging chemical manufacturing and trading company in GIDC Ankleshwar, we offer a work environment that values safety, learning, integrity, and long-term career development. Whether you are an experienced professional or a young talent beginning your industrial career, we provide opportunities that challenge you, inspire you, and help you build a meaningful future.';
-
   const premiumEyebrow = slug === 'about-us' ? 'About Us' : slug === 'industries-we-serve' ? 'Industries We Serve' : 'Careers at Nayara Industries';
-  const premiumLead = slug === 'about-us' ? aboutLead : slug === 'industries-we-serve' ? industriesLead : careersLead;
+  const premiumLead = slug === 'about-us' ? aboutLead : slug === 'industries-we-serve' ? industriesLead : '';
 
   const html = `${getHead(title, description, basePath, slug + '/', headOpts)}
   <div id="page-loader"><div class="relative flex items-center justify-center"><div class="loader-ring"></div><div class="loader-ring-spin"></div><span class="text-white font-heading font-bold text-xl tracking-[0.3em]">NI</span></div></div>
@@ -2408,9 +2434,10 @@ function generatePage(slug, data) {
   <script src="${basePath}assets/js/main.js"></script>
   <script src="${basePath}assets/js/premium.js"></script>
   <script src="${basePath}assets/js/forms.js"></script>
-  ${isBeveragesPage ? `<script src="${basePath}assets/js/beverages-premium.js?v=1"></script>` : ''}
+  ${isBeveragesPage ? `<script src="${basePath}assets/js/beverages-premium.js?v=3"></script>` : ''}
   ${isEtpPage ? `<script src="${basePath}assets/js/etp-premium.js?v=1"></script>` : ''}
   ${isSharedServicePremium ? `<script src="${basePath}assets/js/service-premium.js?v=1"></script>` : ''}
+  ${isOtherServicesFamily || slug === 'careers' ? `<script src="${basePath}assets/js/service-3d-premium.js?v=2"></script>` : ''}
 </body>
 </html>`;
 

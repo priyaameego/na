@@ -41,8 +41,8 @@
 
 .page-home,
 .page-home main {
-  background: #3d6d82 !important;
-  background-color: #3d6d82 !important;
+  background: transparent !important;
+  background-color: transparent !important;
   overflow-x: hidden;
 }
 
@@ -50,10 +50,16 @@
 .page-home h2,
 .page-home .sp-hero-title,
 .page-home .sp-section-title,
-.page-home .hp-corporate__title,
 .page-home .hp-hero-title {
   font-family: var(--font-display) !important;
   color: var(--lux-heading) !important;
+  letter-spacing: -0.03em !important;
+  font-weight: 700 !important;
+}
+
+.page-home .hp-corporate__title {
+  font-family: var(--font-display) !important;
+  color: #ffffff !important;
   letter-spacing: -0.03em !important;
   font-weight: 700 !important;
 }
@@ -252,9 +258,10 @@
 .page-home .hp-cinematic {
   min-height: 100vh !important;
   min-height: 100dvh !important;
-  background: #3d6d82 !important;
+  background: #0f172a !important;
   position: relative;
   overflow: hidden;
+  z-index: 1;
 }
 
 .page-home .hp-cinematic .hero-slide-panel {
@@ -747,12 +754,16 @@
 .page-home .hp-corporate {
   position: relative;
   background:
-    linear-gradient(135deg, #030f1a 0%, #071A2F 25%, #0a3d5c 55%, #071A2F 80%, #051525 100%);
-  background-size: 200% 200%;
+    linear-gradient(135deg, #030f1a 0%, #071A2F 25%, #0a3d5c 55%, #071A2F 80%, #051525 100%) !important;
+  background-color: #071A2F !important;
+  background-image:
+    linear-gradient(135deg, #030f1a 0%, #071A2F 25%, #0a3d5c 55%, #071A2F 80%, #051525 100%) !important;
+  background-size: 200% 200% !important;
   animation: hpCorpGradient 18s ease infinite;
   padding: clamp(4rem, 8vw, 6.5rem) clamp(1.25rem, 4vw, 2rem);
   overflow: hidden;
   border-top: 1px solid rgba(14, 165, 233, 0.15);
+  z-index: 1;
 }
 
 .page-home .hp-corporate__bg {
@@ -886,11 +897,11 @@
   font-weight: 800;
   line-height: 1.1;
   letter-spacing: -0.02em;
-  color: #fff;
+  color: #ffffff !important;
 }
 
 .page-home .hp-corporate__stat-num span {
-  color: #fff;
+  color: #ffffff !important;
 }
 
 .page-home .hp-corporate__stat-label {
@@ -1008,13 +1019,13 @@
   font-family: var(--font-body);
   font-size: clamp(1rem, 1.5vw, 1.0625rem);
   line-height: 1.75;
-  color: rgba(255, 255, 255, 0.68);
+  color: rgba(255, 255, 255, 0.78) !important;
   margin-bottom: 1.75rem;
   max-width: 560px;
 }
 
 .page-home .hp-corporate__lead strong {
-  color: #fff;
+  color: #ffffff !important;
   font-weight: 600;
 }
 
@@ -1024,8 +1035,8 @@
   align-items: center;
   justify-content: center;
   padding: 0.9375rem 2.25rem;
-  background: linear-gradient(135deg, #fff 0%, #e0f2fe 100%);
-  color: var(--lux-navy, #071A2F);
+  background: linear-gradient(135deg, #0EA5E9 0%, #0284C7 100%);
+  color: #ffffff !important;
   font-family: var(--font-body);
   font-size: 0.8125rem;
   font-weight: 700;
@@ -1035,7 +1046,7 @@
   border-radius: 999px;
   overflow: hidden;
   margin-bottom: 2.25rem;
-  box-shadow: 0 8px 28px rgba(14, 165, 233, 0.25);
+  box-shadow: 0 8px 28px rgba(14, 165, 233, 0.35);
   transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
 
@@ -1053,12 +1064,13 @@
 .page-home .hp-corporate__cta span {
   position: relative;
   z-index: 1;
+  color: #ffffff !important;
 }
 
 .page-home .hp-corporate__cta:hover {
   transform: translateY(-3px) scale(1.02);
-  box-shadow: 0 16px 40px rgba(14, 165, 233, 0.35);
-  color: var(--lux-navy, #071A2F);
+  box-shadow: 0 16px 40px rgba(14, 165, 233, 0.45);
+  color: #ffffff !important;
 }
 
 .page-home .hp-corporate__certs-label {
@@ -1168,7 +1180,7 @@
 
 /* ─── ABOUT — Split editorial ─── */
 .page-home #about {
-  background: var(--lux-white) !important;
+  background: transparent !important;
   padding-block: var(--lux-section-y);
 }
 
@@ -1508,7 +1520,7 @@
 
 /* ─── PRODUCTS ─── */
 .page-home #products {
-  background: #3d6d82 !important;
+  background: transparent !important;
   padding-block: var(--lux-section-y);
 }
 
@@ -1524,11 +1536,15 @@
 
 .page-home #products .sp-section-title,
 .page-home #products .sp-section-eyebrow {
-  color: #ffffff !important;
+  color: #0f172a !important;
+}
+
+.page-home #products .sp-section-eyebrow {
+  color: #0284c7 !important;
 }
 
 .page-home #products .sp-feature-text {
-  color: #ffffff !important;
+  color: #475569 !important;
   margin-inline: auto;
   max-width: 58ch;
 }
@@ -1852,10 +1868,7 @@
 .page-home #certificates,
 .page-home .hp-certs {
   position: relative;
-  background:
-    radial-gradient(ellipse 70% 50% at 10% 0%, rgba(184, 230, 240, 0.18), transparent 55%),
-    radial-gradient(ellipse 60% 45% at 90% 100%, rgba(125, 211, 252, 0.14), transparent 50%),
-    #3d6d82 !important;
+  background: transparent !important;
   padding-block: var(--lux-section-y);
   overflow: hidden;
 }
@@ -1870,7 +1883,11 @@
 
 .page-home #certificates .sp-section-title,
 .page-home #certificates .sp-section-eyebrow {
-  color: #ffffff !important;
+  color: #0f172a !important;
+}
+
+.page-home #certificates .sp-section-eyebrow {
+  color: #0284c7 !important;
 }
 
 .page-home #certificates .sp-section-title::after {
@@ -1881,7 +1898,7 @@
 }
 
 .page-home #certificates .sp-feature-text {
-  color: #ffffff !important;
+  color: #475569 !important;
   margin-inline: auto;
   max-width: 52ch;
 }
@@ -2122,7 +2139,7 @@
 .page-home #why-choose {
   position: relative;
   overflow: hidden;
-  background: linear-gradient(165deg, #EEF4FA 0%, #F8FAFC 42%, #E9F2F8 100%) !important;
+  background: transparent !important;
   padding-block: var(--lux-section-y);
 }
 
@@ -2542,14 +2559,20 @@
 
 /* ─── CONTACT ─── */
 .page-home #contact {
-  background: #3d6d82 !important;
+  background: transparent !important;
   padding-block: var(--lux-section-y);
 }
 
-.page-home #contact .sp-section-title,
-.page-home #contact .sp-section-eyebrow,
+.page-home #contact .sp-section-title {
+  color: #0f172a !important;
+}
+
+.page-home #contact .sp-section-eyebrow {
+  color: #0284c7 !important;
+}
+
 .page-home #contact .sp-feature-text {
-  color: #ffffff !important;
+  color: #475569 !important;
 }
 
 .page-home #contact .sp-section-title::after {

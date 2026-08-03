@@ -1,48 +1,151 @@
 /* ═══════════════════════════════════════════════════════════════
-   Site-wide light teal page background (#3d6d82)
-   Applies to all pages except homepage
+   Site-wide animated soft aurora background
+   Fixed layer behind all pages (home + inner)
    ═══════════════════════════════════════════════════════════════ */
 
-html:has(body:not(.page-home)),
+html,
+body {
+  --site-bg: #F8FAFC;
+  background: #F8FAFC !important;
+  background-color: #F8FAFC !important;
+  background-image: none !important;
+}
+
 body:not(.page-home) {
-  --site-teal: #3d6d82;
-  background: #3d6d82 !important;
-  background-color: #3d6d82 !important;
+  color: #334155;
+}
+
+/* Soft drifting aurora orbs */
+body::before {
+  content: '' !important;
+  position: fixed !important;
+  inset: 0 !important;
+  z-index: 0 !important;
+  pointer-events: none !important;
+  display: block !important;
+  opacity: 1 !important;
+  background:
+    radial-gradient(ellipse 58% 48% at 12% 18%, rgba(14, 165, 233, 0.18), transparent 58%),
+    radial-gradient(ellipse 52% 42% at 88% 12%, rgba(100, 116, 139, 0.14), transparent 55%),
+    radial-gradient(ellipse 48% 52% at 72% 82%, rgba(2, 132, 199, 0.12), transparent 58%),
+    linear-gradient(165deg, #F8FAFC 0%, #EEF2F7 48%, #F1F5F9 100%) !important;
+  background-size: 140% 140% !important;
+  animation: siteAuroraDrift 28s ease-in-out infinite alternate !important;
+  will-change: transform;
+}
+
+body::after {
+  content: '' !important;
+  position: fixed !important;
+  inset: 0 !important;
+  z-index: 0 !important;
+  pointer-events: none !important;
+  display: block !important;
+  opacity: 1 !important;
+  background:
+    radial-gradient(ellipse 44% 38% at 38% 62%, rgba(56, 189, 248, 0.12), transparent 60%),
+    radial-gradient(ellipse 40% 34% at 8% 88%, rgba(148, 163, 184, 0.14), transparent 55%),
+    radial-gradient(ellipse 36% 30% at 92% 48%, rgba(14, 165, 233, 0.08), transparent 50%) !important;
+  background-size: 160% 160% !important;
+  animation: siteAuroraDriftAlt 34s ease-in-out infinite alternate-reverse !important;
+  will-change: transform;
+}
+
+@keyframes siteAuroraDrift {
+  from { transform: translate3d(-2%, -1.5%, 0) scale(1); }
+  to { transform: translate3d(3.5%, 2.5%, 0) scale(1.08); }
+}
+
+@keyframes siteAuroraDriftAlt {
+  from { transform: translate3d(2.5%, 1%, 0) scale(1.06); }
+  to { transform: translate3d(-3%, -2%, 0) scale(1); }
+}
+
+/* Content above the fixed aurora (do not clamp header — nav needs high z-index) */
+main,
+body > footer,
+body > .site-footer {
+  position: relative;
+  z-index: 1;
+}
+
+main {
+  background: transparent !important;
+  background-color: transparent !important;
+}
+
+main > section:not(.ph-banner):not(.ph-banner--bg):not(.ipp-banner):not(.sp-hero):not(.hero-swiper):not(#hero-swiper):not(.hp-cinematic):not(.hp-corporate),
+.sp-zone,
+.sp-zone--mesh,
+.sp-zone--industrial,
+.eb-zone,
+.inner-cta-premium,
+.sp-cta-band,
+.pc-cta,
+.pc-intro,
+.pc-products,
+.bwm-v2-zone,
+.bwm-v2-hero,
+.bwm-v2-intro,
+.bwm-v2-what,
+.bwm-v2-services,
+.bwm-v2-gallery,
+.bwm-v2-cta,
+.etp-v2-zone,
+.etp-v2-hero,
+.etp-v2-intro,
+.etp-v2-what,
+.etp-v2-services,
+.etp-v2-gallery,
+.etp-v2-cta,
+.svc-v2-zone,
+.svc-v2-hero,
+.svc-v2-intro,
+.svc-v2-what,
+.svc-v2-services,
+.svc-v2-gallery,
+.svc-v2-cta,
+.ipp-industries,
+.ipp-cr-why,
+.ipp-cr-speculative,
+.ipp-cr-jobs,
+.ipp-cr-apply {
+  background: transparent !important;
+  background-color: transparent !important;
   background-image: none !important;
 }
 
-body:not(.page-home)::before,
-body:not(.page-home)::after {
-  display: none !important;
-  opacity: 0 !important;
-  background: none !important;
-  content: none !important;
+/* Keep designed dark corporate band (white text needs dark surface) */
+.page-home .hp-corporate {
+  background-color: #071A2F !important;
+  background-image:
+    linear-gradient(135deg, #030f1a 0%, #071A2F 25%, #0a3d5c 55%, #071A2F 80%, #051525 100%) !important;
+  background-size: 200% 200% !important;
 }
 
-body:not(.page-home) main {
-  background: #3d6d82 !important;
-  background-color: #3d6d82 !important;
+/* Footer CTA — keep dark band + white text on all pages */
+.premium-footer .pf-cta {
+  background: linear-gradient(135deg, #071A2F 0%, #0a2548 50%, #0d2f5c 100%) !important;
+  background-color: #071A2F !important;
+  background-image: linear-gradient(135deg, #071A2F 0%, #0a2548 50%, #0d2f5c 100%) !important;
 }
 
-/* Keep section shells on the same teal wash */
-body:not(.page-home) main > section,
-body:not(.page-home) .sp-zone,
-body:not(.page-home) .sp-zone--mesh,
-body:not(.page-home) .sp-zone--industrial,
-body:not(.page-home) .eb-zone,
-body:not(.page-home) .inner-cta-premium,
-body:not(.page-home) .sp-cta-band,
-body:not(.page-home) .pf-cta {
-  background-color: #3d6d82 !important;
+.premium-footer .pf-cta-title,
+.premium-footer .pf-cta h3,
+body:not(.page-home) .premium-footer .pf-cta-title,
+body:not(.page-home) .premium-footer .pf-cta h3 {
+  color: #ffffff !important;
 }
 
-body:not(.page-home) .sp-zone[style],
-body:not(.page-home) section[style*="background"] {
-  background-color: #3d6d82 !important;
-  background-image: none !important;
+.premium-footer .pf-cta-label {
+  color: #fbbf24 !important;
 }
 
-/* Readable typography on teal */
+.premium-footer .pf-cta-btn {
+  color: #ffffff !important;
+}
+
+/* Readable dark typography on light pages */
 body:not(.page-home) h1,
 body:not(.page-home) h2,
 body:not(.page-home) h3,
@@ -52,7 +155,7 @@ body:not(.page-home) .sp-cms h2,
 body:not(.page-home) .sp-cms h3,
 body:not(.page-home) .cms-content h2,
 body:not(.page-home) .cms-content h3 {
-  color: #ffffff !important;
+  color: #0f172a !important;
 }
 
 body:not(.page-home) .sp-cms p,
@@ -65,48 +168,41 @@ body:not(.page-home) .sp-feature-text,
 body:not(.page-home) .sp-contact-copy p,
 body:not(.page-home) .pc-cta .sp-feature-text,
 body:not(.page-home) .pc-cta p {
-  color: #ffffff !important;
+  color: #475569 !important;
 }
 
 body:not(.page-home) .sp-section-eyebrow,
 body:not(.page-home) .pc-cta .sp-section-eyebrow {
-  color: rgba(255, 255, 255, 0.82) !important;
+  color: #0ea5e9 !important;
 }
 
-/* Ready to Partner CTA — force white copy on teal pages */
 body:not(.page-home) .pc-cta .sp-section-title,
 body:not(.page-home) .sp-contact-copy .sp-section-title,
 body:not(.page-home) .sp-contact-copy .sp-feature-text {
-  color: #ffffff !important;
-}
-
-body:not(.page-home) .pc-cta {
-  background: #3d6d82 !important;
+  color: #0f172a !important;
 }
 
 body:not(.page-home) .pc-cta__action {
   min-height: 180px;
   border-radius: 22px;
-  background: rgba(255, 255, 255, 0.12) !important;
-  border: 1px solid rgba(255, 255, 255, 0.22);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  background: #ffffff !important;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
 }
 
-/* Content / product tiles as soft glass */
+/* Content tiles — white cards */
 body:not(.page-home) .sp-tile:not(.sp-tile--image),
 body:not(.page-home) .sp-cms,
 body:not(.page-home) .cms-content-premium {
-  background: rgba(255, 255, 255, 0.12) !important;
-  border-color: rgba(255, 255, 255, 0.18) !important;
-  color: rgba(255, 255, 255, 0.9) !important;
+  background: #ffffff !important;
+  border-color: #e2e8f0 !important;
+  color: #334155 !important;
 }
 
-/* Forms stay usable */
 body:not(.page-home) input:not([type="submit"]):not([type="button"]):not([type="checkbox"]):not([type="radio"]),
 body:not(.page-home) select,
 body:not(.page-home) textarea {
-  background: rgba(255, 255, 255, 0.95) !important;
+  background: #ffffff !important;
   color: #0f172a !important;
 }
 
@@ -115,7 +211,7 @@ body:not(.page-home) textarea::placeholder {
   color: #64748b !important;
 }
 
-/* ─── Full-bleed image banner (related photo inside banner) ─── */
+/* ─── Full-bleed image banner (keeps dark overlay for photo contrast) ─── */
 .ph-banner,
 .ph-banner.ph-banner--bg {
   position: relative;
@@ -123,7 +219,7 @@ body:not(.page-home) textarea::placeholder {
   min-height: clamp(280px, 42vh, 400px);
   margin-top: calc(-1 * var(--header-height, 132px));
   padding: 0 !important;
-  background: #3d6d82 !important;
+  background: #0f172a !important;
   display: flex;
   align-items: flex-end;
 }
@@ -149,8 +245,8 @@ body:not(.page-home) textarea::placeholder {
   z-index: 1;
   pointer-events: none;
   background:
-    linear-gradient(105deg, rgba(20, 50, 66, 0.88) 0%, rgba(20, 50, 66, 0.55) 48%, rgba(20, 50, 66, 0.28) 100%),
-    linear-gradient(0deg, rgba(20, 50, 66, 0.45) 0%, transparent 55%);
+    linear-gradient(105deg, rgba(15, 23, 42, 0.82) 0%, rgba(15, 23, 42, 0.5) 48%, rgba(15, 23, 42, 0.28) 100%),
+    linear-gradient(0deg, rgba(15, 23, 42, 0.45) 0%, transparent 55%);
 }
 
 .ph-banner__inner,
@@ -161,7 +257,6 @@ body:not(.page-home) textarea::placeholder {
   max-width: 1280px;
   margin: 0 auto;
   padding: calc(var(--header-height, 100px) + 2rem) clamp(1.25rem, 4vw, 2rem) clamp(2rem, 4vw, 2.75rem);
-  display: block;
   min-height: inherit;
   display: flex;
   align-items: flex-end;
@@ -198,7 +293,7 @@ body:not(.page-home) textarea::placeholder {
 }
 
 .ph-banner__crumb a:hover {
-  color: #b8e6f0 !important;
+  color: #bae6fd !important;
 }
 
 .ph-banner__crumb-sep,
@@ -259,14 +354,15 @@ body:not(.page-home) textarea::placeholder {
   color: #fff !important;
 }
 
-/* Product catalogue tiles on teal pages */
+/* Product catalogue tiles */
 body:not(.page-home) .pc-catalog__card .sp-tile-inner,
 body:not(.page-home) .sp-bento--catalog .sp-tile-inner {
-  background: rgba(255, 255, 255, 0.12) !important;
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: #ffffff !important;
+  border: 1px solid #e2e8f0;
   border-radius: 18px;
   overflow: hidden;
-  color: #fff !important;
+  color: #0f172a !important;
+  box-shadow: 0 10px 28px rgba(15, 23, 42, 0.06);
 }
 
 body:not(.page-home) .pc-catalog__visual,
@@ -293,7 +389,7 @@ body:not(.page-home) .sp-bento--catalog .sp-tile:hover .sp-product-visual img {
 
 body:not(.page-home) .sp-product-name,
 body:not(.page-home) .sp-link {
-  color: #ffffff !important;
+  color: #0f172a !important;
 }
 
 body:not(.page-home) .sp-bento--catalog {
@@ -354,6 +450,13 @@ body:not(.page-home) .sp-bento--catalog {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  body::before,
+  body::after {
+    animation: none !important;
+    transform: none !important;
+    background-size: 100% 100% !important;
+  }
+
   .ph-banner__media {
     animation: none !important;
   }

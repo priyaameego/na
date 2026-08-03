@@ -1,0 +1,358 @@
+/* ═══════════════════════════════════════════════════════════════
+   Shared premium 3D / cinematic motion — Other Services pages
+   Scopes: etp-v2 / svc-v2 / hub ph-banner + eb-prod
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ─── Cinematic hero frames (ETP + shared service) ─── */
+.etp-v2-hero__frame,
+.svc-v2-hero__frame {
+  border: 1px solid rgba(186, 230, 253, 0.22) !important;
+  box-shadow:
+    0 30px 80px rgba(0, 0, 0, 0.45),
+    0 0 0 1px rgba(14, 165, 233, 0.08) inset,
+    0 0 60px rgba(14, 165, 233, 0.12) !important;
+  isolation: isolate;
+}
+
+.etp-v2-hero__frame::before,
+.svc-v2-hero__frame::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(
+    120deg,
+    rgba(56, 189, 248, 0.55),
+    transparent 35%,
+    rgba(255, 255, 255, 0.15) 50%,
+    transparent 65%,
+    rgba(14, 165, 233, 0.45)
+  );
+  background-size: 220% 220%;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  animation: svc3dBorder 10s linear infinite;
+  pointer-events: none;
+  z-index: 4;
+}
+
+@keyframes svc3dBorder {
+  to { background-position: 200% 0; }
+}
+
+.etp-v2-hero__bg,
+.svc-v2-hero__bg {
+  inset: -8% !important;
+  transform-origin: 60% 40%;
+  --px: 0px;
+  --py: 0px;
+  animation: svc3dCine 28s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite alternate !important;
+  filter: saturate(1.15) contrast(1.08) brightness(0.92);
+  translate: var(--px) var(--py);
+}
+
+.etp-v2-hero__bg::before,
+.svc-v2-hero__bg::before {
+  content: '';
+  position: absolute;
+  inset: -6%;
+  background-image: inherit;
+  background-size: cover;
+  background-position: 70% 30%;
+  opacity: 0.35;
+  mix-blend-mode: soft-light;
+  filter: blur(14px) saturate(1.4);
+  animation: svc3dGhost 18s ease-in-out infinite alternate-reverse;
+  pointer-events: none;
+}
+
+.etp-v2-hero__bg::after,
+.svc-v2-hero__bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 40% 35% at 75% 25%, rgba(56, 189, 248, 0.28), transparent 60%),
+    radial-gradient(ellipse 35% 40% at 20% 80%, rgba(14, 165, 233, 0.18), transparent 55%);
+  animation: svc3dOrbs 14s ease-in-out infinite alternate;
+  pointer-events: none;
+  mix-blend-mode: screen;
+}
+
+@keyframes svc3dCine {
+  0%   { transform: scale(1.08) translate3d(0, 0, 0) rotate(0deg); }
+  40%  { transform: scale(1.16) translate3d(-2.5%, 1.2%, 0) rotate(-0.4deg); }
+  100% { transform: scale(1.2) translate3d(1.8%, -1.5%, 0) rotate(0.35deg); }
+}
+
+@keyframes svc3dGhost {
+  from { transform: scale(1.12) translate3d(2%, -1%, 0); opacity: 0.25; }
+  to   { transform: scale(1.22) translate3d(-3%, 2%, 0); opacity: 0.42; }
+}
+
+@keyframes svc3dOrbs {
+  from { transform: translate3d(0, 0, 0) scale(1); opacity: 0.7; }
+  to   { transform: translate3d(-4%, 3%, 0) scale(1.15); opacity: 1; }
+}
+
+.etp-v2-hero__veil,
+.svc-v2-hero__veil {
+  z-index: 1;
+  background:
+    linear-gradient(115deg, rgba(2, 16, 24, 0.9) 0%, rgba(2, 16, 24, 0.58) 42%, rgba(2, 16, 24, 0.28) 100%),
+    radial-gradient(ellipse 70% 80% at 50% 120%, rgba(2, 132, 199, 0.22), transparent 55%),
+    radial-gradient(ellipse 50% 60% at 85% 15%, rgba(125, 211, 252, 0.16), transparent 60%) !important;
+}
+
+.etp-v2-hero__veil::before,
+.svc-v2-hero__veil::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.09;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  pointer-events: none;
+  mix-blend-mode: overlay;
+}
+
+.etp-v2-hero__veil::after,
+.svc-v2-hero__veil::after {
+  content: '';
+  position: absolute;
+  inset: -30%;
+  background: linear-gradient(
+    115deg,
+    transparent 38%,
+    rgba(186, 230, 253, 0.14) 48%,
+    rgba(255, 255, 255, 0.22) 50%,
+    rgba(186, 230, 253, 0.1) 52%,
+    transparent 62%
+  );
+  animation: svc3dSheen 9s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes svc3dSheen {
+  0%, 100% { transform: translateX(-22%) skewX(-14deg); opacity: 0; }
+  40% { opacity: 0.7; }
+  70% { transform: translateX(32%) skewX(-14deg); opacity: 0; }
+}
+
+.etp-v2-hero__content,
+.svc-v2-hero__content {
+  z-index: 5 !important;
+}
+
+/* ─── Hub + Careers banners ─── */
+body.page-other-services .ph-banner__media,
+body.page-careers .ph-banner__media {
+  animation: svc3dCine 26s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite alternate;
+  filter: saturate(1.12) contrast(1.06) brightness(0.9);
+  --px: 0px;
+  --py: 0px;
+  translate: var(--px) var(--py);
+}
+
+body.page-other-services .ph-banner__veil::after,
+body.page-careers .ph-banner__veil::after {
+  content: '';
+  position: absolute;
+  inset: -30%;
+  background: linear-gradient(
+    115deg,
+    transparent 38%,
+    rgba(186, 230, 253, 0.16) 48%,
+    rgba(255, 255, 255, 0.2) 50%,
+    transparent 62%
+  );
+  animation: svc3dSheen 9s ease-in-out infinite;
+  pointer-events: none;
+}
+
+/* Careers — shorter premium banner, no description */
+body.page-careers .ph-banner,
+body.page-careers .ph-banner.ph-banner--bg {
+  min-height: clamp(200px, 28vh, 280px) !important;
+}
+
+body.page-careers .ph-banner__inner,
+body.page-careers .ph-banner__inner--overlay {
+  padding: calc(var(--header-height, 100px) + 1.25rem) clamp(1.25rem, 4vw, 2rem) clamp(1.35rem, 3vw, 1.85rem) !important;
+  min-height: inherit;
+}
+
+body.page-careers .ph-banner__lead {
+  display: none !important;
+}
+
+body.page-careers .ph-banner__title {
+  font-size: clamp(1.85rem, 4vw, 2.65rem) !important;
+  margin-bottom: 0.35rem;
+}
+
+body.page-careers .ph-banner__cta {
+  margin-top: 0.85rem;
+}
+
+body.page-other-services .eb-prod.card-3d {
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+body.page-other-services .eb-prod.card-3d img {
+  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1) !important;
+  will-change: transform;
+}
+
+body.page-other-services .eb-prod.card-3d.is-tilting img {
+  transition: transform 0.12s ease-out !important;
+}
+
+/* ─── Image service cards (ETP / svc) ─── */
+.etp-v2-svc,
+.svc-v2-svc {
+  padding: 0 !important;
+  display: flex;
+  flex-direction: column;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+.etp-v2-svc__media,
+.svc-v2-svc__media {
+  position: relative;
+  height: 150px;
+  overflow: hidden;
+  perspective: 700px;
+  transform-style: preserve-3d;
+}
+
+.etp-v2-svc__media img,
+.svc-v2-svc__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.06);
+  transform-origin: center center;
+  transition: transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+  filter: saturate(1.05) contrast(1.05);
+  will-change: transform;
+}
+
+.etp-v2-svc.is-tilting .etp-v2-svc__media img,
+.svc-v2-svc.is-tilting .svc-v2-svc__media img {
+  transition: transform 0.12s ease-out;
+}
+
+.etp-v2-svc__media::after,
+.svc-v2-svc__media::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(
+    420px circle at var(--shine-x, 50%) var(--shine-y, 40%),
+    rgba(255, 255, 255, 0.28),
+    transparent 45%
+  );
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  z-index: 1;
+}
+
+.etp-v2-svc:hover .etp-v2-svc__media::after,
+.svc-v2-svc:hover .svc-v2-svc__media::after,
+.etp-v2-svc.is-tilting .etp-v2-svc__media::after,
+.svc-v2-svc.is-tilting .svc-v2-svc__media::after {
+  opacity: 1;
+}
+
+.etp-v2-svc__glow,
+.svc-v2-svc__glow {
+  position: absolute;
+  inset: auto -20% -40% -20%;
+  height: 70%;
+  background: radial-gradient(ellipse at center, rgba(14, 165, 233, 0.35), transparent 70%);
+  opacity: 0;
+  transition: opacity 0.45s ease;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.etp-v2-svc:hover .etp-v2-svc__glow,
+.svc-v2-svc:hover .svc-v2-svc__glow {
+  opacity: 1;
+}
+
+.etp-v2-svc__body,
+.svc-v2-svc__body {
+  padding: 1.25rem 1.2rem 1.35rem;
+  flex: 1;
+}
+
+/* Text-only cards (no media) keep padding */
+.etp-v2-svc:not(:has(.etp-v2-svc__media)),
+.svc-v2-svc:not(:has(.svc-v2-svc__media)) {
+  padding: 1.45rem 1.35rem 1.5rem !important;
+}
+
+/* ─── Gallery + what visual 3D ─── */
+.etp-v2-gallery__item,
+.svc-v2-gallery__item,
+.bwm-v2-gallery__item {
+  transform-style: preserve-3d;
+  will-change: transform;
+  perspective: 800px;
+}
+
+.etp-v2-gallery__item img,
+.svc-v2-gallery__item img,
+.bwm-v2-gallery__item img,
+.etp-v2-what__visual img,
+.svc-v2-what__visual img,
+.bwm-v2-what__visual img {
+  will-change: transform;
+  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.etp-v2-what__visual,
+.svc-v2-what__visual,
+.bwm-v2-what__visual {
+  perspective: 900px;
+  overflow: hidden;
+}
+
+.etp-v2-gallery__item.is-tilting img,
+.svc-v2-gallery__item.is-tilting img,
+.bwm-v2-gallery__item.is-tilting img,
+.etp-v2-what__visual.is-tilting img,
+.svc-v2-what__visual.is-tilting img,
+.bwm-v2-what__visual.is-tilting img {
+  transition: transform 0.12s ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .etp-v2-hero__bg,
+  .svc-v2-hero__bg,
+  .etp-v2-hero__bg::before,
+  .svc-v2-hero__bg::before,
+  .etp-v2-hero__bg::after,
+  .svc-v2-hero__bg::after,
+  .etp-v2-hero__frame::before,
+  .svc-v2-hero__frame::before,
+  .etp-v2-hero__veil::after,
+  .svc-v2-hero__veil::after,
+  body.page-other-services .ph-banner__media,
+  body.page-other-services .ph-banner__veil::after {
+    animation: none !important;
+  }
+
+  .etp-v2-hero__bg,
+  .svc-v2-hero__bg,
+  body.page-other-services .ph-banner__media {
+    translate: 0 0 !important;
+  }
+}

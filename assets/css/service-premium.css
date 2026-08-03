@@ -1,7 +1,7 @@
-/* ═══════════════════════════════════════════════════════════════
+/* ???????????????????????????????????????????????????????????????
    Shared Service Premium Landing (lighter teal)
    Scoped to greenfield / process-development / consultancy / .svc-v2-*
-   ═══════════════════════════════════════════════════════════════ */
+   ??????????????????????????????????????????????????????????????? */
 
 /* Same light teal as beverages page */
 html:has(body.page-greenfield-projects),
@@ -13,31 +13,19 @@ body.page-consultancy.bwm-page,
 body.page-greenfield-projects ,
 body.page-process-development ,
 body.page-consultancy {
-  --svc-bg: #3d6d82;
-  --svc-bg-soft: #4a7d93;
-  --svc-panel: rgba(255, 255, 255, 0.14);
-  --svc-panel-hover: rgba(255, 255, 255, 0.2);
-  --svc-line: rgba(255, 255, 255, 0.22);
-  --svc-text: #ffffff;
-  --svc-muted: rgba(255, 255, 255, 0.9);
-  --svc-accent: #b8e6f0;
+  --svc-bg: #F8FAFC;
+  --svc-bg-soft: #EEF2F7;
+  --svc-panel: #ffffff;
+  --svc-panel-hover: #ffffff;
+  --svc-line: #e2e8f0;
+  --svc-text: #0f172a;
+  --svc-muted: #475569;
+  --svc-accent: #0284c7;
   --svc-radius: 28px;
-  background: #3d6d82 !important;
-  background-color: #3d6d82 !important;
+  background: transparent !important;
+  background-color: transparent !important;
   background-image: none !important;
   color: var(--svc-text);
-}
-
-body.page-greenfield-projects::before,
-body.page-process-development::before,
-body.page-consultancy::before,
-body.page-greenfield-projects::after ,
-body.page-process-development::after ,
-body.page-consultancy::after {
-  display: none !important;
-  opacity: 0 !important;
-  background: none !important;
-  content: none !important;
 }
 
 body.page-greenfield-projects main,
@@ -67,8 +55,8 @@ body.page-consultancy .svc-v2-gallery,
 body.page-greenfield-projects .svc-v2-cta ,
 body.page-process-development .svc-v2-cta ,
 body.page-consultancy .svc-v2-cta {
-  background: #3d6d82 !important;
-  background-color: #3d6d82 !important;
+  background: transparent !important;
+  background-color: transparent !important;
   background-image: none !important;
 }
 
@@ -81,6 +69,12 @@ body.page-consultancy .svc-v2-cta {
 .page-greenfield-projects h3 ,
 .page-process-development h3 ,
 .page-consultancy h3 {
+  color: #0f172a !important;
+}
+
+.page-greenfield-projects .svc-v2-hero__title,
+.page-process-development .svc-v2-hero__title,
+.page-consultancy .svc-v2-hero__title {
   color: #fff !important;
 }
 
@@ -101,7 +95,7 @@ body.page-consultancy .svc-v2-cta {
   font-size: clamp(1.55rem, 3.4vw, 2.35rem);
   letter-spacing: -0.03em;
   line-height: 1.15;
-  color: #fff !important;
+  color: #0f172a !important;
   margin: 0 0 1rem;
 }
 
@@ -131,7 +125,7 @@ body.page-consultancy .svc-v2-cta {
   filter: blur(0);
 }
 
-/* Hero — centered premium banner */
+/* Hero � centered premium banner */
 .svc-v2-hero {
   padding: calc(var(--header-height, 100px) + 1.25rem) clamp(1.25rem, 4vw, 2.5rem) 1.5rem;
 }
@@ -284,7 +278,7 @@ body.page-consultancy .svc-v2-cta {
 .svc-v2-list li {
   position: relative;
   padding-left: 1.35rem;
-  color: rgba(255, 255, 255, 0.92);
+  color: #475569;
   font-size: 0.98rem;
   line-height: 1.5;
 }
@@ -322,7 +316,7 @@ body.page-consultancy .svc-v2-cta {
   transform: scale(1.05);
 }
 
-/* Service glass cards — text style matching screenshots */
+/* Service glass cards � text style matching screenshots */
 .svc-v2-services .svc-v2-heading {
   margin-bottom: clamp(1.75rem, 4vw, 2.5rem);
 }
@@ -389,7 +383,7 @@ body.page-consultancy .svc-v2-cta {
   font-family: 'Plus Jakarta Sans', sans-serif;
   font-weight: 750;
   font-size: 1.08rem;
-  color: #fff !important;
+  color: #0f172a !important;
   margin: 0 0 0.55rem;
   letter-spacing: -0.02em;
 }
@@ -398,7 +392,7 @@ body.page-consultancy .svc-v2-cta {
   margin: 0;
   font-size: 0.92rem;
   line-height: 1.65;
-  color: rgba(255, 255, 255, 0.78) !important;
+  color: #475569 !important;
 }
 
 /* Gallery */
@@ -447,9 +441,9 @@ body.page-consultancy .svc-v2-cta {
   text-align: center;
   padding: clamp(2.5rem, 6vw, 3.75rem) clamp(1.5rem, 4vw, 2.5rem);
   border-radius: clamp(24px, 3vw, 36px);
-  background: linear-gradient(160deg, rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0.06));
+  background: #ffffff;
   border: 1px solid var(--svc-line);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
   position: relative;
   overflow: hidden;
 }
@@ -486,6 +480,15 @@ body.page-consultancy .svc-v2-cta {
 .svc-v2-cta__panel .svc-v2-btn {
   position: relative;
   z-index: 1;
+  background: linear-gradient(135deg, #0EA5E9, #0284C7) !important;
+  border-color: transparent !important;
+  color: #fff !important;
+  box-shadow: 0 8px 22px rgba(2, 132, 199, 0.25);
+}
+
+.svc-v2-cta__panel .svc-v2-btn:hover {
+  background: linear-gradient(135deg, #0284C7, #0369a1) !important;
+  color: #fff !important;
 }
 
 @media (max-width: 1024px) {

@@ -5,15 +5,15 @@
 .page-about-us,
 .page-industries-we-serve,
 .page-careers {
-  --ipp-navy: #1a4056;
-  --ipp-navy-mid: #234d66;
-  --ipp-teal: #3d6d82;
-  --ipp-accent: #b8e6f0;
-  --ipp-bg: #3d6d82;
-  --ipp-white: rgba(255, 255, 255, 0.12);
-  --ipp-text: rgba(255, 255, 255, 0.85);
-  --ipp-heading: #ffffff;
-  --ipp-border: rgba(255, 255, 255, 0.2);
+  --ipp-navy: #0f172a;
+  --ipp-navy-mid: #1e293b;
+  --ipp-teal: #0ea5e9;
+  --ipp-accent: #0284c7;
+  --ipp-bg: transparent;
+  --ipp-white: #ffffff;
+  --ipp-text: #475569;
+  --ipp-heading: #0f172a;
+  --ipp-border: #e2e8f0;
   --ipp-ease: cubic-bezier(0.25, 0.46, 0.45, 0.94);
   --ipp-max: 1280px;
 }
@@ -21,33 +21,25 @@
 /* Same light teal page background as service landings */
 html:has(body.page-about-us),
 html:has(body.page-industries-we-serve),
-html:has(body.page-careers),
+html:has(body.page-careers) {
+  background: transparent !important;
+  background-color: transparent !important;
+}
+
 body.page-about-us,
 body.page-industries-we-serve,
 body.page-careers {
-  background: #3d6d82 !important;
-  background-color: #3d6d82 !important;
+  background: transparent !important;
+  background-color: transparent !important;
   background-image: none !important;
-  color: rgba(255, 255, 255, 0.9);
-}
-
-body.page-about-us::before,
-body.page-about-us::after,
-body.page-industries-we-serve::before,
-body.page-industries-we-serve::after,
-body.page-careers::before,
-body.page-careers::after {
-  display: none !important;
-  opacity: 0 !important;
-  background: none !important;
-  content: none !important;
+  color: #334155;
 }
 
 body.page-about-us main,
 body.page-industries-we-serve main,
 body.page-careers main {
-  background: #3d6d82 !important;
-  background-color: #3d6d82 !important;
+  background: transparent !important;
+  background-color: transparent !important;
 }
 
 .page-about-us h1,
@@ -59,13 +51,13 @@ body.page-careers main {
 .page-careers h1,
 .page-careers h2,
 .page-careers h3 {
-  color: #fff !important;
+  color: #0f172a !important;
 }
 
 /* ─── ENTERPRISE BANNER ─── */
 .ipp-banner {
   position: relative;
-  background: linear-gradient(125deg, #2f5f74 0%, #3d6d82 48%, #355f72 100%);
+  background: linear-gradient(125deg, #0f172a 0%, #1e293b 48%, #0f172a 100%);
   overflow: hidden;
   padding: clamp(5rem, 10vw, 7rem) clamp(1.25rem, 4vw, 2rem) clamp(4rem, 8vw, 5.5rem);
   border-bottom: 1px solid rgba(255, 255, 255, 0.12);
@@ -369,8 +361,8 @@ body.page-careers main {
   box-shadow: 0 16px 40px rgba(7, 26, 47, 0.1);
 }
 
-.ipp-vm-card--vision { --vm-accent: #b8e6f0; background: rgba(255, 255, 255, 0.12); }
-.ipp-vm-card--mission { --vm-accent: #9fd8e8; background: rgba(255, 255, 255, 0.12); }
+.ipp-vm-card--vision { --vm-accent: #0284c7; background: #ffffff; border: 1px solid #e2e8f0; }
+.ipp-vm-card--mission { --vm-accent: #0ea5e9; background: #ffffff; border: 1px solid #e2e8f0; }
 
 .ipp-vm-card__tag {
   font-size: 0.625rem;
@@ -508,7 +500,7 @@ body.page-careers main {
 
 /* ─── INDUSTRIES DARK SECTION ─── */
 .ipp-industries {
-  background: #3d6d82;
+  background: transparent;
   padding: clamp(4rem, 8vw, 6rem) clamp(1.25rem, 4vw, 2rem);
 }
 
@@ -521,7 +513,7 @@ body.page-careers main {
   font-family: 'Plus Jakarta Sans', sans-serif;
   font-size: clamp(1.75rem, 3vw, 2.25rem);
   font-weight: 700;
-  color: #fff;
+  color: #0f172a;
   margin-bottom: 0.75rem;
 }
 
@@ -529,7 +521,7 @@ body.page-careers main {
   font-family: 'Manrope', sans-serif;
   font-size: 1.0625rem;
   line-height: 1.75;
-  color: rgba(255, 255, 255, 0.65);
+  color: #475569;
   max-width: 640px;
 }
 
@@ -555,8 +547,8 @@ body.page-careers main {
 
 .ipp-ind-card {
   --ind-accent: #0EA5E9;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
   border-radius: 16px;
   padding: 1.5rem;
   transition: transform 0.35s var(--ipp-ease), border-color 0.35s ease, box-shadow 0.35s ease, background 0.35s ease;
@@ -578,9 +570,9 @@ body.page-careers main {
 
 .ipp-ind-card:hover {
   transform: translateY(-8px);
-  border-color: rgba(255, 255, 255, 0.18);
-  background: rgba(255, 255, 255, 0.07);
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.25);
+  border-color: #cbd5e1;
+  background: #ffffff;
+  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.08);
 }
 
 .ipp-ind-card:hover::before {
@@ -598,8 +590,8 @@ body.page-careers main {
   width: 40px;
   height: 40px;
   border-radius: 10px;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: #f1f5f9;
+  border: 1px solid #e2e8f0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -616,7 +608,7 @@ body.page-careers main {
   font-family: 'Plus Jakarta Sans', sans-serif;
   font-size: 1.0625rem;
   font-weight: 700;
-  color: #fff;
+  color: #0f172a;
   line-height: 1.25;
 }
 
@@ -624,7 +616,7 @@ body.page-careers main {
   font-family: 'Manrope', sans-serif;
   font-size: 0.875rem;
   line-height: 1.65;
-  color: rgba(255, 255, 255, 0.58);
+  color: #64748b;
   margin-bottom: 1rem;
 }
 
@@ -641,16 +633,16 @@ body.page-careers main {
   text-transform: uppercase;
   padding: 0.3rem 0.65rem;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  color: rgba(255, 255, 255, 0.7);
+  background: #f1f5f9;
+  border: 1px solid #e2e8f0;
+  color: #475569;
   transition: background 0.3s ease, border-color 0.3s ease, color 0.3s ease;
 }
 
 .ipp-ind-card:hover .ipp-ind-card__tag {
-  background: color-mix(in srgb, var(--ind-accent) 15%, transparent);
+  background: color-mix(in srgb, var(--ind-accent) 12%, #ffffff);
   border-color: color-mix(in srgb, var(--ind-accent) 35%, transparent);
-  color: #fff;
+  color: #0f172a;
 }
 
 /* Accent per card */
@@ -665,17 +657,20 @@ body.page-careers main {
 .ipp-ind-card:nth-child(9) { --ind-accent: #0EA5E9; }
 
 /* Override global h1/h2/h3 dark heading rules on Industries page */
-.page-industries-we-serve .ipp-banner__title,
+.page-industries-we-serve .ipp-banner__title {
+  color: #ffffff !important;
+}
+
 .page-industries-we-serve .ipp-industries__title,
 .page-industries-we-serve .ipp-ind-card__title {
-  color: #ffffff !important;
+  color: #0f172a !important;
 }
 
 /* ─── CAREERS PAGE ─── */
 
 /* Why Work With Us — dark grid */
 .ipp-cr-why {
-  background: #3d6d82;
+  background: transparent;
   padding: clamp(4rem, 8vw, 6rem) clamp(1.25rem, 4vw, 2rem);
 }
 
@@ -702,14 +697,14 @@ body.page-careers main {
   font-family: 'Plus Jakarta Sans', sans-serif;
   font-size: clamp(1.75rem, 3vw, 2.25rem);
   font-weight: 700;
-  color: #fff;
+  color: #0f172a;
   margin-bottom: 0.625rem;
 }
 
 .ipp-cr-why__lead {
   font-family: 'Manrope', sans-serif;
   font-size: 1.0625rem;
-  color: rgba(255, 255, 255, 0.62);
+  color: #475569;
   max-width: 520px;
 }
 
@@ -727,8 +722,8 @@ body.page-careers main {
 
 .ipp-cr-why-card {
   --cr-accent: #0EA5E9;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
   border-radius: 16px;
   padding: 1.75rem;
   transition: transform 0.35s var(--ipp-ease), border-color 0.35s ease, box-shadow 0.35s ease;
@@ -749,7 +744,7 @@ body.page-careers main {
 .ipp-cr-why-card:hover {
   transform: translateY(-6px);
   border-color: color-mix(in srgb, var(--cr-accent) 40%, transparent);
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.22);
+  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.08);
 }
 
 .ipp-cr-why-card:hover::after {
@@ -773,7 +768,7 @@ body.page-careers main {
   font-family: 'Plus Jakarta Sans', sans-serif;
   font-size: 1.125rem;
   font-weight: 700;
-  color: #fff;
+  color: #0f172a;
   margin-bottom: 0.5rem;
 }
 
@@ -781,7 +776,7 @@ body.page-careers main {
   font-family: 'Manrope', sans-serif;
   font-size: 0.9375rem;
   line-height: 1.65;
-  color: rgba(255, 255, 255, 0.58);
+  color: #64748b;
 }
 
 /* Job Openings — light section */
@@ -922,24 +917,25 @@ body.page-careers main {
 /* Speculative application band */
 .ipp-cr-speculative {
   padding: clamp(3rem, 6vw, 4rem) clamp(1.25rem, 4vw, 2rem);
-  background: #355f72;
+  background: transparent;
 }
 
 .ipp-cr-speculative__inner {
   max-width: 720px;
   margin: 0 auto;
   text-align: center;
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  border: 1px solid #e2e8f0;
   border-radius: 20px;
   padding: clamp(2rem, 4vw, 3rem);
-  background: rgba(255, 255, 255, 0.03);
+  background: #ffffff;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
 }
 
 .ipp-cr-speculative__title {
   font-family: 'Plus Jakarta Sans', sans-serif;
   font-size: clamp(1.25rem, 2.5vw, 1.625rem);
   font-weight: 700;
-  color: #fff;
+  color: #0f172a;
   margin-bottom: 1rem;
   letter-spacing: 0.02em;
 }
@@ -948,7 +944,7 @@ body.page-careers main {
   font-family: 'Manrope', sans-serif;
   font-size: 1rem;
   line-height: 1.75;
-  color: rgba(255, 255, 255, 0.72);
+  color: #475569;
   margin-bottom: 0.75rem;
 }
 
@@ -956,9 +952,9 @@ body.page-careers main {
   display: inline-flex;
   margin-top: 1rem;
   padding: 0.875rem 2rem;
-  background: rgba(255, 255, 255, 0.16);
+  background: linear-gradient(135deg, #0EA5E9, #0284C7);
   color: #fff;
-  border: 1px solid rgba(255, 255, 255, 0.35);
+  border: 1px solid transparent;
   font-family: 'Manrope', sans-serif;
   font-size: 0.8125rem;
   font-weight: 700;
@@ -971,8 +967,8 @@ body.page-careers main {
 
 .ipp-cr-speculative__link:hover {
   transform: translateY(-2px);
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
-  background: rgba(255, 255, 255, 0.24);
+  box-shadow: 0 12px 32px rgba(14, 165, 233, 0.3);
+  background: linear-gradient(135deg, #0284C7, #0369a1);
   color: #fff;
 }
 
@@ -1115,12 +1111,15 @@ body.page-careers main {
   box-shadow: 0 12px 32px rgba(14, 165, 233, 0.35);
 }
 
-/* Careers white headings on dark sections */
-.page-careers .ipp-banner__title,
+/* Careers: white title only on image banner */
+.page-careers .ipp-banner__title {
+  color: #ffffff !important;
+}
+
 .page-careers .ipp-cr-why__title,
 .page-careers .ipp-cr-why-card__title,
 .page-careers .ipp-cr-speculative__title {
-  color: #ffffff !important;
+  color: #0f172a !important;
 }
 
 /* ─── MOBILE RESPONSIVE — inner pages ─── */
