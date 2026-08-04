@@ -19,10 +19,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const isActive = (href) => href === '' ? pathMatch('/') : pathMatch(`/${href}`);
 
+  const productSub = (sub, categoryHref) => {
+    if (typeof sub === 'string') return { label: sub, href: categoryHref };
+    return { label: sub.label, href: sub.href || categoryHref };
+  };
+
   const isParentActive = (item) => {
     if (isActive(item.href)) return true;
     if (item.items) return item.items.some(i => isActive(i.href));
-    if (item.type === 'mega') return data.productCategories.some(c => isActive(c.href));
+    if (item.type === 'mega') {
+      return data.productCategories.some((c) =>
+        isActive(c.href) || (c.items || []).some((sub) => isActive(productSub(sub, c.href).href))
+      );
+    }
     return false;
   };
 
@@ -34,9 +43,10 @@ document.addEventListener('DOMContentLoaded', () => {
       <button type="button" class="lg-mega-cat${i === 0 ? ' is-active' : ''}${isActive(c.href) ? ' active' : ''}" data-mega-cat="${c.id}" data-mega-href="${basePath}${c.href}" role="menuitem">${c.label}</button>`).join('');
 
     const panels = megaCats.map((c, i) => {
-      const subItems = (c.items || []).map((sub) =>
-        `<a href="${basePath}${c.href}" class="lg-mega-subitem">${sub}</a>`
-      ).join('');
+      const subItems = (c.items || []).map((sub) => {
+        const p = productSub(sub, c.href);
+        return `<a href="${basePath}${p.href}" class="lg-mega-subitem${isActive(p.href) ? ' active' : ''}">${p.label}</a>`;
+      }).join('');
       return `
       <div class="lg-mega-panel${i === 0 ? ' is-visible' : ''}" data-mega-panel="${c.id}" role="region" aria-label="${c.label} products">
         <div class="lg-mega-subgrid">${subItems || `<a href="${basePath}${c.href}" class="lg-mega-subempty">View all ${c.label} →</a>`}</div>
@@ -93,7 +103,10 @@ document.addEventListener('DOMContentLoaded', () => {
             <svg class="lg-mobile-chevron w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
           </button>
           <div id="mob${i}c${j}" class="lg-mobile-prod-items hidden">
-            ${(c.items || []).map((sub) => `<a href="${basePath}${c.href}" class="lg-mobile-prod-item">${sub}</a>`).join('')}
+            ${(c.items || []).map((sub) => {
+              const p = productSub(sub, c.href);
+              return `<a href="${basePath}${p.href}" class="lg-mobile-prod-item">${p.label}</a>`;
+            }).join('')}
             <a href="${basePath}${c.href}" class="lg-mobile-prod-view">View all ${c.label} →</a>
           </div>
         </div>`).join('');
@@ -177,7 +190,7 @@ document.addEventListener('DOMContentLoaded', () => {
   <div id="mobile-menu" class="lg-mobile-menu" aria-hidden="true">
     <div class="lg-mobile-menu-inner">
       ${mobileNav}
-      <a href="${basePath}contact-us/" class="lg-btn-cta w-full justify-center mt-6">GET A QUOT</a>
+      <a href="${basePath}contact-us/" class="lg-btn-cta w-full justify-center mt-6 js-quote-open">GET A QUOTE</a>
     </div>
   </div>
 </header>`;
@@ -200,7 +213,7 @@ document.addEventListener('DOMContentLoaded', () => {
         <span class="pf-cta-label">Need high quality products?</span>
         <h3 class="pf-cta-title">Let's build your chemical supply chain together</h3>
       </div>
-      <a href="${basePath}contact-us/" class="pf-cta-btn">
+      <a href="${basePath}contact-us/" class="pf-cta-btn js-quote-open">
         Request a Quote
         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
       </a>
@@ -252,8 +265,8 @@ document.addEventListener('DOMContentLoaded', () => {
   </div>
 
   <div class="pf-bottom">
-    <p>Copyright ${new Date().getFullYear()} <strong>Nayara Industries</strong>. All rights reserved.</p>
-    <p class="pf-credit">Design &amp; Developed By <a href="https://uplinktech.in/" target="_blank" rel="noopener">UPLINK TECHNOLOGY</a></p>
+    <p>Copyright ${new Date().getFullYear()} <strong>Nayara Industries</strong>. All rights reserved. <a href="https://webcodian.in/" target="_blank" rel="noopener">webcodian.in</a></p>
+    <p class="pf-credit">Design &amp; Developed By <a href="https://webcodian.in/" target="_blank" rel="noopener">webcodian.in</a></p>
   </div>
 </footer>`;
 

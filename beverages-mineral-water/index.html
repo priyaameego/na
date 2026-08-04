@@ -13,7 +13,7 @@
   <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../assets/css/style.css?v=3">
-  <link rel="stylesheet" href="../assets/css/liquid-glass.css?v=13">
+  <link rel="stylesheet" href="../assets/css/liquid-glass.css?v=14">
   <link rel="stylesheet" href="../assets/css/nayara-fortune.css?v=3">
   <link rel="stylesheet" href="../assets/css/spatial-ui.css?v=3">
   <link rel="stylesheet" href="../assets/css/editorial-bento.css?v=3">
@@ -22,10 +22,10 @@
   <link rel="stylesheet" href="../assets/css/luxury-images.css?v=5">
   <link rel="stylesheet" href="../assets/css/premium-international.css?v=10">
   <link rel="stylesheet" href="../assets/css/visual-premium.css?v=8">
-  <link rel="stylesheet" href="../assets/css/beverages-premium.css?v=11">
+  <link rel="stylesheet" href="../assets/css/beverages-premium.css?v=13">
   <link rel="stylesheet" href="../assets/css/service-3d-premium.css?v=2">
   <link rel="stylesheet" href="../assets/css/site-teal-bg.css?v=12">
-  <link rel="stylesheet" href="../assets/css/site-pages.css?v=1">
+  <link rel="stylesheet" href="../assets/css/site-pages.css?v=6">
 </head>
 <body class="overflow-x-hidden bwm-page page-beverages-mineral-water">
   <div id="page-loader"><div class="relative flex items-center justify-center"><div class="loader-ring"></div><div class="loader-ring-spin"></div><span class="text-white font-heading font-bold text-xl tracking-[0.3em]">NI</span></div></div>
@@ -160,9 +160,10 @@
   <section class="bwm-v2-zone bwm-v2-cta">
     <div class="bwm-v2-inner">
       <div class="bwm-v2-cta__panel bwm-v2-reveal">
+        <p class="svc-v2-cta__eyebrow">Ready to build</p>
         <h2 class="bwm-v2-heading">Planning a Mineral Water or Beverage Plant?</h2>
         <p class="bwm-v2-text">Partner with Nayara Industries for reliable beverage and mineral water plant solutions from concept to commissioning.</p>
-        <a href="../contact-us/" class="bwm-v2-btn bwm-v2-btn--soft">Contact Us</a>
+        <a href="../contact-us/" class="bwm-v2-btn bwm-v2-btn--soft js-quote-open">Request a Quote</a>
       </div>
     </div>
   </section>
@@ -170,13 +171,18 @@
   </main>
   <div id="footer-container" data-base="../"></div>
   <script src="../assets/js/data.js"></script>
-  <script src="../assets/js/components.js?v=7"></script>
+  <script src="../assets/js/components.js?v=13"></script>
   <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
   <script src="../assets/js/main.js"></script>
   <script src="../assets/js/premium.js"></script>
-  <script src="../assets/js/forms.js"></script>
+  <script src="../assets/js/forms.js?v=4"></script>
+  <script>
+    document.getElementById('careers-thanks-done')?.addEventListener('click', () => {
+      document.getElementById('careers-form-card')?.classList.remove('is-thanks');
+    });
+  </script>
   <script src="../assets/js/beverages-premium.js?v=3"></script>
   
   

@@ -29,9 +29,10 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
   <link rel="stylesheet" href="./assets/css/home-premium.css?v=34">
   <link rel="stylesheet" href="./assets/css/site-teal-bg.css?v=14">
-  <link rel="stylesheet" href="./assets/css/site-pages.css?v=1">
+  <link rel="stylesheet" href="./assets/css/site-pages.css?v=6">
   <link rel="stylesheet" href="./assets/css/home-clean.css?v=18">
-  <link rel="stylesheet" href="./assets/css/home-f500.css?v=7">
+  <link rel="stylesheet" href="./assets/css/home-f500.css?v=12">
+  <link rel="stylesheet" href="./assets/css/forms-premium.css?v=1">
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"Organization","name":"Nayara Industries","url":"https://nayaragroup.com","logo":"https://nayaragroup.com/wp-content/uploads/2026/01/WhatsApp-Image-2026-01-30-at-12.23.01-PM.jpeg","description":"Chemical manufacturing and trading company in GIDC Ankleshwar","address":{"@type":"PostalAddress","addressLocality":"Bharuch","addressRegion":"Gujarat","postalCode":"392001","addressCountry":"IN"},"contactPoint":{"@type":"ContactPoint","telephone":"+91-85111-63373","email":"info@nayaragroup.com","contactType":"sales"}}
   </script>
@@ -52,11 +53,15 @@
     <!-- 1. HERO -->
     <section class="f5-hero" id="hero-swiper" aria-label="Hero">
       <div class="f5-hero__slides" id="f5-hero-slides">
-        <div class="f5-hero__slide is-active" data-ken="a" style="background-image:url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=2200&q=85')"></div>
-        <div class="f5-hero__slide" data-ken="b" style="background-image:url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=2200&q=85')"></div>
-        <div class="f5-hero__slide" data-ken="c" style="background-image:url('https://images.unsplash.com/photo-1532094349884-543bc11b843d?auto=format&fit=crop&w=2200&q=85')"></div>
-        <div class="f5-hero__slide" data-ken="a" style="background-image:url('https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&w=2200&q=85')"></div>
-        <div class="f5-hero__slide" data-ken="b" style="background-image:url('https://images.unsplash.com/photo-1576086213369-97a306d36557?auto=format&fit=crop&w=2200&q=85')"></div>
+        <!-- Industry-related hero slides: chemical plant, pharma, agro, textile, water, paints, plastics -->
+        <div class="f5-hero__slide is-active" data-ken="a" style="background-image:url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=2400&q=85')" role="img" aria-label="Chemical manufacturing plant"></div>
+        <div class="f5-hero__slide" data-ken="b" style="background-image:url('https://images.unsplash.com/photo-1582719471384-894fbb16e074?auto=format&fit=crop&w=2400&q=85')" role="img" aria-label="Pharmaceutical industry"></div>
+        <div class="f5-hero__slide" data-ken="c" style="background-image:url('https://images.unsplash.com/photo-1625246333195-78d9c38ad449?auto=format&fit=crop&w=2400&q=85')" role="img" aria-label="Agrochemical industry"></div>
+        <div class="f5-hero__slide" data-ken="d" style="background-image:url('https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&w=2400&q=85')" role="img" aria-label="Textile and dyes industry"></div>
+        <div class="f5-hero__slide" data-ken="a" style="background-image:url('https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=2400&q=85')" role="img" aria-label="Water treatment industry"></div>
+        <div class="f5-hero__slide" data-ken="b" style="background-image:url('https://images.unsplash.com/photo-1562259949-e8e704c693e3?auto=format&fit=crop&w=2400&q=85')" role="img" aria-label="Paints and coatings industry"></div>
+        <div class="f5-hero__slide" data-ken="c" style="background-image:url('https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&w=2400&q=85')" role="img" aria-label="Plastic and rubber industry"></div>
+        <div class="f5-hero__slide" data-ken="d" style="background-image:url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=2400&q=85')" role="img" aria-label="Industrial chemical facility"></div>
       </div>
       <div class="f5-hero__overlay" aria-hidden="true"></div>
       <div class="f5-hero__particles" id="f5-particles" aria-hidden="true"></div>
@@ -65,7 +70,7 @@
         <h1 class="f5-hero__title f5-reveal">Precision Chemistry.<br>Reliable Supply.</h1>
         <p class="f5-hero__lead f5-reveal">Nayara Industries is a professionally managed chemical manufacturing and trading company delivering quality, consistency, and timely deliveries for industrial applications across India and export markets.</p>
         <div class="f5-hero__actions f5-reveal">
-          <a href="contact-us/" class="f5-btn f5-btn--primary">Request Quote</a>
+          <a href="contact-us/" class="f5-btn f5-btn--primary js-quote-open">Request Quote</a>
           <a href="#products" class="f5-btn f5-btn--ghost">Explore Products</a>
         </div>
         <div class="f5-hero__stats f5-reveal">
@@ -234,7 +239,7 @@
       <div class="f5-container">
         <div class="f5-about__top">
           <div class="f5-about__media f5-reveal">
-            <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=1600&q=85" alt="Nayara Industries manufacturing facility" loading="lazy">
+            <img src="https://nayaragroup.com/wp-content/uploads/2025/12/environmental-pollution-factory-exterior.jpg" alt="Nayara Industries chemical manufacturing facility" loading="lazy">
             <div class="f5-about__badge">
               <strong>GIDC</strong>
               <span>Ankleshwar Hub</span>
@@ -524,7 +529,7 @@
         <h2 class="f5-title">Ready to Partner With Nayara Industries?</h2>
         <p class="f5-lead">Request a quotation, product specifications, or speak with our sales team for reliable chemical supply.</p>
         <div class="f5-hero__actions">
-          <a href="contact-us/" class="f5-btn f5-btn--primary">Request Quote</a>
+          <a href="contact-us/" class="f5-btn f5-btn--primary js-quote-open">Request Quote</a>
           <a href="mailto:sales@nayaragroup.com" class="f5-btn f5-btn--ghost">Contact Sales</a>
         </div>
       </div>
@@ -593,16 +598,65 @@
 
   <div id="footer-container" data-base="./"></div>
 
+  <div id="enquire-modal" class="enq-modal" hidden aria-hidden="true" data-mode="enquire">
+    <div class="enq-modal__backdrop" data-enq-close tabindex="-1"></div>
+    <div class="enq-modal__panel" role="dialog" aria-modal="true" aria-labelledby="enq-modal-title">
+      <button type="button" class="enq-modal__close" data-enq-close aria-label="Close">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+
+      <div class="enq-modal__view enq-modal__view--form" id="enq-view-form">
+        <span class="enq-modal__eyebrow" id="enq-eyebrow">Product enquiry</span>
+        <h3 id="enq-modal-title" class="enq-modal__title">Enquire Now</h3>
+        <p class="enq-modal__product" id="enq-product-line">Interested in <strong id="enq-product-label">Product</strong></p>
+        <form action="/api/contact" method="post" class="enq-modal__form" data-form="contact" id="enquire-form">
+          <div class="form-group">
+            <input type="text" id="enq-name" name="name" placeholder=" " class="premium-input peer" required autocomplete="name">
+            <label for="enq-name">Your name</label>
+          </div>
+          <div class="form-group">
+            <input type="email" id="enq-email" name="email" placeholder=" " class="premium-input peer" required autocomplete="email">
+            <label for="enq-email">Your email</label>
+          </div>
+          <div class="form-group">
+            <input type="tel" id="enq-phone" name="phone" placeholder=" " class="premium-input peer" autocomplete="tel">
+            <label for="enq-phone">Phone (optional)</label>
+          </div>
+          <div class="form-group">
+            <input type="text" id="enq-subject" name="subject" placeholder=" " class="premium-input peer" required>
+            <label for="enq-subject">Subject</label>
+          </div>
+          <div class="form-group">
+            <textarea id="enq-message" name="message" placeholder=" " class="premium-textarea peer" rows="4"></textarea>
+            <label for="enq-message">Your message (optional)</label>
+          </div>
+          <button type="submit" class="sp-btn sp-btn--primary w-full justify-center" id="enq-submit-btn">Send Enquiry</button>
+        </form>
+      </div>
+
+      <div class="enq-modal__view enq-modal__view--thanks" id="enq-view-thanks" hidden>
+        <div class="enq-thanks">
+          <span class="enq-thanks__icon" aria-hidden="true">
+            <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M5 13l4 4L19 7"/></svg>
+          </span>
+          <h3 class="enq-thanks__title" id="enq-thanks-title">Thank you for submitting</h3>
+          <p class="enq-thanks__text" id="enq-thanks-text">Your enquiry for <strong id="enq-thanks-product">Product</strong> has been received. Our team will get back to you shortly.</p>
+          <button type="button" class="sp-btn sp-btn--primary enq-thanks__btn" data-enq-close>Done</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <script src="./assets/js/data.js"></script>
-  <script src="./assets/js/components.js?v=8"></script>
+  <script src="./assets/js/components.js?v=13"></script>
   <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
   <script src="./assets/js/main.js?v=3"></script>
   <script src="./assets/js/premium.js"></script>
-  <script src="./assets/js/forms.js"></script>
+  <script src="./assets/js/forms.js?v=4"></script>
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script src="./assets/js/home-premium.js?v=10"></script>
-  <script src="./assets/js/home-f500.js?v=3"></script>
+  <script src="./assets/js/home-f500.js?v=8"></script>
 </body>
 </html>

@@ -23,11 +23,27 @@
     const slides = Array.from(document.querySelectorAll('.f5-hero__slide'));
     if (slides.length < 2) return;
     let i = 0;
+
+    function activate(next) {
+      slides.forEach((slide, idx) => {
+        const on = idx === next;
+        slide.classList.toggle('is-active', on);
+        if (on) {
+          // Restart Ken Burns every time the slide becomes active
+          slide.style.animation = 'none';
+          // force reflow
+          void slide.offsetWidth;
+          slide.style.animation = '';
+        }
+      });
+      i = next;
+    }
+
+    activate(0);
+    if (reduced) return;
     setInterval(() => {
-      slides[i].classList.remove('is-active');
-      i = (i + 1) % slides.length;
-      slides[i].classList.add('is-active');
-    }, 6500);
+      activate((i + 1) % slides.length);
+    }, 7000);
   }
 
   function animateCounter(el) {
@@ -223,10 +239,32 @@
     }
   }
 
+  function initProductEnquireButtons() {
+    document.querySelectorAll('.home-products-grid .eb-enquire').forEach((btn) => {
+      btn.setAttribute('role', 'button');
+      btn.setAttribute('tabindex', '0');
+      const openFromCard = (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        const card = btn.closest('.eb-prod, .hp-prod-card');
+        const title = card && card.querySelector('.eb-prod-name');
+        const product = title ? title.textContent.trim() : 'Product';
+        if (window.NayaraEnquire && typeof window.NayaraEnquire.open === 'function') {
+          window.NayaraEnquire.open({ mode: 'enquire', product: product });
+        }
+      };
+      btn.addEventListener('click', openFromCard);
+      btn.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') openFromCard(e);
+      });
+    });
+  }
+
   document.addEventListener('DOMContentLoaded', () => {
     initParticles();
     initHeroSlider();
     initRevealAndCounters();
     initGsapExtras();
+    initProductEnquireButtons();
   });
 })();

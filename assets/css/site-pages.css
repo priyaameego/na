@@ -400,16 +400,22 @@ body.page-about-us .sp-zone.pc-cta {
 
 body.page-about-us .pc-cta .sp-section-title,
 body.page-about-us .pc-cta h2 {
+  background-image: none !important;
+  -webkit-background-clip: border-box !important;
+  background-clip: border-box !important;
   color: #FFFFFF !important;
+  -webkit-text-fill-color: #FFFFFF !important;
 }
 
 body.page-about-us .pc-cta .sp-feature-text,
 body.page-about-us .pc-cta .sp-section-eyebrow {
   color: rgba(255, 255, 255, 0.78) !important;
+  -webkit-text-fill-color: rgba(255, 255, 255, 0.78) !important;
 }
 
 body.page-about-us .pc-cta .sp-section-eyebrow {
   color: #7DDBB8 !important;
+  -webkit-text-fill-color: #7DDBB8 !important;
 }
 
 body.page-about-us .pc-cta .sp-btn--primary {
@@ -421,5 +427,411 @@ body.page-about-us .pc-cta .sp-btn--primary {
 @media (max-width: 900px) {
   body.page-about-us .ipp-vm-grid {
     grid-template-columns: 1fr !important;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   Premium gradient headings — sitewide (home, about, careers…)
+   ═══════════════════════════════════════════════════════════════ */
+:root {
+  --heading-grad: linear-gradient(
+    118deg,
+    #06141C 0%,
+    #0B1F2A 18%,
+    #0D7A5F 48%,
+    #0EA5E9 78%,
+    #14B8A6 100%
+  );
+}
+
+h1,
+h2,
+h3,
+body:not(.page-home) h1,
+body:not(.page-home) h2,
+body:not(.page-home) h3,
+body:not(.page-home) .sp-cms h2,
+body:not(.page-home) .cms-content h2,
+.f5-title,
+.f5-about__title,
+.ipp-about__heading,
+.ipp-vm-card__title,
+.ipp-excellence__title,
+.ipp-industries__title,
+.ipp-ind-card__title,
+.ipp-cr-why__title,
+.ipp-cr-why-card__title,
+.ipp-cr-jobs__title,
+.ipp-cr-job-card__title,
+.ipp-cr-apply__title,
+.ipp-cr-life__title,
+.ipp-cr-form-card__title,
+.ipp-stat__num,
+.sp-section-title,
+.eb-prod-name,
+.eb-cell-title,
+.pc-products__title,
+.pc-card__title,
+.f5-service-card__title,
+.f5-why-card h3,
+.f5-feat h3,
+.f5-sustain__item h3,
+.bwm-v2-heading,
+.etp-v2-heading,
+.svc-v2-heading,
+.bwm-v2-svc__title,
+.etp-v2-svc__title,
+.svc-v2-svc__title,
+.os-card__title,
+body.page-beverages-mineral-water .bwm-v2-heading,
+body.page-etp-solutions .etp-v2-heading,
+body.page-greenfield-projects .svc-v2-heading,
+body.page-process-development .svc-v2-heading,
+body.page-consultancy .svc-v2-heading,
+body.page-other-services .sp-section-title,
+body.page-other-services .os-card__title,
+body.page-about-us h1,
+body.page-about-us h2,
+body.page-about-us h3,
+body.page-careers h1,
+body.page-careers h2,
+body.page-careers h3,
+body.page-industries-we-serve h1,
+body.page-industries-we-serve h2,
+body.page-industries-we-serve h3,
+body.page-about-us .ipp-about__heading,
+body.page-about-us .ipp-vm-card__title,
+body.page-about-us .ipp-excellence__title,
+body.page-about-us .ipp-stat__num,
+body.page-industries-we-serve .ipp-industries__title,
+body.page-industries-we-serve .ipp-ind-card__title,
+body.page-careers .ipp-cr-why__title,
+body.page-careers .ipp-cr-why-card__title,
+body.page-careers .ipp-cr-jobs__title,
+body.page-careers .ipp-cr-job-card__title,
+body.page-careers .ipp-cr-apply__title,
+body.page-careers .ipp-cr-life__title,
+body.page-careers .ipp-cr-form-card__title {
+  background-image: var(--heading-grad) !important;
+  background-size: 140% 140% !important;
+  background-position: 0% 50% !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  color: transparent !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
+/* Keep readable white headings on dark / photo bands */
+.f5-hero__title,
+.f5-section-head--light .f5-title,
+.f5-cta .f5-title,
+#company-stats .f5-title,
+#company-stats h2,
+#cta-band .f5-title,
+.ph-banner__title,
+.ipp-banner__title,
+body:not(.page-home) .ph-banner__title,
+body:not(.page-home) .ipp-banner__title,
+body:not(.page-home) h1.ph-banner__title,
+body:not(.page-home) h1.ipp-banner__title,
+body.page-about-us .ph-banner__title,
+body.page-about-us .ipp-banner__title,
+body.page-industries-we-serve .ipp-banner__title,
+body.page-careers .ipp-banner__title,
+body.page-careers .ph-banner__title,
+.premium-footer h3,
+.pf-cta-title,
+.enq-modal__title,
+.enq-thanks__title,
+.ipp-cr-thanks__title,
+.bwm-v2-hero__title,
+.etp-v2-hero__title,
+.svc-v2-hero__title,
+.bwm-v2-cta__panel .bwm-v2-heading,
+.etp-v2-cta__panel .etp-v2-heading,
+.svc-v2-cta__panel .svc-v2-heading,
+body.page-beverages-mineral-water .bwm-v2-hero__title,
+body.page-etp-solutions .etp-v2-hero__title,
+body.page-greenfield-projects .svc-v2-hero__title,
+body.page-process-development .svc-v2-hero__title,
+body.page-consultancy .svc-v2-hero__title,
+body.page-other-services .ph-banner__title,
+body.bwm-page h1.bwm-v2-hero__title,
+body.bwm-page h1.etp-v2-hero__title,
+body.bwm-page h1.svc-v2-hero__title {
+  background-image: none !important;
+  -webkit-background-clip: border-box !important;
+  background-clip: border-box !important;
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+
+h1::selection,
+h2::selection,
+h3::selection,
+.f5-title::selection {
+  background: rgba(13, 122, 95, 0.22);
+  color: #0B1F2A;
+  -webkit-text-fill-color: #0B1F2A;
+}
+
+/* ─── Request a Quote / Enquire popup (sitewide) ─── */
+body.enq-modal-open {
+  overflow: hidden;
+  touch-action: none;
+}
+
+.enq-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 12000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: max(0.75rem, env(safe-area-inset-top)) max(0.75rem, env(safe-area-inset-right)) max(0.75rem, env(safe-area-inset-bottom)) max(0.75rem, env(safe-area-inset-left));
+}
+
+.enq-modal[hidden] {
+  display: none !important;
+}
+
+.enq-modal__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(6, 20, 28, 0.62);
+  backdrop-filter: blur(6px);
+}
+
+.enq-modal__panel {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 460px);
+  max-height: min(92vh, 720px);
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  padding: clamp(1.25rem, 4vw, 1.75rem) clamp(1rem, 3.5vw, 1.5rem) clamp(1.15rem, 3vw, 1.5rem);
+  border-radius: clamp(16px, 3vw, 20px);
+  background: #ffffff;
+  border: 1px solid rgba(216, 227, 223, 0.9);
+  box-shadow: 0 28px 80px rgba(6, 20, 28, 0.28);
+  animation: enqModalIn 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@keyframes enqModalIn {
+  from { opacity: 0; transform: translateY(16px) scale(0.98); }
+  to { opacity: 1; transform: none; }
+}
+
+.enq-modal__close {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  border-radius: 999px;
+  background: #F4F7F6;
+  color: #0B1F2A;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+  z-index: 2;
+}
+
+.enq-modal__close:hover {
+  background: #0D7A5F;
+  color: #fff;
+}
+
+.enq-modal__eyebrow {
+  display: block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #0D7A5F;
+  margin-bottom: 0.35rem;
+  padding-right: 2.5rem;
+}
+
+.enq-modal__title {
+  margin: 0 0 0.35rem;
+  font-family: 'Plus Jakarta Sans', 'Manrope', sans-serif;
+  font-size: clamp(1.45rem, 4.5vw, 1.75rem);
+  font-weight: 700;
+  color: #0B1F2A !important;
+  -webkit-text-fill-color: #0B1F2A !important;
+  background-image: none !important;
+  letter-spacing: -0.02em;
+  padding-right: 2rem;
+}
+
+.enq-modal__product {
+  margin: 0 0 1.15rem;
+  font-size: clamp(0.9rem, 3.4vw, 0.95rem);
+  color: #4A5C63;
+  line-height: 1.45;
+}
+
+.enq-modal__product strong {
+  color: #0B1F2A;
+}
+
+.enq-modal__form .form-group {
+  position: relative;
+  margin-bottom: 0.85rem;
+}
+
+.enq-modal__form .premium-input,
+.enq-modal__form .premium-textarea {
+  width: 100%;
+  display: block;
+  box-sizing: border-box;
+  padding: 1.15rem 1rem 0.55rem;
+  border: 1.5px solid #D8E3DF;
+  border-radius: 12px;
+  background: #F8FBFA;
+  font-size: 16px !important;
+  color: #0B1F2A;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.enq-modal__form .premium-textarea {
+  min-height: 110px;
+  resize: vertical;
+  padding-top: 1.35rem;
+}
+
+.enq-modal__form .premium-input:focus,
+.enq-modal__form .premium-textarea:focus {
+  border-color: #0D7A5F;
+  background: #fff;
+  box-shadow: 0 0 0 4px rgba(13, 122, 95, 0.12);
+}
+
+.enq-modal__form .form-group label {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.92rem;
+  color: #6B7C83;
+  pointer-events: none;
+  transition: 0.18s ease;
+  background: transparent;
+}
+
+.enq-modal__form .form-group:has(textarea) label {
+  top: 1.1rem;
+  transform: none;
+}
+
+.enq-modal__form .premium-input:focus + label,
+.enq-modal__form .premium-input:not(:placeholder-shown) + label,
+.enq-modal__form .premium-textarea:focus + label,
+.enq-modal__form .premium-textarea:not(:placeholder-shown) + label {
+  top: 0.35rem;
+  transform: none;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #0D7A5F;
+}
+
+.enq-modal__form .sp-btn,
+.enq-modal__form .sp-btn--primary {
+  margin-top: 0.35rem;
+  min-height: 48px;
+  width: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  border-radius: 999px;
+  background: linear-gradient(118deg, #0B1F2A 0%, #0D7A5F 55%, #0EA5E9 100%);
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.enq-modal__form .sp-btn:hover,
+.enq-modal__form .sp-btn--primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 28px rgba(13, 122, 95, 0.28);
+}
+
+.enq-modal__view--thanks[hidden],
+.enq-modal__view--form[hidden] {
+  display: none !important;
+}
+
+.enq-thanks {
+  text-align: center;
+  padding: 1.25rem 0.25rem 0.5rem;
+  animation: enqModalIn 0.32s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.enq-thanks__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 72px;
+  height: 72px;
+  margin: 0 auto 1rem;
+  border-radius: 999px;
+  background: rgba(13, 122, 95, 0.12);
+  color: #0D7A5F;
+  box-shadow: 0 10px 28px rgba(13, 122, 95, 0.16);
+}
+
+.enq-thanks__title {
+  margin: 0 0 0.55rem;
+  font-family: 'Plus Jakarta Sans', 'Manrope', sans-serif;
+  font-size: clamp(1.5rem, 5vw, 1.9rem);
+  font-weight: 700;
+  color: #0B1F2A !important;
+  -webkit-text-fill-color: #0B1F2A !important;
+  background-image: none !important;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
+
+.enq-thanks__text {
+  margin: 0 auto 1.35rem;
+  max-width: 32ch;
+  font-size: clamp(0.92rem, 3.5vw, 1rem);
+  line-height: 1.6;
+  color: #4A5C63;
+}
+
+.enq-thanks__btn {
+  min-width: min(100%, 180px);
+  min-height: 48px;
+  justify-content: center;
+  border: 0;
+  border-radius: 999px;
+  background: linear-gradient(118deg, #0B1F2A 0%, #0D7A5F 55%, #0EA5E9 100%);
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+@media (max-width: 480px) {
+  .enq-modal {
+    align-items: flex-end;
+    padding: 0;
+  }
+
+  .enq-modal__panel {
+    width: 100%;
+    max-height: min(92vh, 100%);
+    border-radius: 20px 20px 0 0;
+    padding-bottom: max(1.25rem, env(safe-area-inset-bottom));
   }
 }

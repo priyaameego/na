@@ -655,7 +655,7 @@ const PAGE_CONTENT = {
 
 const PAGE_IMAGES = {
   'about-us': 'https://nayaragroup.com/wp-content/uploads/2025/12/environmental-pollution-factory-exterior.jpg',
-  'contact-us': 'https://images.unsplash.com/photo-1423666639041-f56000c27a9a?auto=format&fit=crop&w=1600&q=80',
+  'contact-us': 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=1800&q=80',
   'product': 'https://nayaragroup.com/wp-content/uploads/2025/12/Acrylic-Solvent.webp',
   'careers': 'https://nayaragroup.com/wp-content/uploads/2026/01/lab-technician-dressed-protective-suit-as-safety-precaution-looking-test-tube-scaled-1.jpg',
   'quality-safety': 'https://images.unsplash.com/photo-1581093588401-fbb62a02f120?auto=format&fit=crop&w=1600&q=80',
@@ -805,8 +805,19 @@ function getPageLayout(slug) {
   return layouts[slug.split('').reduce((a, c) => a + c.charCodeAt(0), 0) % layouts.length];
 }
 
-function getPremiumCategoryIntro(content, slug, title) {
+function getPremiumCategoryIntro(content, slug, title, basePath = '../') {
   const img = getPageImage(slug);
+  const cat = CATEGORY_PRODUCTS[slug];
+  const lead = PAGE_LEADS[slug] || '';
+  const copyHtml = lead
+    ? `<p>${lead}</p>`
+    : content;
+  const chips = cat
+    ? cat.items.slice(0, 8).map((item) => {
+        const productSlug = slugifyProduct(item);
+        return `<a class="pc-intro__chip" href="${basePath}${slug}/${productSlug}/">${item}</a>`;
+      }).join('')
+    : '';
   return `
   <section class="pc-intro">
     <div class="pc-intro__stage">
@@ -814,7 +825,11 @@ function getPremiumCategoryIntro(content, slug, title) {
         <img src="${img}" alt="${title}" loading="lazy" decoding="async">
       </figure>
       <article class="pc-intro__glass">
-        <div class="pc-intro__copy sp-cms cms-content cms-content-premium">${content}</div>
+        <span class="pc-intro__eyebrow">Product range</span>
+        <h2 class="pc-intro__title">${cat ? cat.label : title}</h2>
+        <div class="pc-intro__copy sp-cms cms-content cms-content-premium">${copyHtml}</div>
+        ${chips ? `<div class="pc-intro__chips" aria-label="${title} products">${chips}</div>` : ''}
+        <a class="pc-intro__cta js-quote-open" href="${basePath}contact-us/">Request a Quote</a>
       </article>
     </div>
   </section>`;
@@ -923,7 +938,7 @@ function getHead(title, description, basePath, canonical, options = {}) {
   <link rel="stylesheet" href="${basePath}assets/css/visual-premium.css?v=8">
   ${extraCss}
   <link rel="stylesheet" href="${basePath}assets/css/site-teal-bg.css?v=12">
-  <link rel="stylesheet" href="${basePath}assets/css/site-pages.css?v=1">
+  <link rel="stylesheet" href="${basePath}assets/css/site-pages.css?v=6">
 </head>
 <body class="${bodyClass}">`;
 }
@@ -1156,14 +1171,19 @@ function getPremiumCareersPage(basePath) {
         <p class="ipp-cr-why-card__desc">${c.desc}</p>
       </article>`).join('');
 
-  const jobCards = CAREERS_JOBS.map((j) => `
-      <article class="ipp-cr-job-card gs-reveal">
+  const jobAccents = ['#0EA5E9', '#10B981', '#F59E0B', '#8B5CF6', '#0284C7'];
+  const jobCards = CAREERS_JOBS.map((j, idx) => `
+      <article class="ipp-cr-job-card gs-reveal" style="--job-accent:${jobAccents[idx % jobAccents.length]}">
+        <div class="ipp-cr-job-card__top">
+          <span class="ipp-cr-job-card__badge">Hiring Now</span>
+          <span class="ipp-cr-job-card__num">${String(idx + 1).padStart(2, '0')}</span>
+        </div>
         <h3 class="ipp-cr-job-card__title">${j.title}</h3>
         <p class="ipp-cr-job-card__desc">${j.desc}</p>
         <ul class="ipp-cr-job-card__meta">
           ${j.meta.map((m) => `<li>${m}</li>`).join('')}
         </ul>
-        <a href="#apply" class="ipp-cr-job-card__btn magnetic-btn" data-position="${j.slug}">Apply Now</a>
+        <a href="#apply" class="ipp-cr-job-card__btn magnetic-btn" data-position="${j.slug}">Apply Now <span aria-hidden="true">→</span></a>
       </article>`).join('');
 
   const positionOptions = CAREERS_POSITIONS.map((p) => `<option value="${p}">${p}</option>`).join('');
@@ -1191,30 +1211,32 @@ function getPremiumCareersPage(basePath) {
     </div>
   </section>
 
-  <section class="ipp-cr-speculative gs-reveal">
-    <div class="ipp-cr-speculative__inner">
-      <h2 class="ipp-cr-speculative__title">Didn't Find a Suitable Role?</h2>
-      <p class="ipp-cr-speculative__text">We are always looking for talented and motivated individuals to join our growing team.</p>
-      <p class="ipp-cr-speculative__text"><strong>Share your resume with us and we will reach out when suitable opportunities arise.</strong></p>
-      <a href="#apply" class="ipp-cr-speculative__link magnetic-btn">Send Your Resume</a>
-    </div>
-  </section>
-
   <section class="ipp-cr-apply" id="apply">
     <div class="ipp-cr-apply__inner">
       <div class="ipp-cr-apply__copy gs-reveal-left">
         <span class="ipp-cr-apply__eyebrow">How to Apply</span>
         <h2 class="ipp-cr-apply__title">Send Your Resume Now</h2>
+        <p class="ipp-cr-apply__lead">Join a team that values integrity, safety, and long-term career growth in India's chemical hub.</p>
         <div class="ipp-cr-life">
-          <h3 class="ipp-cr-life__title">Life at Nayara Industries</h3>
-          <p>At Nayara Industries, you will work in a professional environment where teamwork, accountability, and respect are core values. We encourage every employee to share ideas, take responsibility, and contribute toward operational excellence.</p>
-          <p>Safety, quality, and continuous improvement guide everything we do.</p>
-          <p>Build your career with Nayara Industries — a company committed to growth, safety, and innovation.</p>
-          <p>Apply today and be part of our journey.</p>
+          <div class="ipp-cr-life__head">
+            <span class="ipp-cr-life__tag">Culture</span>
+            <h3 class="ipp-cr-life__title">Life at Nayara Industries</h3>
+          </div>
+          <div class="ipp-cr-life__panel">
+            <p>At Nayara Industries, you will work in a professional environment where teamwork, accountability, and respect are core values. We encourage every employee to share ideas, take responsibility, and contribute toward operational excellence.</p>
+            <p>Safety, quality, and continuous improvement guide everything we do.</p>
+            <p>Build your career with Nayara Industries — a company committed to growth, safety, and innovation.</p>
+            <p class="ipp-cr-life__cta-line">Apply today and be part of our journey.</p>
+          </div>
+          <ul class="ipp-cr-life__points">
+            <li>Teamwork &amp; Accountability</li>
+            <li>Safety First Culture</li>
+            <li>Growth &amp; Innovation</li>
+          </ul>
         </div>
       </div>
       <div class="ipp-cr-form-wrap gs-reveal-right">
-        <div class="ipp-cr-form-card">
+        <div class="ipp-cr-form-card" id="careers-form-card">
           <h2 class="ipp-cr-form-card__title">Apply for a Position</h2>
           <p class="ipp-cr-form-card__sub">Please fill the form below and attach your resume. Our HR team will contact you shortly.</p>
           <form class="ipp-cr-form space-y-5" action="/api/careers" method="post" enctype="multipart/form-data" data-form="careers">
@@ -1247,16 +1269,26 @@ function getPremiumCareersPage(basePath) {
             </div>
             <button type="submit" class="ipp-cr-form__submit magnetic-btn">Submit Application</button>
           </form>
+          <div class="ipp-cr-thanks" aria-live="polite">
+            <span class="ipp-cr-thanks__icon" aria-hidden="true">
+              <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M5 13l4 4L19 7"/></svg>
+            </span>
+            <h3 class="ipp-cr-thanks__title">Thank you for submitting</h3>
+            <p class="ipp-cr-thanks__text">Your application has been received. Our HR team will review it and contact you shortly.</p>
+            <button type="button" class="sp-btn sp-btn--primary ipp-cr-thanks__btn" id="careers-thanks-done">Done</button>
+          </div>
         </div>
       </div>
     </div>
   </section>`;
 }
 
-function getPageHero(title, breadcrumb, basePath, slug) {
-  const heroImage = getPageImage(slug);
-  const lead = PAGE_LEADS[slug] || '';
-  const showCta = Boolean(CATEGORY_PRODUCTS[slug] || slug === 'product');
+function getPageHero(title, breadcrumb, basePath, slug, options = {}) {
+  const heroImage = getPageImage(options.imageSlug || slug);
+  const lead = options.lead != null ? options.lead : (PAGE_LEADS[slug] || '');
+  const showCta = options.showCta != null
+    ? options.showCta
+    : Boolean(CATEGORY_PRODUCTS[slug] || slug === 'product');
   const crumbs = breadcrumb.map((c, i) => {
     if (i === breadcrumb.length - 1) return `<span class="ph-banner__crumb-current">${c.label}</span>`;
     return `<a href="${basePath}${c.href}">${c.label}</a><span class="ph-banner__crumb-sep">/</span>`;
@@ -1276,36 +1308,41 @@ function getPageHero(title, breadcrumb, basePath, slug) {
         <p class="ph-banner__eyebrow">Nayara Industries</p>
         <h1 class="ph-banner__title">${title}</h1>
         ${lead ? `<p class="ph-banner__lead">${lead}</p>` : ''}
-        ${showCta ? `<a href="${basePath}contact-us/" class="ph-banner__cta">Request Quote</a>` : ''}
+        ${showCta ? `<a href="${basePath}contact-us/" class="ph-banner__cta js-quote-open">Request Quote</a>` : ''}
       </div>
     </div>
   </section>`;
 }
 
 function getOtherServicesHub(basePath) {
-  const cards = OTHER_SERVICES.map((s, i) => `
-    <a href="${basePath}${s.href}" class="eb-prod card-3d gs-reveal group" style="text-decoration:none;color:inherit">
-      <div class="eb-prod-inner" style="padding:0">
-        <div class="relative overflow-hidden" style="height:180px">
-          <img src="${s.image}" alt="${s.label}" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;transition:transform 0.6s ease">
-        </div>
-        <div style="padding:1.5rem">
-          <h3 class="eb-cell-title">${s.label}</h3>
-          <p class="eb-cell-text">${s.excerpt}</p>
-          <span class="sp-link mt-3 inline-flex items-center gap-1">Explore <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></span>
-        </div>
+  const cards = OTHER_SERVICES.map((s, i) => {
+    const num = String(i + 1).padStart(2, '0');
+    return `
+    <a href="${basePath}${s.href}" class="os-card gs-reveal">
+      <div class="os-card__media">
+        <img src="${s.image}" alt="${s.label}" loading="lazy" decoding="async">
       </div>
-    </a>`).join('');
+      <div class="os-card__body">
+        <div class="os-card__top">
+          <span class="os-card__badge">Service</span>
+          <span class="os-card__num">${num}</span>
+        </div>
+        <h3 class="os-card__title">${s.label}</h3>
+        <p class="os-card__text">${s.excerpt}</p>
+        <span class="os-card__cta">Explore <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </div>
+    </a>`;
+  }).join('');
 
   return `
-  <section class="eb-zone eb-zone--mesh eb-zone--blueprint">
-    <div class="eb-inner">
-      <header class="eb-head eb-head--center gs-reveal">
-        <span class="sp-section-eyebrow">Beyond Chemicals</span>
-        <h2 class="sp-section-title">Other Services</h2>
-        <p class="sp-feature-text mt-4 max-w-2xl mx-auto">Nayara Industries delivers turnkey engineering, consultancy, and plant solutions for chemical, pharmaceutical, and industrial projects across India.</p>
+  <section class="os-hub">
+    <div class="os-hub__inner">
+      <header class="os-hub__head gs-reveal">
+        <p class="os-hub__eyebrow">Beyond Chemicals</p>
+        <h2 class="os-hub__title">Other Services</h2>
+        <p class="os-hub__lead">Nayara Industries delivers turnkey engineering, consultancy, and plant solutions for chemical, pharmaceutical, and industrial projects across India.</p>
       </header>
-      <div class="eb-products-grid">
+      <div class="os-hub__grid">
         ${cards}
       </div>
     </div>
@@ -1654,9 +1691,10 @@ function getPremiumBeveragesPage(basePath) {
   <section class="bwm-v2-zone bwm-v2-cta">
     <div class="bwm-v2-inner">
       <div class="bwm-v2-cta__panel bwm-v2-reveal">
+        <p class="svc-v2-cta__eyebrow">Ready to build</p>
         <h2 class="bwm-v2-heading">${p.cta.title}</h2>
         <p class="bwm-v2-text">${p.cta.text}</p>
-        <a href="${basePath}contact-us/" class="bwm-v2-btn bwm-v2-btn--soft">Contact Us</a>
+        <a href="${basePath}contact-us/" class="bwm-v2-btn bwm-v2-btn--soft js-quote-open">Request a Quote</a>
       </div>
     </div>
   </section>`;
@@ -1744,9 +1782,10 @@ function getPremiumEtpPage(basePath) {
   <section class="etp-v2-zone etp-v2-cta">
     <div class="etp-v2-inner">
       <div class="etp-v2-cta__panel etp-v2-reveal">
+        <p class="svc-v2-cta__eyebrow">Ready to build</p>
         <h2 class="etp-v2-heading">${p.cta.title}</h2>
         <p class="etp-v2-text">${p.cta.text}</p>
-        <a href="${basePath}contact-us/" class="etp-v2-btn etp-v2-btn--soft">${p.cta.btn || 'Contact Us'}</a>
+        <a href="${basePath}contact-us/" class="etp-v2-btn etp-v2-btn--soft js-quote-open">${p.cta.btn || 'Request a Quote'}</a>
       </div>
     </div>
   </section>`;
@@ -1846,9 +1885,10 @@ function getServicePremiumV2Page(p, basePath, options = {}) {
   <section class="svc-v2-zone svc-v2-cta">
     <div class="svc-v2-inner">
       <div class="svc-v2-cta__panel svc-v2-reveal">
+        <p class="svc-v2-cta__eyebrow">Ready to build</p>
         <h2 class="svc-v2-heading">${p.cta.title}</h2>
         <p class="svc-v2-text">${p.cta.text}</p>
-        <a href="${basePath}contact-us/" class="svc-v2-btn svc-v2-btn--soft">${ctaBtn}</a>
+        <a href="${basePath}contact-us/" class="svc-v2-btn svc-v2-btn--soft js-quote-open">${ctaBtn}</a>
       </div>
     </div>
   </section>`;
@@ -2098,78 +2138,115 @@ function getPremiumBeveragesPageLegacy(basePath) {
 
 function getPremiumContactSection(basePath) {
   const c = CONTACT_PAGE;
-  const icons = {
-    location: '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>',
-    email: '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>',
-    hr: '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>',
-    phone: '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>',
-  };
-
-  const cardsHtml = c.cards.map((card) => {
-    let body = '';
-    if (card.type === 'location') {
-      body = `<p class="eb-connect-card-text">${card.address}</p>`;
-    } else if (card.type === 'email') {
-      body = `<p class="eb-connect-card-sub">${card.subtitle}</p>${card.emails.map((e) => `<a href="mailto:${e}" class="eb-connect-link">${e}</a>`).join('')}`;
-    } else if (card.type === 'hr') {
-      body = `<p class="eb-connect-card-sub">${card.subtitle}</p><a href="mailto:${card.email}" class="eb-connect-link">${card.email}</a>`;
-    } else if (card.type === 'phone') {
-      body = `<p class="eb-connect-card-text">Mobile: <a href="tel:+918511163373" class="eb-connect-link inline">+91 85111 63373</a></p><p class="eb-connect-card-text">WhatsApp: <a href="https://wa.me/918511163373" class="eb-connect-link inline" target="_blank" rel="noopener noreferrer">+91 85111 63373</a></p>`;
-    }
-    return `
-    <article class="eb-connect-card eb-connect-card--${card.type} card-3d gs-reveal">
-      <span class="eb-connect-icon-ring" aria-hidden="true"></span>
-      <div class="eb-connect-card-inner">
-        <div class="eb-connect-icon">${icons[card.type]}</div>
-        <h3 class="eb-connect-card-title">${card.title}</h3>
-        ${body}
-      </div>
-    </article>`;
-  }).join('');
-
-  const f = c.formLabels;
-  const headlineParts = c.headline.split('NAYARA GROUP');
-  const headlineHtml = headlineParts.length > 1
-    ? `${headlineParts[0]}<span class="eb-connect-accent">NAYARA GROUP</span>${headlineParts[1] || ''}`
-    : c.headline;
-
   return `
-  <section class="eb-zone eb-connect-zone eb-zone--mesh eb-zone--blueprint">
-    <div class="eb-inner">
-      <header class="eb-connect-head gs-reveal">
-        <h2 class="eb-connect-headline">${headlineHtml}</h2>
-        <p class="eb-connect-tagline">${c.tagline}</p>
+  <section class="ni-contact">
+    <div class="ni-contact__inner">
+      <header class="ni-contact__head gs-reveal">
+        <p class="ni-contact__eyebrow">Get in touch</p>
+        <h2 class="ni-contact__title">Let's Connect with <span>NAYARA GROUP</span></h2>
+        <p class="ni-contact__lead">Quotations, specifications, MSDS/TDS, or custom sourcing — our chemical manufacturing &amp; trading team responds quickly.</p>
       </header>
-      <div class="eb-connect-layout">
-        <div class="eb-connect-bento gs-reveal-left">
-          ${cardsHtml}
+
+      <div class="ni-contact__grid">
+        <div class="ni-contact__info gs-reveal-left">
+          <article class="ni-info">
+            <div class="ni-info__icon" aria-hidden="true">
+              <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+            </div>
+            <div class="ni-info__body">
+              <span class="ni-info__label">Headquarters</span>
+              <h3 class="ni-info__title">Nayara Industries</h3>
+              <p class="ni-info__text">${c.cards[0].address}</p>
+            </div>
+          </article>
+
+          <article class="ni-info">
+            <div class="ni-info__icon" aria-hidden="true">
+              <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+            </div>
+            <div class="ni-info__body">
+              <span class="ni-info__label">Email</span>
+              <h3 class="ni-info__title">Sales &amp; Export</h3>
+              <span class="ni-info__meta">Commercial enquiries</span>
+              <a class="ni-info__link" href="mailto:sales@nayaragroup.com">sales@nayaragroup.com</a>
+              <a class="ni-info__link" href="mailto:export@nayaragroup.com">export@nayaragroup.com</a>
+            </div>
+          </article>
+
+          <article class="ni-info">
+            <div class="ni-info__icon" aria-hidden="true">
+              <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+            </div>
+            <div class="ni-info__body">
+              <span class="ni-info__label">Careers</span>
+              <h3 class="ni-info__title">HR Desk</h3>
+              <span class="ni-info__meta">Send resume</span>
+              <a class="ni-info__link" href="mailto:hrd@nayaragroup.com">hrd@nayaragroup.com</a>
+            </div>
+          </article>
+
+          <article class="ni-info">
+            <div class="ni-info__icon" aria-hidden="true">
+              <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+            </div>
+            <div class="ni-info__body">
+              <span class="ni-info__label">Direct line</span>
+              <h3 class="ni-info__title">Call / WhatsApp</h3>
+              <a class="ni-info__link" href="tel:+918511163373">+91 85111 63373</a>
+              <a class="ni-info__link" href="https://wa.me/918511163373" target="_blank" rel="noopener noreferrer">Chat on WhatsApp</a>
+            </div>
+          </article>
         </div>
-        <div class="eb-connect-form eb-form-glass card-3d gs-reveal-right">
-          <form action="/api/contact" method="post" class="space-y-5" data-form="contact">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+
+        <div class="ni-form gs-reveal-right">
+          <div class="ni-form__head">
+            <span class="ni-form__eyebrow">Enquiry desk</span>
+            <h3 class="ni-form__title">Send us a message</h3>
+            <p class="ni-form__hint">Share your requirement — product, quantity, or documentation need. We typically respond within one business day.</p>
+          </div>
+          <form action="/api/contact" method="post" data-form="contact">
+            <div class="ni-form__row">
               <div class="form-group">
-                <input type="text" id="name" name="name" placeholder=" " class="premium-input peer" required>
-                <label for="name">${f.name}</label>
+                <input type="text" id="name" name="name" placeholder=" " class="premium-input peer" required autocomplete="name">
+                <label for="name">${c.formLabels.name}</label>
               </div>
               <div class="form-group">
-                <input type="email" id="email" name="email" placeholder=" " class="premium-input peer" required>
-                <label for="email">${f.email}</label>
+                <input type="email" id="email" name="email" placeholder=" " class="premium-input peer" required autocomplete="email">
+                <label for="email">${c.formLabels.email}</label>
               </div>
             </div>
-            <div class="form-group">
-              <input type="text" id="subject" name="subject" placeholder=" " class="premium-input peer">
-              <label for="subject">${f.subject}</label>
+            <div class="ni-form__row">
+              <div class="form-group">
+                <input type="tel" id="phone" name="phone" placeholder=" " class="premium-input peer" autocomplete="tel">
+                <label for="phone">Phone (optional)</label>
+              </div>
+              <div class="form-group">
+                <input type="text" id="subject" name="subject" placeholder=" " class="premium-input peer" required>
+                <label for="subject">${c.formLabels.subject}</label>
+              </div>
             </div>
             <div class="form-group">
               <textarea id="message" name="message" placeholder=" " class="premium-textarea peer" rows="5"></textarea>
-              <label for="message">${f.message}</label>
+              <label for="message">Your message / requirement</label>
             </div>
-            <button type="submit" class="sp-btn sp-btn--primary magnetic-btn">${f.submit}</button>
+            <button type="submit" class="sp-btn sp-btn--primary ni-form__submit">
+              Send Enquiry
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </button>
+            <p class="ni-form__note">Your details stay confidential and are used only for this enquiry.</p>
           </form>
         </div>
       </div>
-      <div class="eb-connect-map eb-map-wrap gs-reveal">
-        <iframe src="${c.mapEmbed}" loading="lazy" allowfullscreen title="Nayara Industries Location"></iframe>
+
+      <div class="ni-map gs-reveal">
+        <div class="ni-map__bar">
+          <div>
+            <strong>Visit our office</strong>
+            <span>Shravan Chowkdi, Bharuch, Gujarat</span>
+          </div>
+          <a href="https://www.google.com/maps/search/?api=1&query=Samraiya+Complex+Shravan+Chowkdi+Bharuch" target="_blank" rel="noopener noreferrer">Open in Maps →</a>
+        </div>
+        <iframe src="${c.mapEmbed}" loading="lazy" allowfullscreen title="Nayara Industries Location" referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
     </div>
   </section>`;
@@ -2273,15 +2350,103 @@ const CATEGORY_PRODUCTS = {
   'industrial-salts': { label: 'Industrial Salts', tone: 4, items: ['Calcium Chloride Prills', 'Calcium Chloride Powder', 'Calcium Chloride Lumps', 'Aluminum Chloride', 'Potassium Chloride', 'Sodium Carbonate', 'Sodium Bi-Carbonate', 'Sodium Sulphate', 'Sodium Nitrate', 'Potassium Nitrate'] },
 };
 
+const CATEGORY_INDUSTRIES = {
+  solvents: ['Pharmaceuticals', 'Paints & Coatings', 'Export & International Trade'],
+  'acids-alkalies': ['Pharmaceuticals', 'Water Treatment', 'Textile & Dyes', 'Export & International Trade'],
+  intermediates: ['Pharmaceuticals', 'Agrochemicals', 'Export & International Trade'],
+  'pharma-raw-materials': ['Pharmaceuticals', 'Laboratory & Research Institutions', 'Export & International Trade'],
+  'textile-chemicals': ['Textile & Dyes', 'Export & International Trade'],
+  'water-treatment-chemicals': ['Water Treatment', 'Export & International Trade'],
+  'agro-chemicals': ['Agrochemicals', 'Construction Chemicals', 'Export & International Trade'],
+  'dyes-dye-intermediates': ['Textile & Dyes', 'Export & International Trade'],
+  'laboratory-chemicals': ['Laboratory & Research Institutions', 'Pharmaceuticals'],
+  'detergent-chemicals': ['Detergent & Cleaning Products', 'Export & International Trade'],
+  'industrial-salts': ['Water Treatment', 'Pharmaceuticals', 'Export & International Trade'],
+};
+
+const PRODUCT_NAME_ALIASES = {
+  Bromin: ['Bromine'],
+  'Feric Aluminium Sulphate': ['Ferric Aluminium Sulphate', 'Ferric Aluminum Sulphate', 'Ferric Aluminium Sulfate'],
+  STPP: ['STPP (Sodium Tripolyphosphate)', 'Sodium Tripolyphosphate'],
+};
+
+function slugifyProduct(name) {
+  return String(name)
+    .toLowerCase()
+    .replace(/&/g, ' and ')
+    .replace(/[()]/g, ' ')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '')
+    .replace(/-+/g, '-');
+}
+
+function getProductItems(categorySlug) {
+  const cat = CATEGORY_PRODUCTS[categorySlug];
+  if (!cat) return [];
+  return cat.items.map((name) => ({
+    name,
+    slug: slugifyProduct(name),
+    href: `${categorySlug}/${slugifyProduct(name)}/`,
+  }));
+}
+
+function findProductCas(categorySlug, productName) {
+  const data = pagesData[categorySlug];
+  if (!data) return '';
+  const text = `${data.excerpt || ''}\n${data.content || ''}`
+    .replace(/&#038;/g, '&')
+    .replace(/<\/?[^>]+>/g, ' ')
+    .replace(/\s+/g, ' ');
+  const names = [productName, ...(PRODUCT_NAME_ALIASES[productName] || [])];
+  for (const name of names) {
+    const escaped = name.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    const re = new RegExp(
+      `${escaped}[\\s\\S]{0,140}?CAS No:?\\s*([A-Za-z0-9][A-Za-z0-9\\-\\/\\s,.]{0,48}?)(?:\\s+Category|\\s+Enquire|$)`,
+      'i'
+    );
+    const m = text.match(re);
+    if (m) {
+      const cas = m[1].trim().replace(/\s+/g, ' ');
+      if (cas && !/^proprietary|^mixture|^multiple|^various|^polymer/i.test(cas)) return cas;
+      if (cas) return cas;
+    }
+  }
+  return '';
+}
+
+function getProductBlurb(productName, categoryLabel) {
+  return `${productName} is supplied by Nayara Industries as part of our ${categoryLabel} range for industrial applications. We support reliable sourcing with documentation (MSDS/TDS) and quotation assistance on request.`;
+}
+
 function getCategoryProductsSection(slug, basePath) {
   const cat = CATEGORY_PRODUCTS[slug];
   if (!cat) return '';
 
-  const cards = cat.items.map((name) => `
+  const gallery = PAGE_BANNER_GALLERY[slug] || [getPageImage(slug)];
+  const cards = cat.items.map((name, i) => {
+    const img = gallery[i % gallery.length];
+    const num = String(i + 1).padStart(2, '0');
+    const productSlug = slugifyProduct(name);
+    const detailHref = `${basePath}${slug}/${productSlug}/`;
+    return `
     <article class="pc-card">
-      <h3 class="pc-card__title">${name}</h3>
-      <a href="${basePath}contact-us/" class="pc-card__btn">Enquire</a>
-    </article>`).join('');
+      <a class="pc-card__media" href="${detailHref}">
+        <img src="${img}" alt="${name}" loading="lazy" decoding="async">
+      </a>
+      <div class="pc-card__body">
+        <div class="pc-card__top">
+          <span class="pc-card__badge">${cat.label}</span>
+          <span class="pc-card__num">${num}</span>
+        </div>
+        <h3 class="pc-card__title"><a href="${detailHref}">${name}</a></h3>
+        <p class="pc-card__text">Available for industrial supply with documentation support on request.</p>
+        <div class="pc-card__actions">
+          <a href="${detailHref}" class="pc-card__btn">View Details</a>
+          <a href="${basePath}contact-us/" class="pc-card__btn pc-card__btn--ghost js-quote-open">Enquire Now</a>
+        </div>
+      </div>
+    </article>`;
+  }).join('');
 
   return `
   <section class="pc-products" data-tone="${cat.tone}" id="category-products">
@@ -2290,7 +2455,7 @@ function getCategoryProductsSection(slug, basePath) {
         <span class="pc-products__bar" aria-hidden="true"></span>
         <div>
           <h2 class="pc-products__title">${cat.label}</h2>
-          <p class="pc-products__count">${cat.items.length} products available</p>
+          <p class="pc-products__count">${cat.items.length} products in this range</p>
         </div>
       </header>
       <div class="pc-products__grid">
@@ -2298,6 +2463,116 @@ function getCategoryProductsSection(slug, basePath) {
       </div>
     </div>
   </section>`;
+}
+
+function getProductDetailMain(categorySlug, product, basePath) {
+  const cat = CATEGORY_PRODUCTS[categorySlug];
+  const cas = findProductCas(categorySlug, product.name);
+  const industries = CATEGORY_INDUSTRIES[categorySlug] || [];
+  const gallery = PAGE_BANNER_GALLERY[categorySlug] || [getPageImage(categorySlug)];
+  const siblings = getProductItems(categorySlug).filter((p) => p.slug !== product.slug).slice(0, 4);
+  const img = gallery[cat.items.indexOf(product.name) % gallery.length] || getPageImage(categorySlug);
+
+  const industryChips = industries
+    .map((label) => `<span class="pd-industries__chip">${label}</span>`)
+    .join('');
+
+  const related = siblings.map((p, i) => {
+    const rImg = gallery[(cat.items.indexOf(p.name)) % gallery.length] || img;
+    return `
+    <a class="pd-related__card gs-reveal" href="${basePath}${p.href}" style="--d:${i * 0.06}s">
+      <span class="pd-related__media"><img src="${rImg}" alt="${p.name}" loading="lazy" decoding="async"></span>
+      <span class="pd-related__body">
+        <span class="pd-related__badge">${cat.label}</span>
+        <span class="pd-related__title">${p.name}</span>
+      </span>
+    </a>`;
+  }).join('');
+
+  return `
+  <section class="pd-page" data-tone="${cat.tone}">
+    <div class="pd-page__inner">
+      <div class="pd-overview gs-reveal">
+        <figure class="pd-overview__media">
+          <img src="${img}" alt="${product.name}" loading="lazy" decoding="async">
+        </figure>
+        <div class="pd-overview__copy">
+          <div class="pd-overview__meta">
+            <span class="pd-badge">${cat.label}</span>
+            ${cas ? `<span class="pd-cas">CAS ${cas}</span>` : ''}
+          </div>
+          <h2 class="pd-overview__title">${product.name}</h2>
+          <p class="pd-overview__text">${getProductBlurb(product.name, cat.label)}</p>
+          <div class="pd-overview__actions">
+            <a class="pd-overview__cta js-quote-open" href="${basePath}contact-us/">Request a Quote</a>
+            <a class="pd-overview__link" href="${basePath}${categorySlug}/">Back to ${cat.label}</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="pd-industries gs-reveal">
+        <span class="pd-industries__label">Industries</span>
+        <div class="pd-industries__chips" aria-label="Industries for ${product.name}">
+          ${industryChips}
+        </div>
+      </div>
+
+      ${related ? `
+      <div class="pd-related">
+        <header class="pd-related__head gs-reveal">
+          <h3 class="pd-related__heading">Related in ${cat.label}</h3>
+          <p class="pd-related__sub">Explore more products from this range</p>
+        </header>
+        <div class="pd-related__grid">${related}</div>
+      </div>` : ''}
+    </div>
+  </section>`;
+}
+
+function generateProductDetailPages() {
+  let count = 0;
+  Object.keys(CATEGORY_PRODUCTS).forEach((categorySlug) => {
+    const cat = CATEGORY_PRODUCTS[categorySlug];
+    const pageLayout = getPageLayout(categorySlug);
+    getProductItems(categorySlug).forEach((product) => {
+      const basePath = '../../';
+      const dir = path.join(__dirname, categorySlug, product.slug);
+      fs.mkdirSync(dir, { recursive: true });
+      const description = `${product.name} | ${cat.label} from Nayara Industries. Industrial supply with documentation support.`;
+      const lead = `High-quality ${product.name} from our ${cat.label} range — reliable industrial supply from GIDC Ankleshwar.`;
+      const breadcrumb = [
+        { label: 'Product', href: 'product/' },
+        { label: cat.label, href: `${categorySlug}/` },
+        { label: product.name, href: `${categorySlug}/${product.slug}/` },
+      ];
+      const mainContent = getProductDetailMain(categorySlug, product, basePath);
+      const html = `${getHead(product.name, description, basePath, `${categorySlug}/${product.slug}/`, {
+        extraCss: ['assets/css/product-category.css?v=12'],
+        bodyClass: `overflow-x-hidden page-product-detail page-${categorySlug} ${pageLayout}`,
+      })}
+  <div id="page-loader"><div class="relative flex items-center justify-center"><div class="loader-ring"></div><div class="loader-ring-spin"></div><span class="text-white font-heading font-bold text-xl tracking-[0.3em]">NI</span></div></div>
+  <div id="header-container" data-base="${basePath}"></div>
+  <main>
+    ${getPageHero(product.name, breadcrumb, basePath, categorySlug, { lead, showCta: true, imageSlug: categorySlug })}
+    ${mainContent}
+    ${getCtaSection(basePath)}
+  </main>
+  <div id="footer-container" data-base="${basePath}"></div>
+  <script src="${basePath}assets/js/data.js"></script>
+  <script src="${basePath}assets/js/components.js?v=13"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="${basePath}assets/js/main.js"></script>
+  <script src="${basePath}assets/js/premium.js"></script>
+  <script src="${basePath}assets/js/forms.js?v=4"></script>
+</body>
+</html>`;
+      fs.writeFileSync(path.join(dir, 'index.html'), html);
+      count += 1;
+    });
+  });
+  console.log('Generated product detail pages:', count);
 }
 
 function getProductGrid(basePath) {
@@ -2372,7 +2647,7 @@ function generatePage(slug, data) {
   } else if (slug === 'other-services') {
     mainContent = getOtherServicesHub(basePath);
   } else if (CATEGORY_PRODUCTS[slug]) {
-    mainContent = getPremiumCategoryIntro(content || `<p>${description}</p>`, slug, title)
+    mainContent = getPremiumCategoryIntro(content || `<p>${description}</p>`, slug, title, basePath)
       + getCategoryProductsSection(slug, basePath);
   } else {
     mainContent = getContentSection(content || `<p>${description}</p>`, slug, title);
@@ -2389,19 +2664,21 @@ function generatePage(slug, data) {
   const pageLayout = getPageLayout(slug);
   const svc3dCss = 'assets/css/service-3d-premium.css?v=2';
   const headOpts = isBeveragesPage
-    ? { extraCss: ['assets/css/beverages-premium.css?v=11', svc3dCss], bodyClass: `overflow-x-hidden bwm-page page-${slug}` }
+    ? { extraCss: ['assets/css/beverages-premium.css?v=13', svc3dCss], bodyClass: `overflow-x-hidden bwm-page page-${slug}` }
     : isEtpPage
-      ? { extraCss: ['assets/css/etp-premium.css?v=5', svc3dCss], bodyClass: `overflow-x-hidden bwm-page page-${slug}` }
+      ? { extraCss: ['assets/css/etp-premium.css?v=7', svc3dCss], bodyClass: `overflow-x-hidden bwm-page page-${slug}` }
       : isSharedServicePremium
-        ? { extraCss: ['assets/css/service-premium.css?v=4', svc3dCss], bodyClass: `overflow-x-hidden bwm-page page-${slug}` }
+        ? { extraCss: ['assets/css/service-premium.css?v=6', svc3dCss], bodyClass: `overflow-x-hidden bwm-page page-${slug}` }
         : isOtherServicesHub
-          ? { extraCss: [svc3dCss], bodyClass: `overflow-x-hidden page-${slug} ${pageLayout}` }
+          ? { extraCss: ['assets/css/other-services-premium.css?v=1', svc3dCss], bodyClass: `overflow-x-hidden page-${slug} ${pageLayout}` }
         : isPremiumInner
-          ? { extraCss: ['assets/css/inner-pages-premium.css?v=8', ...(slug === 'careers' ? [svc3dCss] : [])], bodyClass: `overflow-x-hidden page-${slug} ${pageLayout}` }
+          ? { extraCss: ['assets/css/inner-pages-premium.css?v=13', 'assets/css/forms-premium.css?v=1', ...(slug === 'careers' ? [svc3dCss] : [])], bodyClass: `overflow-x-hidden page-${slug} ${pageLayout}` }
           : isProductCategory
-            ? { extraCss: ['assets/css/product-category.css?v=6'], bodyClass: `overflow-x-hidden page-${slug} ${pageLayout}` }
+            ? { extraCss: ['assets/css/product-category.css?v=12'], bodyClass: `overflow-x-hidden page-${slug} ${pageLayout}` }
             : slug === 'product'
-              ? { extraCss: ['assets/css/product-category.css?v=6'], bodyClass: `overflow-x-hidden page-${slug} ${pageLayout}` }
+              ? { extraCss: ['assets/css/product-category.css?v=12'], bodyClass: `overflow-x-hidden page-${slug} ${pageLayout}` }
+              : slug === 'contact-us'
+                ? { extraCss: ['assets/css/forms-premium.css?v=2', 'assets/css/contact-premium.css?v=4'], bodyClass: `overflow-x-hidden page-${slug} ${pageLayout}` }
               : { bodyClass: `overflow-x-hidden page-${slug} ${pageLayout}` };
 
   const aboutLead = 'Learn about Nayara Industries, a chemical manufacturing and trading company in GIDC Ankleshwar specializing in solvents, intermediates, and industrial chemicals with strict QC systems.';
@@ -2428,13 +2705,18 @@ function generatePage(slug, data) {
   </main>
   <div id="footer-container" data-base="${basePath}"></div>
   <script src="${basePath}assets/js/data.js"></script>
-  <script src="${basePath}assets/js/components.js?v=8"></script>
+  <script src="${basePath}assets/js/components.js?v=13"></script>
   <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
   <script src="${basePath}assets/js/main.js"></script>
   <script src="${basePath}assets/js/premium.js"></script>
-  <script src="${basePath}assets/js/forms.js"></script>
+  <script src="${basePath}assets/js/forms.js?v=4"></script>
+  <script>
+    document.getElementById('careers-thanks-done')?.addEventListener('click', () => {
+      document.getElementById('careers-form-card')?.classList.remove('is-thanks');
+    });
+  </script>
   ${isBeveragesPage ? `<script src="${basePath}assets/js/beverages-premium.js?v=3"></script>` : ''}
   ${isEtpPage ? `<script src="${basePath}assets/js/etp-premium.js?v=1"></script>` : ''}
   ${isSharedServicePremium ? `<script src="${basePath}assets/js/service-premium.js?v=1"></script>` : ''}
@@ -2449,5 +2731,7 @@ function generatePage(slug, data) {
 Object.entries(pagesData).forEach(([slug, data]) => {
   generatePage(slug, data);
 });
+
+generateProductDetailPages();
 
 console.log('Done! Generated', Object.keys(pagesData).filter(s => !SKIP_SLUGS.includes(s)).length, 'pages');
