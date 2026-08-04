@@ -93,9 +93,17 @@ main > section:not(.ph-banner):not(.ph-banner--bg):not(.ipp-banner):not(.sp-hero
 
 .premium-footer .pf-cta-title,
 .premium-footer .pf-cta h3,
+.premium-footer h3.pf-cta-title,
 body:not(.page-home) .premium-footer .pf-cta-title,
-body:not(.page-home) .premium-footer .pf-cta h3 {
+body:not(.page-home) .premium-footer .pf-cta h3,
+body:not(.page-home) .premium-footer h3.pf-cta-title,
+body.page-home .premium-footer .pf-cta-title,
+body.page-home .premium-footer h3.pf-cta-title {
+  background-image: none !important;
+  -webkit-background-clip: border-box !important;
+  background-clip: border-box !important;
   color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
 }
 
 .premium-footer .pf-cta-label {

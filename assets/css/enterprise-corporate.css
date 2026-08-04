@@ -727,7 +727,11 @@ a.text-gold:hover,
 }
 
 .pf-cta-title {
+  background-image: none !important;
+  -webkit-background-clip: border-box !important;
+  background-clip: border-box !important;
   color: #FFFFFF !important;
+  -webkit-text-fill-color: #FFFFFF !important;
 }
 
 .pf-cta-btn,
@@ -787,10 +791,12 @@ a.text-gold:hover,
 }
 
 .pf-contact-card {
-  background: rgba(255, 255, 255, 0.05) !important;
-  border: 1px solid rgba(255, 255, 255, 0.08) !important;
-  border-radius: var(--corp-radius) !important;
-  transition: border-color 0.3s ease, background 0.3s ease !important;
+  background: transparent !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  color: rgba(255, 255, 255, 0.95) !important;
+  font-weight: 600 !important;
+  transition: color 0.3s ease !important;
 }
 
 .pf-contact-card:hover {

@@ -927,18 +927,18 @@ function getHead(title, description, basePath, canonical, options = {}) {
   <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="${basePath}assets/css/style.css?v=3">
-  <link rel="stylesheet" href="${basePath}assets/css/liquid-glass.css?v=14">
-  <link rel="stylesheet" href="${basePath}assets/css/nayara-fortune.css?v=3">
+  <link rel="stylesheet" href="${basePath}assets/css/liquid-glass.css?v=16">
+  <link rel="stylesheet" href="${basePath}assets/css/nayara-fortune.css?v=5">
   <link rel="stylesheet" href="${basePath}assets/css/spatial-ui.css?v=3">
   <link rel="stylesheet" href="${basePath}assets/css/editorial-bento.css?v=3">
-  <link rel="stylesheet" href="${basePath}assets/css/enterprise-corporate.css?v=3">
+  <link rel="stylesheet" href="${basePath}assets/css/enterprise-corporate.css?v=5">
   <link rel="stylesheet" href="${basePath}assets/css/luxury-enterprise.css?v=4">
   <link rel="stylesheet" href="${basePath}assets/css/luxury-images.css?v=5">
   <link rel="stylesheet" href="${basePath}assets/css/premium-international.css?v=10">
   <link rel="stylesheet" href="${basePath}assets/css/visual-premium.css?v=8">
   ${extraCss}
-  <link rel="stylesheet" href="${basePath}assets/css/site-teal-bg.css?v=12">
-  <link rel="stylesheet" href="${basePath}assets/css/site-pages.css?v=6">
+  <link rel="stylesheet" href="${basePath}assets/css/site-teal-bg.css?v=13">
+  <link rel="stylesheet" href="${basePath}assets/css/site-pages.css?v=7">
 </head>
 <body class="${bodyClass}">`;
 }

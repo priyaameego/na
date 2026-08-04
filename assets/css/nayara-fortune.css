@@ -554,7 +554,15 @@ strong.text-primary { color: var(--nf-cyan) !important; }
 }
 
 .pf-cta-label { color: var(--nf-cyan) !important; }
-.pf-cta-title { color: var(--nf-heading) !important; }
+.pf-cta-title,
+.premium-footer .pf-cta-title,
+.premium-footer h3.pf-cta-title {
+  background-image: none !important;
+  -webkit-background-clip: border-box !important;
+  background-clip: border-box !important;
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
 
 .pf-cta-btn {
   background: linear-gradient(135deg, var(--corp-primary, #0B1F3A), var(--corp-secondary, #142B4D)) !important;
@@ -566,7 +574,7 @@ strong.text-primary { color: var(--nf-cyan) !important; }
 .pf-glow-1 { background: radial-gradient(circle, rgba(201, 169, 110, 0.12), transparent 70%) !important; }
 .pf-glow-2 { background: radial-gradient(circle, rgba(20, 43, 77, 0.1), transparent 70%) !important; }
 
-.pf-heading { color: var(--nf-heading) !important; }
+.pf-heading { color: #ffffff !important; font-weight: 800 !important; }
 .pf-heading-line {
   background: var(--corp-accent, #C9A96E) !important;
 }
@@ -576,9 +584,10 @@ strong.text-primary { color: var(--nf-cyan) !important; }
 .pf-view-all { color: var(--nf-cyan) !important; }
 
 .pf-contact-card {
-  background: var(--nf-surface) !important;
-  border-color: var(--nf-border) !important;
-  color: var(--nf-body) !important;
+  background: transparent !important;
+  border-color: transparent !important;
+  color: rgba(255, 255, 255, 0.95) !important;
+  font-weight: 600 !important;
 }
 
 .pf-contact-card:hover {
